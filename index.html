@@ -36,6 +36,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#regist").click(function(){
+        $("p").toggle(1000, function(){
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -252,11 +262,38 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">criador de conteudo</label>
             </div> -->
+
+            <div>
             <h8>Já tem conta?</h8>
             <a href="#" onclick="fecha()" data-toggle="modal" data-target="#login"><button type="submit" class="btn btn-outline-warning">Login</button></a>
+            </div>
+
+            <!-- <a href="criador.html"><small class="form-text text-muted">Criar conta como criador de conteudo</small></a> -->
           </form>
-          <a href="criador.html"><small id="emailHelp" class="form-text text-muted">Criar conta como criador de conteudo</small></a>
-        </div>
+          <br>
+          <button id="regist"><small class="form-text text-muted">Criar conta como criador de conteudo</small></button>
+          <br>
+            <p class="col-md-12">
+
+            <label for="inputEmail4" class="form-label">Telemovel</label>
+            <input type="email" class="form-control" id="inputEmail4">
+              <label for="inputPassword4" class="form-label">Grau</label>
+              <input type="password" class="form-control" id="inputPassword4">
+              <label for="inputCity" class="form-label">Localidade</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Maceira, Leiria">
+              <label for="inputAddress2" class="form-label">Website</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="www.example.com"><br>
+              <label for="inputState" class="form-label">Freenlace</label>
+              <select id="inputState" class="form-select">
+                <option selected>Disponivel</option>
+                <option>Não disponivel</option>
+              </select>
+          </p>
+
+
+
+
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           <button type="submit" class="btn btn-warning">Submeter</button>
