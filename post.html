@@ -252,7 +252,9 @@
             <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
 
             <span style="display:block">
-              <i class="fa fa-heart-o" aria-hidden="true"> </i><small> 22 gostos</small>
+            <p id="gosto" onclick="myFunction()"><i class="fa fa-heart-o" aria-hidden="true"> </i></p><small> 22 gostos</small>
+
+
           </span>
           </div>
         </div>
@@ -378,6 +380,11 @@
   }
 
 </script>
+  <script>
+    function myFunction() {
+      document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+    }
+  </script>
 
 </body>
 
