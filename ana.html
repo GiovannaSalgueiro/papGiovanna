@@ -44,10 +44,10 @@
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.html">Página Principal</a></li>
         <!--   <li><a href="#services">Top Posts</a></li>  -->
-        <li><a href="post.html">Posts</a></li>
-        <li><a href="post.html">Feed</a></li>
+        <li><a href="post.html">Publicações</a></li>
+        <li><a href="post.html">Atividade</a></li>
         <li><a>|</a> </li>
         <li><a href="#" data-toggle="modal" data-target="#login">Login </a> </li>
 
@@ -74,7 +74,7 @@
           <img src="assets/img/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <i class="far fa-star" style="color: #ffb459; text-align: right"></i>
+              <p id="favorito" onclick="favorito()"><i class="far fa-star" aria-hidden="true" style="color: #ffb459"></i></p>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
@@ -82,14 +82,14 @@
                     <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> Ana Silva</li>
                     <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> 918 632 176 </li>
                     <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> Maceira, Leiria</li>
-                    <li><i class="icofont-rounded-right"></i> <strong>Idade:</strong> 18</li>
+                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Idade:</strong> 18</li> -->
                   </ul>
                 </div>
                 <div class="col-lg-6">
                   <br>
                   <ul>
 
-                    <li><i class="icofont-rounded-right"></i> <strong>Grau:</strong> Amador</li>
+                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Grau:</strong> Amador</li> -->
                     <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> anaSilva@gmail.com</li>
                     <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponível</li>
                   </ul>
@@ -180,9 +180,6 @@
 
 
 
-
-
-
         </div>
 
       </div>
@@ -225,6 +222,11 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function favorito() {
+      document.getElementById("favorito").innerHTML = "<i class=\"fas fa-star\" style='color: #ffb459'></i>";
+    }
+  </script>
 
 </body>
 

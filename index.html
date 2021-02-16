@@ -60,9 +60,9 @@
         <li class="active"><a href="index.html">Página principal</a></li>
         <!--   <li><a href="#services">Top Posts</a></li>  -->
         <li><a href="post.html">Publicações</a></li>
-        <li><a href="post.html">Feed</a></li>
+        <li><a href="post.html">Atividade</a></li>
         <li><a>|</a> </li>
-        <li><a href="#" data-toggle="modal" data-target="#login">Login </a> </li>
+        <li><a href="#" data-toggle="modal" data-target="#login">Login</a> </li>
 
 
 
@@ -157,30 +157,20 @@
         </div>
 
         <div class="modal-body">
-          <div class="row portfolio-container">
             <div class="text-center">
-              <div class="col-lg-4 col-md-6">
             <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
 
             <span style="display:block">
-              <i class="fa fa-heart-o" aria-hidden="true"> </i><small> 22 gostos</small>
+              <p id="gosto" onclick="gosto()"><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+              <p id="gostar" onclick="contagosto()"><small> 22 gostos</small></p>
             </span>
-                <div class="col-lg-4 col-md-6">
-                <h7>adorei</h7>
               </div>
-              </div>
-
-            </div>
-          </div>
 
         </div>
 
       </div>
     </div>
   </div>
-
-
-
 
 
   <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -353,6 +343,14 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+    <script>
+      function gosto() {
+        document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+        document.getElementById("gostar").innerHTML = "<small>23 gostos<small>";
+      }
+    </script>
+
 
 </body>
 
