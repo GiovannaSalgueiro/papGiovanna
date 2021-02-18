@@ -247,13 +247,35 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <div class="text-center">
+        <div class="row">
+          <div class="col">
             <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
+            <small>Joana Silva: Adorei</small>
+            <p></p>
 
-            <span style="display:block">
-            <p id="gosto" onclick="myFunction()"><i class="fa fa-heart-o" aria-hidden="true"> </i></p><small> 22 gostos</small>
-
+            <p id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"> </i></p>
+            <small id="gostar" style="text-align: center"> 22 gostos</small>
 
           </span>
           </div>
@@ -261,6 +283,13 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
   <!-- End Post -->
 
   <!-- ======= Login======= -->
@@ -381,10 +410,11 @@
 
 </script>
   <script>
-    function myFunction() {
+    function gosto() {
       document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+      document.getElementById("gostar").innerHTML = "23 gostos";
     }
-  </script>
+  </script>>
 
 </body>
 
