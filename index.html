@@ -342,15 +342,36 @@
         </div>
         <div class="modal-body">
           <div class="text-center">
-            <img width="320" src="assets/img/portfolio/port-2.jpg" class="post-img" alt="">
+            <div class="row">
+              <div class="col-8">
+                <img width="320" src="assets/img/portfolio/port-2.jpg" class="post-img" alt="">
+              </div>
+              <div class="col-4" style="height: 200px;  overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
+                <p class="text-justify p-2 bg-light">
+                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                </p>
+                <p class="text-justify p-2 bg-light">
+                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                </p>
+                <p class="text-justify p-2 bg-light">
+                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                </p>
 
-            <span style="display:block">
-              <i class="fa fa-heart-o" aria-hidden="true"> </i><small> 10 gostos</small>
-          </span>
-          </div>
+
+
+
+              </div>
+            </div>
+            <div class="container text-center">
+              <span id="gosto1" onclick="gosto1()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+              <small id="gostar1" style="text-align: center"> 10 gostos</small>
+            </div>
+
+
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- End Top -->
 
@@ -505,6 +526,12 @@
       function gosto() {
         document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
         document.getElementById("gostar").innerHTML = "23 gostos";
+      }
+    </script>
+    <script>
+      function gosto1() {
+        document.getElementById("gosto1").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+        document.getElementById("gostar1").innerHTML = "11 gostos";
       }
     </script>
 
