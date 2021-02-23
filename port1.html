@@ -47,6 +47,8 @@
           <li class="active"><a href="index.html">Página principal</a></li>
           <li><a href="post.html">Publicações</a></li>
           <li><a href="post.html">Atividade</a></li>
+          <li><a>|</a> </li>
+          <li><a href="ana.html">Perfil</a> </li>
 
       </ul>
     </nav><!-- .nav-menu -->
@@ -67,6 +69,7 @@
       <br>
           <div class="section-title">
               <span>Ana Silva</span>
+              <h2>Ana Silva</h2>
               <h2>Sessão de fografia dos bébes de Março</h2>
               <p>22.11.2020 | 9 fotografias</p>
 
@@ -130,11 +133,31 @@
               </div>
               <div class="modal-body">
                   <div class="text-center">
+                      <div class="row">
+                          <div class="col-8">
                       <img width="320" src="img/1.jpg" class="post-img" alt="">
+                          </div>
+                          <div class="col-4" style="height: 200px;  overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
+                              <p class="text-justify p-2 bg-light">
+                                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                              </p>
+                              <p class="text-justify p-2 bg-light">
+                                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                              </p>
+                              <p class="text-justify p-2 bg-light">
+                                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
+                              </p>
 
-                      <span style="display:block">
-              <i class="fa fa-heart-o" aria-hidden="true"> </i><small> 22 gostos</small>
-          </span>
+
+
+
+                          </div>
+                          </div>
+                      <div class="container text-center">
+                          <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                          <small id="gostar" style="text-align: center"> 22 gostos</small>
+                      </div>
+
                   </div>
               </div>
           </div>
@@ -175,6 +198,12 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+      function gosto() {
+          document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+          document.getElementById("gostar").innerHTML = "23 gostos";
+      }
+  </script>
 </body>
 
 </html>
