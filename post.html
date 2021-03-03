@@ -48,7 +48,8 @@
         <li><a href="post.html">Publicações</a></li>
         <li><a href="post.html">Atividade</a></li>
         <li><a>|</a> </li>
-        <li><a href="ana.html">Perfil</a> </li>
+        <li><a href="#" data-toggle="modal" data-target="#perfil">Perfil</a></li>
+
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -64,18 +65,12 @@
     <section id="services" class="services">
       <div class="container">
 
-        <!-- <br><span style="float: right;">
-           <a href="#" data-toggle="modal" data-target="#login">Login</a> |
-           <a href="#" data-toggle="modal" data-target="#regista">Registar</a>
-         <span style="color:#ffb727" class="fas fa-sign-in-alt"></span>
 
-         </span><br>
-        -->
          <div class="section-title">
            <span>Publicações</span>
            <h2>Publicações</h2>
          </div>
-
+        <small>Pesquisar:</small><br><input type="text" id="search">
          <div class="row">
 
            <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
@@ -304,17 +299,14 @@
 
 
 
-
-
-
   <!-- End Post -->
 
   <!-- ======= Login======= -->
-  <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="perfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <a href="perfil.html"><h5 class="modal-title" id="exampleModalLabel">Perfil</h5></a>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -322,69 +314,47 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
+              <label for="InputEmail">Nome de Utilizador:</label>
+              <input type="email" class="form-control" id="InputNomUti" placeholder="anaSilva1">
+            </div>
+            <div class="form-group">
               <label for="InputEmail">Email:</label>
-              <input type="email" class="form-control" id="InputEmail">
+              <input type="email" class="form-control" id="InputEmail" placeholder="anaSilva@gmail.com">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Palavra-passe:</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-              <small id="emailHelp" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.              </small>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="**********">
 
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Manter-me logado</label>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirmar palavra-passe:</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+
             </div>
-            <h8>Ainda não tem conta?</h8>
-            <a href="#" onclick="fecha()" data-toggle="modal" data-target="#regista"><button type="submit" class="btn btn-outline-warning">Registar</button></a>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirmar palavra-passe:</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+
+            </div>
+            <div class="form-group">
+              <label>Foto de perfil</label>
+              <input type="file" name="header">
+
+            </div>
+
           </form>
+          <small><button type="submit" class="btn btn-warning">Editar</button></small>
         </div>
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-warning">Submeter</button>
+          <h7>Sair da conta</h7>
+          <i class="fas fa-sign-out-alt" style="color: #ffb727"></i>
         </div>
       </div>
     </div>
   </div>
   <!-- End Login -->
-  <!-- ======= Registar======= -->
-  <div class="modal fade" id="regista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Registar</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="InputName">Nome:</label>
-              <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp">
 
-            </div>
-            <div class="form-group">
-              <label for="InputEmail">Email:</label>
-              <input type="email" class="form-control" id="InputEmail">
-            </div>
-            <div class="form-group">
-              <label for="InputPassword1">Palavra-passe</label>
-              <input type="password" class="form-control" id="InputPassword1">
-              <small id="emailHelp" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
-            </div>
-            <h8>Já tem conta?</h8>
-            <a href="#" onclick="fecha()" data-toggle="modal" data-target="#login"><button type="submit" class="btn btn-outline-warning">Login</button></a>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-warning">Submeter</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Registar -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
