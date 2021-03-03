@@ -43,15 +43,14 @@
   <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
 
     <nav class="nav-menu d-none d-lg-block">
-      <ul>
-          <li class="active"><a href="index.html">Início</a></li>
-          <!--   <li><a href="#services">Top Posts</a></li>  -->
-          <li><a href="post.html">Posts</a></li>
-          <li><a href="post.html">Feed</a></li>
-          <li><a>|</a> </li>
-          <li><a href="perfil.html">Perfil</a></li>
+        <ul>
+            <li class="active"><a href="index.html">Início</a></li>
+            <li><a href="post.html">Publicações</a></li>
+            <li><a href="post.html">Atividade</a></li>
+            <li><a>|</a> </li>
+            <li><a href="ana.html">Perfil</a> </li>
 
-      </ul>
+        </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
@@ -123,7 +122,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Port ======= -->
+<!-- PORT 11 -->
   <div class="modal fade" id="port1-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
@@ -136,18 +135,36 @@
               </div>
               <div class="modal-body">
                   <div class="text-center">
-                      <img width="320" src="img/1.jpg" class="post-img" alt="">
+                      <div class="row">
+                          <div class="col-8">
+                              <img width="320" src="img/1.jpg" class="post-img" alt="">
+                          </div>
+                          <div class="col-4" style="height: 200px;  overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
+                              <p class="text-justify p-2 bg-light">
+                                  <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Que bebe lindo!</small>
+                              </p>
+                              <i class="fas fa-trash-alt"></i>
+                              <p class="text-justify p-2 bg-light">
+                                  <small><span class="text-primary "><strong>Ana Silva:</strong></span> Obrigada, tenho uma galeria cheio delas!</small>
+                              </p>
+                              <i class="far fa-edit"></i>
+                              <i class="fas fa-trash-alt"></i>
+                          </div>
+                      </div>
+                      <div class="container text-center">
+                          <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                          <small id="gostar" style="text-align: center">10 gostos</small>
+                      </div>
 
 
-                      <span style="display:block">
-              <i class="fa fa-heart-o" aria-hidden="true"> </i><small> 22 gostos</small>
-          </span>
                   </div>
               </div>
           </div>
       </div>
   </div>
-  <!-- End Port -->
+  <!-- End PORT -->
+
+
 
   <!-- ======= Login======= -->
   <div class="modal fade" id="adiciona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -207,6 +224,12 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+      function gosto() {
+          document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+          document.getElementById("gostar").innerHTML = "11 gostos";
+      }
+  </script>>
 </body>
 
 </html>

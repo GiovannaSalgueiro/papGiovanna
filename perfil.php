@@ -1,57 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once("includes/body.inc.php");
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BluPost</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <!-- Font awesome -->
-  <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
-
-  <!-- Favicons -->
-  <link href="assets/img/favico.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Laura - v2.1.0
-  * Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+?>
+    <head>
+        <title>BluPost</title>
+    </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
 
-    <nav class="nav-menu d-none d-lg-block">
-      <ul>
-        <li class="active"><a href="index.html">Início</a></li>
-        <!--   <li><a href="#services">Top Posts</a></li>  -->
-        <li><a href="post.html">Publicações</a></li>
-        <li><a href="post.html">Atividade</a></li>
-        <li><a>|</a> </li>
-        <li><a href="perfil.html">Perfil</a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
+      <nav class="nav-menu d-none d-lg-block">
+          <ul>
+              <li><a href="index.php">Início</a></li>
+              <li><a href="post.php">Publicações</a></li>
+              <li><a href="post.php">Atividade</a></li>
+              <li><a>|</a> </li>
+              <li><a href="ana.php">Perfil</a> </li>
+
+          </ul>
+      </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
 
@@ -164,9 +134,10 @@
             <div class="portfolio-info">
               <h4>Sessão de fografia dos bébes de Março</h4>
               <p>22.11.2020</p>
-              <a href="port11.html"><i class="bx bx-plus"></i></a>
+              <a href="port11.php"><i class="bx bx-plus"></i></a>
+              <input type="checkbox">
             </div>
-            <input type="checkbox">
+
           </div>
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
@@ -174,8 +145,9 @@
                     <h4>Almoço Americano</h4>
                     <p>15.10.2019</p>
                     <a href="port2.html"><i class="bx bx-plus"></i></a>
+                  <input type="checkbox">
                 </div>
-              <input type="checkbox">
+
             </div>
         </div>
       </div>
@@ -190,7 +162,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+          <h5 class="modal-title" id="exampleModalLabel1">Editar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -199,7 +171,7 @@
           <form>
             <div class="form-group">
               <label for="InputName">Nome:</label>
-              <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Ana Silva">
+              <input type="name" class="form-control" id="InputName1" aria-describedby="emailHelp" placeholder="Ana Silva">
 
             </div>
             <div class="form-group">
@@ -234,6 +206,7 @@
         </div>
       </div>
     </div>
+    </div>
     <!--End Edita -->
 
     <!-- ======= Adiciona======= -->
@@ -263,42 +236,16 @@
           </div>
         </div>
       </div>
+      </div>
       <!--End Adiciona -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>BluPost</h3>
-      <p>Tirar uma foto, congelar um momento, revela o quão rica é a realidade.</p>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Laura</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
-
-</html>
+<?php
+bottom();
+?>
