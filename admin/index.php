@@ -1,5 +1,5 @@
 <?php
-include_once("includes/body.inc.admin.php");
+include_once("includes/body.inc.php");
 top();
 
 ?>
