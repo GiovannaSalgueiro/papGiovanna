@@ -120,10 +120,7 @@ include_once("includes/body.inc.php");
               </div>
             </div><!-- End .content-->
             <br>
-            <div class="social-links">
-              <a href="https://www.instagram.com/realdonaldtrump/?hl=pt" class="instagram"><i class="fab fa-instagram"></i></a>
-              <a href=""><i class="fas fa-globe"></i></a>
-            </div>
+
           </div>
         </div>
 
