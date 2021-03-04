@@ -384,6 +384,6 @@ include_once("includes/body.inc.php");
 
 </body>
 <?php
-bottom();
+bottom(HOME);
 
 ?>
