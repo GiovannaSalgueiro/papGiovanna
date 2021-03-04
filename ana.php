@@ -4,7 +4,6 @@ top();
 
 ?>
 <head>
-    <title>BluPost</title>
 
     <script>
         $(document).ready(function(){
@@ -36,7 +35,7 @@ top();
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                         <p id="favorito" onclick="favorito()"><i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i></p>
-                        <small>seguir</small>
+                        <small id="favoritar">seguir</small>
                         <div class="row">
                             <div class="col-lg-6">
                                 <br>
@@ -132,7 +131,7 @@ top();
                     <div class="portfolio-info">
                         <h4>Sessão de fografia dos bébes de Março</h4>
                         <p>22.11.2020</p>
-                        <a href="port1.html"><i class="bx bx-plus"></i></a>
+                        <a href="port1.php"><i class="bx bx-plus"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -265,19 +264,6 @@ top();
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
 <script>
     function fecha(){
         $('#regista').modal('toggle');
@@ -286,11 +272,11 @@ top();
 
 </script>
 <script>
-    function gosto() {
-        document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-        document.getElementById("gostar").innerHTML = "23 gostos";
+    function favorito() {
+        document.getElementById("favorito").innerHTML = "<i class=\"fas fa-star fa-2x\" style='color: #ffb459'></i>";
+        document.getElementById("favoritar").innerHTML = "deixar de seguir";
     }
-</script>>
+</script>
 
 </body>
 <?php

@@ -3,9 +3,7 @@ include_once("includes/body.inc.php");
 top();
 
 ?>
-<head>
-    <title>BluPost</title>
-</head>
+
 
 <body>
 

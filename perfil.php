@@ -5,6 +5,31 @@ include_once("includes/body.inc.php");
 ?>
     <head>
         <title>BluPost</title>
+        <meta charset='utf-8'>
+        <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+
+        <meta content='' name='descriptison'>
+        <meta content='' name='keywords'>
+        <!-- Font awesome -->
+        <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
+
+        <!-- Favicons -->
+        <link href='assets/img/favico.png' rel='icon'>
+        <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
+
+        <!-- Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
+
+
+        <!-- Vendor CSS Files -->
+        <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='assets/vendor/icofont/icofont.min.css' rel='stylesheet'>
+        <link href='assets/vendor/boxicons/css/boxicons.min.css' rel='stylesheet'>
+        <link href='assets/vendor/owl.carousel/assets/owl.carousel.min.css' rel='stylesheet'>
+        <link href='assets/vendor/venobox/venobox.css' rel='stylesheet'>
+
+        <!-- Template Main CSS File -->
+        <link href='assets/css/style.css' rel='stylesheet'>
     </head>
 
 <body>
@@ -117,7 +142,8 @@ include_once("includes/body.inc.php");
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
           <i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i>
-          <a href="#" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
+            <br>
+          <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
         </div>
         <ul id="portfolio-flters" class="d-flex justify-content-center">
           <li data-filter="*" class="filter-active">Todos</li>

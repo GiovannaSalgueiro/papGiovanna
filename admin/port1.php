@@ -3,9 +3,7 @@ include_once("includes/body.inc.php");
 top();
 
 ?>
-<head>
-    <title>BluPost</title>
-</head>
+
 <body>
 <main id="main">
 
@@ -14,7 +12,7 @@ top();
 
         <div class="container">
             <br>
-            <a href="ana.html#portfolio">Voltar</a>
+            <a href="ana.php#portfolio">Voltar</a>
             <br>
             <br>
             <div class="section-title">
