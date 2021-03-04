@@ -1,7 +1,5 @@
 <?php
 include_once("includes/body.inc.php");
-
-
 ?>
     <head>
         <title>BluPost</title>
@@ -248,6 +246,10 @@ include_once("includes/body.inc.php");
                 <label for="InputName">Nome:</label>
                 <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Ana Silva">
               </div>
+                <div class="form-group">
+                    <label for="InputName">Data:</label>
+                    <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="20.05.2019">
+                </div>
 
               <label>Foto de capa</label>
               <input type="file" name="logoEmpresa">

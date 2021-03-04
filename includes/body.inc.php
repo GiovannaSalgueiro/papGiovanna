@@ -95,10 +95,9 @@ function top(){
 
 <?php
 }
+function bottom(){
 
-function bottom($page){
-
-    if($page==HOME){
+    if(HOME){
     ?>
 
     <div class="modal fade" id="top" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -218,7 +217,10 @@ function bottom($page){
     <!-- End Top -->
 <?php
     }
+
 ?>
+
+
     <!-- ======= Login======= -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

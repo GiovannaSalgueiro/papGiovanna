@@ -38,7 +38,7 @@ function top(){
             </ul>
         </nav><!-- .nav-menu -->
     </header><!-- End Header -->
-</body>
+
 <?php
 }
 function bottom(){
