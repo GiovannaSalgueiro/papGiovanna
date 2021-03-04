@@ -1,5 +1,6 @@
 <?php
 function top(){
+
 ?>
 
     <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
