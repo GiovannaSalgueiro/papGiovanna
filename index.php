@@ -64,7 +64,6 @@ top();
 
 
             <div class="row portfolio-container">
-                <!-- app=            card=2019               web=2020-->
                 <div class="row">
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                         <div class="portfolio-img"><img src="img/principal1.jpg" height="231" class="img-fluid" alt=""></div>

@@ -1,6 +1,7 @@
-
 <?php
 include_once ("config.inc.php");
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$con->set_charset("utf8");
 
 function top(){
     ?>
@@ -119,37 +120,37 @@ function bottom(){
                                 <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
                             </div>
                             <div class="col-4" style="height: 400px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
+                                    <small><span class="text-primary"><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                                </p>
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
-                                <p class="text-justify p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-justify p-2 bg-light">
+                                <p class="text-center p-2 bg-light">
                                     <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
                                 </p>
 
@@ -171,49 +172,6 @@ function bottom(){
     </div>
 
 
-    <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <a href="joao.html"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;João Santos</h7></a>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center">
-                        <div class="row">
-                            <div class="col-8">
-                                <img width="320" src="assets/img/portfolio/port-2.jpg" class="post-img" alt="">
-                            </div>
-                            <div class="col-4" style="height: 200px;  overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
-                                <p class="text-justify p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
-                                </p>
-                                <p class="text-justify p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
-                                </p>
-                                <p class="text-justify p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Acho lindo Amesterdão. As cores de lá são lindas.</small>
-                                </p>
-
-
-
-
-                            </div>
-                        </div>
-                        <div class="container text-center">
-                            <span id="gosto1" onclick="gosto1()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                            <small id="gostar1" style="text-align: center"> 10 gostos</small>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- End Top -->
 <?php
     }
@@ -363,19 +321,6 @@ function bottom(){
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-    <script>
-        function gosto() {
-            document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-            document.getElementById("gostar").innerHTML = "23 gostos";
-        }
-    </script>
-    <script>
-        function gosto1() {
-            document.getElementById("gosto1").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-            document.getElementById("gostar1").innerHTML = "11 gostos";
-        }
-    </script>
 
 
     </body>

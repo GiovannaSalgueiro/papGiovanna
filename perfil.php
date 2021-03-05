@@ -1,5 +1,11 @@
 <?php
 include_once("includes/body.inc.php");
+
+$id=1;
+$sql="select * from fotografos where fotografoId=1";
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 ?>
     <head>
         <title>BluPost</title>
@@ -65,14 +71,14 @@ include_once("includes/body.inc.php");
           <img src="assets/img/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <a href="#" data-toggle="modal" data-target="#edita"><i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php"><i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
                   <ul>
-                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> Ana Silva</li>
-                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> 918 632 176 </li>
-                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> Maceira, Leiria</li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> <?php echo $dados['fotografoNome']?></li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> <?php echo $dados['fotografoTelemovel']?></li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> <?php echo $dados['fotografoCidade']?></li>
                   </ul>
                 </div>
                 <div class="col-lg-6">
