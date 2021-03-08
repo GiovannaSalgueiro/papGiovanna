@@ -91,7 +91,7 @@ $dados=mysqli_fetch_array($result);
                                 <br>
                                 <ul>
                                     <li><small><input type="text" name="nomeFotografo" value="<?php echo $dados['fotografoNome']?>"></small></li><br>
-                                    <li><small><input type="text" name="numeroFotografo" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
+                                    <li><small><input type="text" name="telemovelFotografo" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
                                     <li><small><input type="text" name="cidadeFotografo" value="<?php echo $dados['fotografoCidade']?>"></small></li><br>
                                     <li><small><input type="text" name="emailFotografo" value="<?php echo $dados['fotografoEmail']?>"></small></li><br>
                                     <li><small><input type="radio" id="disponivel" name="freelance" value="disponivel">

@@ -84,8 +84,8 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-lg-6">
                   <br>
                   <ul>
-                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> anaSilva@gmail.com</li>
-                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponível</li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong><?php echo $dados['fotografoFreelancer']?></li>
                   </ul>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 <?php
+include_once("config.inc.php");
 function top(){
 ?>
     <!DOCTYPE html>
