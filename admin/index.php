@@ -2,8 +2,14 @@
 <html lang="en">
 
 <?php
+
+$id=1;
 include_once("includes/body.inc.php");
 top();
+$sql="select * from albuns where albumId=".$id;
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 
 ?>
 
@@ -33,30 +39,30 @@ top();
                 <tr>
                     <th> Nome do álbum </th>
                     <th> Capa </th>
-                    <th> #Fotos </th>
+                    <th> Data </th>
                     <th colspan="3"> Opções </th>
                 </tr>
                 <tr>
-                    <td>Sessão fotográfica da primavera</td>
-                    <td><img src="img/1.jpg" width="102"> </td>
-                    <td>16</td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
+                    <td><?php echo $dados['albumNome']?></td>
+                    <td><img src="<?php echo $dados['albumCapaURL']?>" width="102"> </td>
+                    <td><?php echo $dados['albumData']?></td>
+                    <td><a href="editaAlbum.php"><span class="btn-sm btn-primary">Edita</span></a></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
                     <td><a href="#" data-toggle="modal" data-target="#post1"><span class="btn-sm btn-success"><span class="btn-sm btn-success">Detalhes</span></a></td>
                 </tr>
                 <tr>
                     <td>Almoço Americano</td>
                     <td><img src="assets/img/portfolio/portfolio-details-2.jpg" width="102"> </td>
-                    <td>17</td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
+                    <td><?php echo $dados['albumData']?></td>
+                    <td><a href="editaAlbum.php"><span class="btn-sm btn-primary">Edita</span></a></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
                     <td><span class="btn-sm btn-success">Detalhes</span></td>
                 </tr>
                 <tr>
                     <td>Sessão fotográfica da primavera</td>
                     <td><img src="img/2.jpg" width="102"> </td>
-                    <td>18</td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
+                    <td><?php echo $dados['albumData']?></td>
+                    <td><a href="editaAlbum.php"><span class="btn-sm btn-primary">Edita</span></a></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
                     <td><span class="btn-sm btn-success">Detalhes</span></td>
                 </tr>
