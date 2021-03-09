@@ -71,7 +71,7 @@ $dados=mysqli_fetch_array($result);
             <form action="confirmaeditaperfil.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="1">
             <div class="row">
-                <img src="imagens/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+                <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
 
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <small><input type="file" name="fotoFotografo" src="../<?php echo $dados['fotografoFotoURL']?>"></small> <!-- Nao esta a ir buscar -->

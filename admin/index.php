@@ -90,7 +90,7 @@ $dados=mysqli_fetch_array($result);
                 <td>Sessão fotográfica da primavera</td>
                 <td><img src="img/principal1.jpg" width="102"> </td>
                 <td>9</td>
-                <td><span class="btn-sm btn-primary">Edita</span></td>
+                <td><span class="btn-sm btn-primary"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
                 <td><span class="btn-sm btn-danger">Elimina</span></td>
                 <td><a href="port1"><span class="btn-sm btn-success">Detalhes</span></a></td>
             </tr>
@@ -98,7 +98,7 @@ $dados=mysqli_fetch_array($result);
                 <td>Almoço Americano</td>
                 <td><img src="assets/img/portfolio/portfolio-4.jpg" width="102"> </td>
                 <td>17</td>
-                <td><span class="btn-sm btn-primary">Edita</span></td>
+                <td><span class="btn-sm btn-primary"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
                 <td><span class="btn-sm btn-danger">Elimina</span></td>
                 <td><span class="btn-sm btn-success">Detalhes</span></td>
             </tr>
@@ -106,7 +106,7 @@ $dados=mysqli_fetch_array($result);
                 <td>Passeio de bicicletas</td>
                 <td><img src="assets/img/portfolio/port-1.jpg" width="102"> </td>
                 <td>1</td>
-                <td><span class="btn-sm btn-primary">Edita</span></td>
+                <td><span class="btn-sm btn-primary"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
                 <td><span class="btn-sm btn-danger">Elimina</span></td>
                 <td><span class="btn-sm btn-success">Detalhes</span></td>
             </tr>
