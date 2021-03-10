@@ -1,9 +1,10 @@
 <?php
 include_once("includes/body.inc.php");
 
-$id=1;
-$sql="select * from fotografos where fotografoId=1";
+
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$sql="select * from fotografos" ;
+
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
@@ -68,10 +69,10 @@ $dados=mysqli_fetch_array($result);
         </div>
 
         <div class="row">
-            <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+          <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php"><i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"> <i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
@@ -142,10 +143,15 @@ $dados=mysqli_fetch_array($result);
 
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-          <i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i>
-            <br>
-          <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
+            <div class="row">
+                <div class="col-2"><a href="adicionaAlbum.php"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
+                <div class="col-10"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></div>
+            </div>
+          <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
+
+          <br>
+
         <ul id="portfolio-flters" class="d-flex justify-content-center">
           <li data-filter="*" class="filter-active">Todos</li>
           <li data-filter=".filter-card">2020</li>
@@ -173,6 +179,16 @@ $dados=mysqli_fetch_array($result);
                     <p>15.10.2019</p>
                     <a href="port2.html"><i class="bx bx-plus"></i></a>
                   <input type="checkbox">
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="<?php echo $dados['albumCapaURL']?>" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                    <h4><?php echo $dados['albumNome']?></h4>
+                    <p><?php echo $dados['albumData']?></p>
+                    <a href="port2.html"><i class="bx bx-plus"></i></a>
+                    <input type="checkbox">
                 </div>
 
             </div>
@@ -236,7 +252,7 @@ $dados=mysqli_fetch_array($result);
     </div>
     <!--End Edita -->
 
-    <!-- ======= Adiciona======= -->
+    <!-- ======= Adiciona=======
     <div class="modal fade" id="adicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -254,7 +270,7 @@ $dados=mysqli_fetch_array($result);
               </div>
                 <div class="form-group">
                     <label for="InputName">Data:</label>
-                    <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="20.05.2019">
+                    <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="20.05.2019">
                 </div>
 
               <label>Foto de capa</label>
@@ -268,7 +284,7 @@ $dados=mysqli_fetch_array($result);
         </div>
       </div>
       </div>
-      <!--End Adiciona -->
+      End Adiciona -->
 
 
 

@@ -1,27 +1,28 @@
 <?php
 include_once("includes/body.inc.php");
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
 
-$nome=addslashes($_POST['nomeFotografo']);
-$telemovel=addslashes($_POST['telemovelFotografo']);
-$cidade=addslashes($_POST['cidadeFotografo']);
-$email=addslashes($_POST['emailFotografo']);
-$id=intval($_POST['id']);
-$imagem=$_FILES['fotoFotografo']['name'];
+$id=intval($_GET['id']);
+$nome=addslashes($_POST['fotografoNome']);
+$telemovel=addslashes($_POST['fotografoTelemovel']);
+$cidade=addslashes($_POST['fotografoCidade']);
+$email=addslashes($_POST['fotografoEmail']);
+$imagem=$_FILES['fotografoFotoURL']['name'];
 $novoNome="imagens/".$imagem;
 
-$sql="Update fotografos set fotografoNome='".$nome."'";
-$sql="Update fotografos set fotografoTelemovel='".$telemovel."'";
-$sql="Update fotografos set fotografoCidade='".$cidade."'";
-$sql="Update fotografos set fotografoEmail='".$email."'";
+$sql="Update fotografos set fotografoNome='".$nome."', fotografoTelemovel='".$telemovel."', fotografoEmail='".$email."', fotografoCidade='".$cidade."' ";
+
 if($imagem!=''){
     $sql.=", fotografoFotoURL='imagens/".$imagem."'";
-    copy($_FILES['fotoFotografo']['tmp_name'],$novoNome);
+    copy($_FILES['fotografoFotoURL']['tmp_name'],$novoNome);
 }
 
-$sql.=" where fotografoId=".$id;
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$sql.=" where albumId=".$id;
+
+
 mysqli_query($con,$sql);
-header("location:perfil.php");
+print_r($sql);
+header("location: perfil.php");
 ?>
 
 

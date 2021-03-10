@@ -1,12 +1,12 @@
 <?php
 include_once ("includes/body.inc.php");
 
-$id=1;
-$sql="select * from fotografos where fotografoId=1";
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$result=mysqli_query($con,$sql);
 
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$sql="select * from fotografos";
+$result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
+
 
 ?>
 <head>
@@ -68,13 +68,12 @@ $dados=mysqli_fetch_array($result);
                 <span>Editar o perfil</span>
                 <h2>Editar o perfil</h2>
             </div>
-            <form action="confirmaeditaperfil.php" method="post" enctype="multipart/form-data">
+            <form action="confirmaeditaperfil.php?id=<?php echo $dados["fotografoId"]; ?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="1">
             <div class="row">
                 <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
-
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                    <small><input type="file" name="fotoFotografo" src="../<?php echo $dados['fotografoFotoURL']?>"></small> <!-- Nao esta a ir buscar -->
+                    <small><input type="file" name="fotografoFotoURL" src="../<?php echo $dados['fotografoFotoURL']?>"></small>
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-lg-3">
@@ -90,14 +89,22 @@ $dados=mysqli_fetch_array($result);
                             <div class="col-lg-9">
                                 <br>
                                 <ul>
-                                    <li><small><input type="text" name="nomeFotografo" value="<?php echo $dados['fotografoNome']?>"></small></li><br>
-                                    <li><small><input type="text" name="telemovelFotografo" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
-                                    <li><small><input type="text" name="cidadeFotografo" value="<?php echo $dados['fotografoCidade']?>"></small></li><br>
-                                    <li><small><input type="text" name="emailFotografo" value="<?php echo $dados['fotografoEmail']?>"></small></li><br>
+                                    <li><small><input type="text" name="fotografoNome" value="<?php echo $dados['fotografoNome']?>"></small></li><br>
+                                    <li><small><input type="text" name="fotografoTelemovel" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
+                                    <li><small><input type="text" name="fotografoCidade" value="<?php echo $dados['fotografoCidade']?>"></small></li><br>
+                                    <li><small><input type="text" name="fotografoEmail" value="<?php echo $dados['fotografoEmail']?>"></small></li><br>
                                     <li><small><input type="radio" id="disponivel" name="freelance" value="disponivel">
-                                        <label for="disponivel">Disponivel</label>
-                                        <input type="radio" id="female" name="freelance" value="indisponivel">
-                                        <label for="indisponivel">Indisponivel</label><br></small></li>
+                                            <label for="disponivel">Disponivel</label>
+                                            <input type="radio" id="female" name="freelance" value="indisponivel">
+                                            <label for="indisponivel">Indisponivel</label><br></small></li>
+
+
+
+
+
+
+                                            </select>
+                                        </small></li>
                                 </ul>
                             </div>
 
