@@ -5,7 +5,10 @@ include_once("includes/body.inc.php");
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $sql="select * from fotografos" ;
 
+
+
 $result=mysqli_query($con,$sql);
+$result1=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
     <head>
@@ -72,7 +75,7 @@ $dados=mysqli_fetch_array($result);
           <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"> <i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i></a>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
@@ -163,11 +166,12 @@ $dados=mysqli_fetch_array($result);
 <!-- app=            card=2019               web=2020-->
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="img/principal1.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="<?php echo $dados['albumCapaURL']?>" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Sessão de fografia dos bébes de Março</h4>
               <p>22.11.2020</p>
               <a href="port11.php"><i class="bx bx-plus"></i></a>
+                <a href="editaAlbum.php"><i class="far fa-edit" style="color:#ffb459"></i></a>
               <input type="checkbox">
             </div>
 
