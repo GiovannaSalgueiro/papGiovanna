@@ -12,4 +12,3 @@ $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 mysqli_query($con,$sql);
 header("location:port11.php");
 ?>
->

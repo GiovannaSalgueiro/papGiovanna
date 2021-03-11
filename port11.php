@@ -2,6 +2,13 @@
 include_once("includes/body.inc.php");
 
 
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$sql="select * from fotos inner join albuns on fotoId=fotoAlbumId" ;
+
+
+
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 ?>
 <head>
     <title>BluPost</title>
@@ -71,7 +78,7 @@ include_once("includes/body.inc.php");
         <div class="row portfolio-container">
           <div class="col-lg-4 col-md-6 portfolio-item">
               <a href="#" data-toggle="modal" data-target="#port1-1">
-            <div class="portfolio-img"><img src="img/1.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="<?php echo $dados['fotoURL']?>" class="img-fluid" alt=""></div>
               </a>
               <input type="checkbox">
           </div>
@@ -161,12 +168,13 @@ include_once("includes/body.inc.php");
 
 
 
-  <!-- ======= Login======= -->
+  <!-- ======= Adiciona ======= -->
   <div class="modal fade" id="adiciona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form action="confirmaNovaFoto.php" method="post" enctype="multipart/form-data">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Adiciona Fotografias</h5>
+                  <h5 class="modal-title">Adiciona Fotografias</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
@@ -174,14 +182,15 @@ include_once("includes/body.inc.php");
               <div class="modal-body">
                   <label>Escolha a fotografia para essa Galeria</label>
                   <p></p>
-                  <input type="file" name="fotografia">
+                  <input type="file" name="fotoURL">
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-warning">Adicionar</button>
+                  <button type="submit" class="btn btn-warning" value="Adiciona">Adicionar</button>
               </div>
           </div>
       </div>
+  </form>
   </div>
   <!--End Login -->
 
