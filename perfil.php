@@ -37,6 +37,7 @@ $dados=mysqli_fetch_array($result);
         <link href='assets/css/style.css' rel='stylesheet'>
     </head>
 
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -165,7 +166,7 @@ $dados=mysqli_fetch_array($result);
           <?php
           while ($dados=mysqli_fetch_array($result)) {
           ?>
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="col-lg-4 col-md-8 portfolio-item filter-web">
                   <div class="portfolio-img"><img src="imagens/<?php echo $dados['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
                   <div class="portfolio-info">
                       <h4><?php echo $dados['albumNome']?></h4>
@@ -174,6 +175,7 @@ $dados=mysqli_fetch_array($result);
                       <input type="checkbox">
                   </div>
               </div>
+
          <?php
           }
            ?>
