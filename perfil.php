@@ -145,7 +145,7 @@ $dados=mysqli_fetch_array($result);
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
+                <div class="col-2"><a href="adicionaAlbum.php?albumFotografoId="<?php echo $dados["albumFotografoId"]?>><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
                 <div class="col-10"><a><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a></div>
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->

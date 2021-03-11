@@ -92,16 +92,14 @@ include_once ("includes/body.inc.php");
                             <div class="col-lg-8">
                                 <br>
                                 <ul>
-                                    <small><input type="text" name="albumData"></small>
+                                    <small><input type="date" name="albumData"></small>
                                 </ul>
                             </div>
-
-                            <div class="col-lg-12"  style="text-align: center">
-                                <button type="Submit" class="btn btn-warning">Adiciona</button><br>
-                            </div>
-
                         </div>
 
+                        <div class="col-lg-12"  style="text-align: center">
+                            <button type="Submit" class="btn btn-warning">Adiciona</button><br>
+                        </div>
                     </div>
                 </div>
             </form>
