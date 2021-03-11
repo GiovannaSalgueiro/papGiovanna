@@ -1,9 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 
-
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="select * from fotos inner join albuns on fotoId=fotoAlbumId" ;
+$id=intval($_GET['id']);
+$sql="select * from fotos  where fotoId=$id" ;
 
 
 
@@ -76,6 +75,24 @@ $dados=mysqli_fetch_array($result);
       <br>
 
         <div class="row portfolio-container">
+            <?php
+            $sql="select * from fotos where fotoAlbumId=$id";
+            $resultAlbum=mysqli_query($con,$sql);
+            while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
+                ?>
+                <div class="col-lg-4 col-md-6 portfolio-item">
+                    <a href="#" data-toggle="modal" data-target="#port1-1">
+                        <div class="portfolio-img"><img src="<?php echo $dadosAlbum['fotoURL']; ?>" class="img-fluid" alt=""></div>
+                    </a>
+                    <input type="checkbox">
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+
+
+<!--
           <div class="col-lg-4 col-md-6 portfolio-item">
               <a href="#" data-toggle="modal" data-target="#port1-1">
             <div class="portfolio-img"><img src="<?php echo $dados['fotoURL']?>" class="img-fluid" alt=""></div>
@@ -112,12 +129,12 @@ $dados=mysqli_fetch_array($result);
           <div class="col-lg-4 col-md-6 portfolio-item">
             <div class="portfolio-img"><img src="img/9.jpg" class="img-fluid" alt=""></div>
               <input type="checkbox">
-          </div>
+          </div></div>
+
+-->
 
 
-        </div>
 
-      </div>
     </section><!-- End My Portfolio Section -->
 
 

@@ -1,9 +1,7 @@
 <?php
 include_once ("includes/body.inc.php");
-
-
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="select * from fotografos";
+$id=intval($_GET['id']);
+$sql="select * from fotografos where fotografoId=$id";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 
@@ -68,8 +66,8 @@ $dados=mysqli_fetch_array($result);
                 <span>Editar o perfil</span>
                 <h2>Editar o perfil</h2>
             </div>
-            <form action="confirmaeditaperfil.php?id=<?php echo $dados["fotografoId"]; ?>" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="1">
+            <form action="confirmaEditaPerfil.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $id;?>">
             <div class="row">
                 <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">

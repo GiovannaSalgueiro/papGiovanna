@@ -1,10 +1,8 @@
 <?php
 
-$id=1;
 include_once ("includes/body.inc.php");
-
-$sql="select * from albuns where albumId=".$id;
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$id=intval($_GET['id']);
+$sql="select * from albuns where albumId=$id";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 
@@ -63,7 +61,7 @@ $dados=mysqli_fetch_array($result);
             <input type="hidden" name="id" value="<?php echo $id?>">
             <div class="row">
                 <img src="<?php echo $dados['albumCapaURL']?>" width="102" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
-            </div>
+
 
             <div class="col-lg-8 d-flex flex-column align-items-stretch">
                 <small><input type="file" name="capaAlbum"></small>
@@ -88,6 +86,7 @@ $dados=mysqli_fetch_array($result);
 
                     </div>
                 </div>
+            </div>
             </div>
         </form>
         <br>

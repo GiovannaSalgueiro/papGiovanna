@@ -1,5 +1,7 @@
 <?php
 include_once ("includes/body.inc.php");
+
+$id=intval($_POST['id']);
 $nome=addslashes($_POST['nomeAlbum']);
 $id=intval($_POST['id']);
 $imagem=$_FILES['albumCapaURL']['name'];
@@ -12,7 +14,7 @@ if($imagem!=''){
 }
 
 $sql.=" where albumId=".$id;
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+
 mysqli_query($con,$sql);
 header("location:perfil.php");
 ?>

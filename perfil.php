@@ -1,14 +1,12 @@
 <?php
 include_once("includes/body.inc.php");
-
-
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="select * from fotografos inner join albuns on fotografoId=albumFotografoId" ;
+$id=intval($_GET['id']);
+$sql="select * from fotografos where fotografoId=$id" ;
 
 
 
 $result=mysqli_query($con,$sql);
-// $dados=mysqli_fetch_array($result);
+$dados=mysqli_fetch_array($result);
 ?>
     <head>
         <title>BluPost</title>
@@ -165,13 +163,15 @@ $result=mysqli_query($con,$sql);
               <!-- app=            card=2019               web=2020-->
 
               <?php
-              while ($dados=mysqli_fetch_array($result)) {
+              $sql="select * from albuns where albumFotografoId=$id";
+              $resultAlbum=mysqli_query($con,$sql);
+              while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
                   ?>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                      <div class="portfolio-img"><img src="imagens/<?php echo $dados['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
+                      <div class="portfolio-img"><img src="imagens/<?php echo $dadosAlbum['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
                       <div class="portfolio-info">
-                          <h4><?php echo $dados['albumNome']?></h4>
-                          <p><?php echo $dados['albumData']?></p>
+                          <h4><?php echo $dadosAlbum['albumNome']?></h4>
+                          <p><?php echo $dadosAlbum['albumData']?></p>
                           <a href="port2.html"><i class="bx bx-plus"></i></a>
                           <a href="editaAlbum.php"><i class="far fa-edit"></i></a>
                           <input type="checkbox">
