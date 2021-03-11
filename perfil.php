@@ -3,7 +3,7 @@ include_once("includes/body.inc.php");
 
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="select * from fotografos" ;
+$sql="select * from fotografos inner join albuns where fotografoId=albumFotografoId" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -145,7 +145,7 @@ $dados=mysqli_fetch_array($result);
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
                 <div class="col-2"><a href="adicionaAlbum.php"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
-                <div class="col-10"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></div>
+                <div class="col-10"><a><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a></div>
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
@@ -162,36 +162,22 @@ $dados=mysqli_fetch_array($result);
         <div class="row portfolio-container">
 <!-- app=            card=2019               web=2020-->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="img/principal1.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Sessão de fografia dos bébes de Março</h4>
-              <p>22.11.2020</p>
-              <a href="port11.php"><i class="bx bx-plus"></i></a>
-              <input type="checkbox">
-            </div>
+          <?php
+          while ($dados=mysqli_fetch_array($result)) {
+          ?>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <div class="portfolio-img"><img src="imagens/<?php echo $dados['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
+                  <div class="portfolio-info">
+                      <h4><?php echo $dados['albumNome']?></h4>
+                      <p><?php echo $dados['albumData']?></p>
+                      <a href="port2.html"><i class="bx bx-plus"></i></a>
+                      <input type="checkbox">
+                  </div>
+              </div>
+         <?php
+          }
+           ?>
 
-          </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                    <h4>Almoço Americano</h4>
-                    <p>15.10.2019</p>
-                    <a href="port2.html"><i class="bx bx-plus"></i></a>
-                  <input type="checkbox">
-                </div>
-
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="<?php echo $dados['albumCapaURL']?>" class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                    <h4><?php echo $dados['albumNome']?></h4>
-                    <p><?php echo $dados['albumData']?></p>
-                    <a href="port2.html"><i class="bx bx-plus"></i></a>
-                    <input type="checkbox">
-                </div>
-
-            </div>
         </div>
       </div>
     </section><!-- End My Portfolio Section -->
