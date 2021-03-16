@@ -1,6 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 
+$sql = "select * from fotos";
+$resultFotos = mysqli_query($con, $sql);
 
 ?>
 <head>
@@ -77,19 +79,18 @@ include_once("includes/body.inc.php");
             </div>
             <small>Pesquisar:</small><br><input type="text" id="search">
             <div class="row">
-
+                <?php
+                while ($dadosFotos = mysqli_fetch_array($resultFotos)) {
+                ?>
                 <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="post-box">
                         <a href="#" data-toggle="modal" data-target="#post1">
-                            <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
+                            <img width="320" src="<?php echo $dadosFotos['fotoURL']?>" class="post-img" alt="">
                         </a>
                         <div class="portfolio-info">
                             <h4 class="title">15 gostos</h4>
 
-
-
-
-                            <a href="assets/img/portfolio/port-1.jpg" data-gall="portfolioGallery" class="venobox preview-link">
+                            <a href="<?php echo $dadosFotos['fotoURL']?>" data-gall="portfolioGallery" class="venobox preview-link">
                                 <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
                                     <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
@@ -99,133 +100,11 @@ include_once("includes/body.inc.php");
                         </div>
                     </div>
                 </div>
-                <!--
-                          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <div class="portfolio-img"><img src="img/principal2.jpg" class="img-fluid" alt=""></div>
-                            <div class="portfolio-info">
-                              <h4>Pandora</h4>
-                              <p>14.05.2019</p>
-                              <a href="port3.html"><i class="bx bx-plus"></i></a>
-                            </div>
-                          </div>           -->
-
-
-
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <img width="320" src="assets/img/portfolio/port-2.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">5 gostos</h4>
-                            <a href="assets/img/portfolio/port-2.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-
-                        </div>
-                        <img width="320" src="img/7.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">27 gostos</h4>
-                            <a href="img/7.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <img width="320" src="assets/img/portfolio/portfolio-2.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">31 gostos</h4>
-                            <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-
-                        </div>
-                        <img width="320" src="assets/img/portfolio/port-3.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">13 gostos</h4>
-                            <a href="assets/img/portfolio/port-3.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-
-                        </div>
-                    </div>
-                </div>
-
+                    <?php
+                }
+                ?>
             </div>
 
-            <div class="row">
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <img width="320" src="assets/img/portfolio/port-4.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">58 gostos</h4>
-                            <a href="assets/img/portfolio/port-4.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-
-                        </div>
-                        <img width="320" src="img/5.jpg" class="post-img" alt="">
-                        <h4 class="title">6 gostos</h4>
-                        <a href="img/5.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                            <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                            </svg></a>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <div class="portfolio-info">
-                            <img width="320" src="assets/img/portfolio/portfolio-6.jpg" class="post-img" alt="">
-                            <div class="portfolio-info">
-                                <h4 class="title">34 gostos</h4>
-                                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                    <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                        <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                        <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                    </svg></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <img width="320" src="img/principal2.jpg" class="post-img" alt="">
-                        <div class="portfolio-info">
-                            <h4 class="title">2 gostos</h4>
-                            <a href="img/principal2.jpg" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
     </section>
