@@ -14,6 +14,7 @@ function mostraFoto(id){
         success:function (result){
             $('#top1').html(result);
             $('#top1').modal('toggle');
+
         }
     })
 }

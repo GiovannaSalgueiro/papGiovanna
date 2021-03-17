@@ -234,7 +234,6 @@ $resultFotos = mysqli_query($con, $sql);
 
 </main><!-- End #main -->
 <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
 </div>
 
 <?php

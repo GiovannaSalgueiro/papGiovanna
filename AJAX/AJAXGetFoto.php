@@ -1,7 +1,9 @@
 <?php
 include_once ("../includes/body.inc.php");
 $id=intval($_POST['idFoto']);
-$sql = "select * from fotos where fotoId=$id";
+$sql="Select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
+$sql.="Select * from fotografos inner join albuns on fotografoId=albumFotografoId";
+
 $resultId = mysqli_query($con, $sql);
 ?>
 <div class="modal-dialog">
@@ -9,65 +11,73 @@ $resultId = mysqli_query($con, $sql);
         <div class="modal-header">
             <h1 id="teste"></h1>
 
-            <a href="ana.html"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;Ana Silva</h7></a>
+            <a href="ana.php"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;Ana Silva</h7></a>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+            
         </div>
 
         <div class="modal-body">
             <div class="text-center">
+                <?php
+                while ($dadosId = mysqli_fetch_array($resultId)) {
+                ?>
+                <div class="row">
+
+                    <div class="col-12">
+                        <a href="port1.php"><h8><?php echo $dadosId['fotoNome']?></h8></a>
+                    </div>
+
+                </div>
 
                 <div class="row">
 
-                    <?php
-                    while ($dadosId = mysqli_fetch_array($resultId)) {
-                        ?>
                         <div class="col-8">
 
                             <img width="320" src="<?php echo $dadosId['fotoURL']?>" class="post-img" alt="">
 
                         </div>
-                        <?php
-                    }
-                    ?>
+
                     <div class="col-4" style="height: 200px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
+                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente ï¿½ minha casa...</small>
                         </p>
 
                     </div>
-
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="container text-center">
                     <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
