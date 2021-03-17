@@ -2,7 +2,6 @@
 include_once ("../includes/body.inc.php");
 $id=intval($_POST['idFoto']);
 $sql="Select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
-$sql.="Select * from fotografos inner join albuns on fotografoId=albumFotografoId";
 
 $resultId = mysqli_query($con, $sql);
 ?>
@@ -15,7 +14,7 @@ $resultId = mysqli_query($con, $sql);
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            
+
         </div>
 
         <div class="modal-body">
