@@ -28,7 +28,7 @@ $resultFotos = mysqli_query($con, $sql);
                ?>
                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                    <div class="post-box">
-                       <a href="#" data-toggle="modal" data-target="#top1">
+                       <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dadosFotos['fotoId']?>)">
                            <img width="320" src="<?php echo $dadosFotos['fotoURL']?>" class="post-img" alt="">
                        </a>
                        <h7 class="title">10 gostos</h7>
@@ -234,93 +234,9 @@ $resultFotos = mysqli_query($con, $sql);
 
 </main><!-- End #main -->
 <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <?php
-    $sql = "select * from fotos where fotoId=1";
-    $resultId = mysqli_query($con, $sql);
-    ?>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
 
-                <a href="ana.html"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;Ana Silva</h7></a>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <div class="text-center">
-
-                    <div class="row">
-
-                        <?php
-                        while ($dadosId = mysqli_fetch_array($resultId)) {
-                        ?>
-                        <div class="col-8">
-
-                            <img width="320" src="<?php echo $dadosId['fotoURL']?>" class="post-img" alt="">
-
-                        </div>
-                            <?php
-                        }
-                        ?>
-                        <div class="col-4" style="height: 200px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-                            <p class="text-justify p-2 bg-light">
-                                <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                            </p>
-
-                        </div>
-
-                    </div>
-                    <div class="container text-center">
-                        <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                        <small id="gostar" style="text-align: center"> 22 gostos</small>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
 </div>
-<script>
-    function gosto() {
-        document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-        document.getElementById("gostar").innerHTML = "23 gostos";
-    }
-</script>
+
 <?php
 bottom(HOME);
 
