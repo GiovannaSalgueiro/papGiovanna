@@ -1,7 +1,11 @@
 <?php
 include_once("includes/body.inc.php");
 
+$id=intval($_GET['id']);
+$sql="select * from fotografos where fotografoId=1" ;
 
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 ?>
 <head>
     <title>BluPost</title>
@@ -86,7 +90,7 @@ include_once("includes/body.inc.php");
             </div>
 
             <div class="row">
-                <img src="assets/img/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+                <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                         <p id="favorito" onclick="favorito()"><i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i></p>
@@ -95,19 +99,16 @@ include_once("includes/body.inc.php");
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> Ana Silva</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> 918 632 176 </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> Maceira, Leiria</li>
-                                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Idade:</strong> 18</li> -->
+                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong><?php echo $dados['fotografoNome']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> <?php echo $dados['fotografoTelemovel']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> <?php echo $dados['fotografoCidade']?></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-
-                                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Grau:</strong> Amador</li> -->
-                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> anaSilva@gmail.com</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponível</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong><?php echo $dados['fotografoFreelancer']?></li>
                                 </ul>
                             </div>
                         </div>

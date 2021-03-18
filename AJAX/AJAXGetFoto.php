@@ -2,15 +2,22 @@
 include_once ("../includes/body.inc.php");
 $id=intval($_POST['idFoto']);
 $sql="Select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
+$sql2="Select * from fotografos";
 
 $resultId = mysqli_query($con, $sql);
+$result2 = mysqli_query($con, $sql2);
 ?>
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
             <h1 id="teste"></h1>
-
-            <a href="ana.php"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;Ana Silva</h7></a>
+            <?php
+            while ($dados2 = mysqli_fetch_array($result2)) {
+            ?>
+            <a href="ana.php"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados2['fotografoNome']?></h7></a>
+            <?php
+            }
+            ?>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -25,7 +32,7 @@ $resultId = mysqli_query($con, $sql);
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="port1.php"><h8><?php echo $dadosId['fotoNome']?></h8></a>
+                        <a href="port1.php"><h8><?php echo $dadosId['albumNome']?></h8></a>
                     </div>
 
                 </div>
@@ -77,6 +84,8 @@ $resultId = mysqli_query($con, $sql);
                     <?php
                     }
                     ?>
+
+
                 </div>
                 <div class="container text-center">
                     <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
