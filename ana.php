@@ -1,8 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 
-$id=intval($_GET['id']);
-$sql="select * from fotografos where fotografoId=1" ;
+
+$sql="select * from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=1" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -174,26 +174,31 @@ $dados=mysqli_fetch_array($result);
 
                 <li >2018</li>
             </ul>
-
+            <?php
+            $sql = "select * from albuns where albumFotografoId=1";
+            $resultAlbuns = mysqli_query($con, $sql);
+            ?>
             <div class="row portfolio-container">
                 <!-- app=            card=2019               web=2020-->
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-img"><img src="img/principal1.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Sessão de fografia dos bébes de Março</h4>
-                        <p>22.11.2020</p>
-                        <a href="port1.php"><i class="bx bx-plus"></i></a>
+                <?php
+                while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="<?php echo $dadosAlbuns['albumCapaURL']?>"  class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4><?php echo $dadosAlbuns['albumNome']?></h4>
+                            <p><?php echo $dadosAlbuns['albumData']?></p>
+                            <a href="album.php?id=<?php echo $dados['albumId']?>"><i class="fas fa-plus" style="color: #ffb727"></i></a>
+                            <a href="editaAlbum.php"><i class="far fa-edit"></i></a>
+                            <input type="checkbox">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Almoço Americano</h4>
-                        <p>15.10.2019</p>
-                        <a href="port2.html"><i class="bx bx-plus"></i></a>
-                    </div>
-                </div>
+                    <?php
+
+                }
+                ?>
+
 
 
             </div>

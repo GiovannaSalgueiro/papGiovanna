@@ -124,6 +124,7 @@ $resultFotos = mysqli_query($con, $sql);
                 </div>
             </div>
 
+
         </div>
     </section>
     <!-- ======= Novidades ======= -->
