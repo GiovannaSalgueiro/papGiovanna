@@ -1,23 +1,21 @@
 <?php
 include_once ("../includes/body.inc.php");
 $id=intval($_POST['idFoto']);
-$sql="Select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
-$sql2="Select * from fotografos";
+$sql="Select * 
+        from fotos inner join albuns on fotoAlbumId=albumId 
+        inner join fotografos on fotografoId=albumFotografoId 
+        where fotoId=$id";
 
-$resultId = mysqli_query($con, $sql);
-$result2 = mysqli_query($con, $sql2);
+$result = mysqli_query($con, $sql);
+$dados = mysqli_fetch_array($result);
 ?>
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
             <h1 id="teste"></h1>
-            <?php
-            while ($dados2 = mysqli_fetch_array($result2)) {
-            ?>
-            <a href="ana.php"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados2['fotografoNome']?></h7></a>
-            <?php
-            }
-            ?>
+
+            <a href="perfil.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
+
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -26,13 +24,11 @@ $result2 = mysqli_query($con, $sql2);
 
         <div class="modal-body">
             <div class="text-center">
-                <?php
-                while ($dadosId = mysqli_fetch_array($resultId)) {
-                ?>
+
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="port1.php"><h8><?php echo $dadosId['albumNome']?></h8></a>
+                        <a href="album.php?id=<?php echo $dados['albumId']?>"><h8><?php echo $dados['albumNome']?></h8></a>
                     </div>
 
                 </div>
@@ -41,7 +37,7 @@ $result2 = mysqli_query($con, $sql2);
 
                         <div class="col-8">
 
-                            <img width="320" src="<?php echo $dadosId['fotoURL']?>" class="post-img" alt="">
+                            <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
 
                         </div>
 
@@ -81,9 +77,7 @@ $result2 = mysqli_query($con, $sql2);
                         </p>
 
                     </div>
-                    <?php
-                    }
-                    ?>
+
 
 
                 </div>
