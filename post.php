@@ -44,6 +44,8 @@ $resultFotos = mysqli_query($con, $sql);
 
     <!-- Template Main CSS File -->
     <link href='assets/css/style.css' rel='stylesheet'>
+
+    <script src="js/common.js"></script>
 </head>
 <body>
 

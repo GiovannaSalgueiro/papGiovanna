@@ -170,8 +170,6 @@ $dados=mysqli_fetch_array($result);
                 <a href="portfolio.php?id=7&ano=2020"><li >2020</li></a>
                 <li >2019</li>
 
-
-
                 <li >2018</li>
             </ul>
             <?php
