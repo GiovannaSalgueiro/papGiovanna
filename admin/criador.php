@@ -1,7 +1,9 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-
+$sql="Select * from fotografos";
+$result = mysqli_query($con, $sql);
+$resultCriador = mysqli_query($con, $sql);
 ?>
 
 <body>
@@ -20,32 +22,34 @@ top();
 
             <table class="table table-hover table-striped">
                 <tr>
-                    <th>Id do Fotografo </th>
+                    <th>Id</th>
                     <th> Nome do Criador </th>
+                    <th> Telemovel </th>
+                    <th> Email</th>
+                    <th> Cidade </th>
+                    <th> Freelancer</th>
                     <th> Capa </th>
+                    <th> Perfil </th>
                     <th colspan="3"> Opções </th>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>Ana Silva</td>
-                    <td><img src="assets/img/me.jpg" width="102"> </td>
+                    <?php
+                    while ($dados = mysqli_fetch_array($result)) {
+                    ?>
+                    <td><?php echo $dados['fotografoId']?></td>
+                    <td><?php echo $dados['fotografoNome']?></td>
+                    <td><?php echo $dados['fotografoTelemovel']?></td>
+                    <td><?php echo $dados['fotografoEmail']?></td>
+                    <td><?php echo $dados['fotografoCidade']?></td>
+                    <td><?php echo $dados['fotografoFreelancer']?></td>
+                    <td><img src="<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
+                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-primary">Ver perfil</span></a></td>
+                    <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><a href="ana.html"><span class="btn-sm btn-success">Detalhes</span></a></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>João Santos</td>
-                    <td><img src="assets/img/joao1.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Maria Pereira</td>
-                    <td><img src="" width="102"> Sem imagem </td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
+                <?php
+                }
+                ?>
             </table>
             <br>
         </div>
@@ -59,32 +63,32 @@ top();
         </div>
 
         <table class="table table-hover table-striped">
+
             <tr>
                 <th> Nome</th>
                 <th> Telemovel </th>
-                <th> Cidade </th>
                 <th> Email </th>
+                <th> Cidade </th>
                 <th> Freelance </th>
+                <th> Capa </th>
                 <th colspan="3"> Opções </th>
             </tr>
+            <?php
+            while ($dadosCriador = mysqli_fetch_array($resultCriador)) {
+                ?>
             <tr>
-                <td>Ana Silva</td>
-                <td>918485876</td>
-                <td>Maceira, Leiria</td>
-                <td>anaSilva@gmail.com</td>
-                <td>Disponivel</td>
+                <td><?php echo $dadosCriador['fotografoNome']?></td>
+                <td><?php echo $dadosCriador['fotografoTelemovel']?></td>
+                <td><?php echo $dadosCriador['fotografoCidade']?></td>
+                <td><?php echo $dadosCriador['fotografoEmail']?></td>
+                <td><?php echo $dadosCriador['fotografoFreelancer']?></td>
+                <td><img src="<?php echo $dadosCriador['fotografoFotoURL']?>" width="102"></td>
                 <td><i class="fas fa-check-circle" style="color: green"></i></i></td>
                 <td><i class="fas fa-times-circle" style="color: red"></i></td>
             </tr>
-            <tr>
-                <td>João Santos</td>
-                <td>918485876</td>
-                <td>Maceira, Leiria</td>
-                <td>anaSilva@gmail.com</td>
-                <td>Disponivel</td>
-                <td><i class="fas fa-check-circle" style="color: green"></i></i></td>
-                <td><i class="fas fa-times-circle" style="color: red"></i></td>
-            </tr>
+                <?php
+            }
+            ?>
 
         </table>
         <br>

@@ -10,7 +10,34 @@ $result = mysqli_query($con, $sql);
 $resultAlbuns = mysqli_query($con, $sql);
 
 ?>
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFoto.php",
+            type:"post",
+            data:{
+                idFoto:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a empresa:'+result+"?"))
+                    //   $.ajax({
+                    //   url:"eliminaFoto.php",
+                    //   type:"post",
+                    //   data:{
+                    //     id:id
+                    //},
+                    //sucess:funtion
+                    //  if(resul<0)
 
+                    //$('mensagemModal').html('Registo elem com sucesso');
+                    //else
+                    //      $('mensagemModal').html('Não pode ELiminar');
+
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+</script>
 <body>
 
 <main id="main">
@@ -38,7 +65,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                 </tr>
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
-                    <td><a href="criador.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
+                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
                     <td><img src="<?php echo $dados['fotoURL']?>" width="102"> </td>
                     <td style="text-align: center"><a href="album.php?id=<?php echo $dados['albumId']?>" ><i class="fas fa-images" style="color: #ffb727"></i>&nbsp;<?php echo $dados['albumNome']?></td></a>
                     <td>10 gostos</td>
