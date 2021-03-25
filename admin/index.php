@@ -4,7 +4,7 @@ top();
 
 $sql="Select * 
         from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId 
+        inner join fotografos on fotografoId=albumFotografoId
         ";
 $result = mysqli_query($con, $sql);
 $resultAlbuns = mysqli_query($con, $sql);
@@ -19,24 +19,27 @@ $resultAlbuns = mysqli_query($con, $sql);
                 idFoto:id
             },
             success:function (result){
-                if(confirm('Confirma que deseja eliminar a empresa:'+result+"?"))
-                    //   $.ajax({
-                    //   url:"eliminaFoto.php",
-                    //   type:"post",
-                    //   data:{
-                    //     id:id
-                    //},
-                    //sucess:funtion
-                    //  if(resul<0)
-
-                    //$('mensagemModal').html('Registo elem com sucesso');
-                    //else
-                    //      $('mensagemModal').html('Não pode ELiminar');
+                if(confirm('Confirma que deseja eliminar a foto:'+result+"?"))
 
                     window.location="eliminaFoto.php?id=" + id;
             }
         })
     }
+    function confirmaEliminaAlbum(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameAlbum.php",
+            type:"post",
+            data:{
+                idAlbum:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar o album: '+result+" ?"))
+
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+
 </script>
 <body>
 
@@ -51,9 +54,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                 <p>Imagens mais populares da semana</p>
             </div>
             <table class="table table-hover table-striped">
-                <?php
-                while ($dados = mysqli_fetch_array($result)) {
-                ?>
+
                 <tr>
                     <th>Id</th>
                     <th> Criador</th>
@@ -62,7 +63,9 @@ $resultAlbuns = mysqli_query($con, $sql);
                     <th> Nº de gostos</th>
                     <th> Comentários</th>
                     <th colspan="3"> Opções </th>
-                </tr>
+                </tr><?php
+                while ($dados = mysqli_fetch_array($result)) {
+                    ?>
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
@@ -71,7 +74,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                     <td>10 gostos</td>
                     <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
                     <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
+                    <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                 </tr>
                 <?php
@@ -96,9 +99,7 @@ $resultAlbuns = mysqli_query($con, $sql);
         $resultAlbuns = mysqli_query($con, $sql);
         ?>
         <table class="table table-hover table-striped">
-            <?php
-            while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
-                ?>
+
             <tr>
                 <th>Id</th>
                 <th> Nome do álbum </th>
@@ -107,7 +108,9 @@ $resultAlbuns = mysqli_query($con, $sql);
                 <th> Nº de Fotos </th>
                 <th> Detalhes </th>
                 <th colspan="3"> Opções </th>
-            </tr>
+            </tr><?php
+            while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
+                ?>
             <tr>
                 <td ><?php echo $dadosAlbuns['albumId']?></td>
                 <td style="text-align: center"><?php echo $dadosAlbuns['albumNome']?></td>
@@ -116,7 +119,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                 <td style="text-align: center">9</td>
                 <td><a href="port1"><span class="btn-sm btn-success">Ver album</span></a></td>
                 <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
-                <td><span class="btn-sm btn-danger">Elimina</span></td>
+                <td><a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbuns['albumId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
             </tr>
                 <?php
             }
@@ -133,6 +136,12 @@ $resultAlbuns = mysqli_query($con, $sql);
 
 
 <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php
+    $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
+            inner join fotos on fotoId=comentarioFotoId
+            ";
+    $resultTexto = mysqli_query($con, $sql);
+    ?>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -141,22 +150,16 @@ $resultAlbuns = mysqli_query($con, $sql);
                         <tr>
                             <th colspan="12">Comentarios</th>
                         </tr>
+                        <?php
+                        while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
+                        ?>
                         <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
+                            <th><small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span> <?php echo $dadosTexto['comentarioTexto']?></small></th>
                             <th><i class="fas fa-trash-alt"></i></th>
                         </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
+                            <?php
+                        }
+                        ?>
 
                     </table>
 

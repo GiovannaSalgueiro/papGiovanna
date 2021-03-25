@@ -1,6 +1,6 @@
 <?php
 // dados na base de dados
-include_once("includes/body.inc.php");
+include_once("../includes/body.inc.php");
 $id=intval($_POST['idAlbum']);
 $sql="Select * from albuns where albumId=$id";
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);

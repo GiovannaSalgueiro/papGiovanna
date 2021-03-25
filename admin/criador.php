@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql="Select * from fotografos";
+$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
 $result = mysqli_query($con, $sql);
 $resultCriador = mysqli_query($con, $sql);
 ?>
@@ -24,11 +24,9 @@ $resultCriador = mysqli_query($con, $sql);
                 <tr>
                     <th>Id</th>
                     <th> Nome do Criador </th>
-                    <th> Telemovel </th>
                     <th> Email</th>
-                    <th> Cidade </th>
-                    <th> Freelancer</th>
                     <th> Capa </th>
+                    <th> Estado </th>
                     <th> Perfil </th>
                     <th colspan="3"> Opções </th>
                 </tr>
@@ -38,12 +36,13 @@ $resultCriador = mysqli_query($con, $sql);
                     ?>
                     <td><?php echo $dados['fotografoId']?></td>
                     <td><?php echo $dados['fotografoNome']?></td>
-                    <td><?php echo $dados['fotografoTelemovel']?></td>
                     <td><?php echo $dados['fotografoEmail']?></td>
-                    <td><?php echo $dados['fotografoCidade']?></td>
-                    <td><?php echo $dados['fotografoFreelancer']?></td>
                     <td><img src="<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
-                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-primary">Ver perfil</span></a></td>
+
+                    <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-primary"><?php echo $dados['perfilEstado']?></span></a></td>
+
+
+                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
                     <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
                 </tr>
