@@ -46,26 +46,6 @@ $dados=mysqli_fetch_array($result);
             ?>
         </div>
 
-
-<!--
-          <div class="col-lg-4 col-md-6 portfolio-item">
-              <a href="#" data-toggle="modal" data-target="#port1-1">
-            <div class="portfolio-img"><img src="<?php echo $dados['fotoURL']?>" class="img-fluid" alt=""></div>
-              </a>
-              <input type="checkbox">
-          </div>
-            <div class="col-lg-4 col-md-6 portfolio-item">
-                <div class="portfolio-img"><img src="img/2.jpg" class="img-fluid" alt=""></div>
-                <input type="checkbox">
-            </div>
-            -->
-
-
-
-    </section><!-- End My Portfolio Section -->
-
-
-
   </main><!-- End #main -->
 
 <!-- PORT 11 -->

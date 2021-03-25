@@ -40,51 +40,41 @@ $dados = mysqli_fetch_array($result);
                             <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
 
                         </div>
-
+                    <?php
+                    $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
+            inner join fotos on fotoId=comentarioFotoId
+            ";
+                    $resultTexto = mysqli_query($con, $sql);
+                    ?>
                     <div class="col-4" style="height: 200px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
+                        <?php
+                        while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
+                        ?>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
+                            <small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small>
                         </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
-                        <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente � minha casa...</small>
-                        </p>
+                            <?php
+                        }
+                        ?>
+
+
 
                     </div>
 
 
 
                 </div>
-                <div class="container text-center">
+                <div class="container text-left">
                     <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
                     <small id="gostar" style="text-align: center"> 22 gostos</small>
+
+                    <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">
+                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..."></small>&nbsp;<button><i class="fas fa-comment"></i></button></div>
+                    </form>
                 </div>
+
+
+
 
 
             </div>

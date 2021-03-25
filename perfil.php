@@ -1,5 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
+top1();
 $id=intval($_GET['id']);
 $sql="select * from fotografos where fotografoId=$id" ;
 
@@ -8,52 +9,7 @@ $sql="select * from fotografos where fotografoId=$id" ;
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
-    <head>
-        <title>BluPost</title>
-        <meta charset='utf-8'>
-        <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 
-        <meta content='' name='descriptison'>
-        <meta content='' name='keywords'>
-        <!-- Font awesome -->
-        <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
-
-        <!-- Favicons -->
-        <link href='assets/img/favico.png' rel='icon'>
-        <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
-
-        <!-- Google Fonts-->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
-
-
-        <!-- Vendor CSS Files -->
-        <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
-        <link href='assets/vendor/icofont/icofont.min.css' rel='stylesheet'>
-        <link href='assets/vendor/boxicons/css/boxicons.min.css' rel='stylesheet'>
-        <link href='assets/vendor/owl.carousel/assets/owl.carousel.min.css' rel='stylesheet'>
-        <link href='assets/vendor/venobox/venobox.css' rel='stylesheet'>
-
-        <!-- Template Main CSS File -->
-        <link href='assets/css/style.css' rel='stylesheet'>
-    </head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
-
-      <nav class="nav-menu d-none d-lg-block">
-          <ul>
-              <li><a href="index.php">Início</a></li>
-              <li><a href="post.php">Publicações</a></li>
-              <li><a href="post.php">Atividade</a></li>
-              <li><a>|</a> </li>
-              <li><a href="ana.php">Perfil</a> </li>
-
-          </ul>
-      </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
 
@@ -144,7 +100,7 @@ $dados=mysqli_fetch_array($result);
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
+                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
                 <div class="col-10"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></div>
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
@@ -159,12 +115,15 @@ $dados=mysqli_fetch_array($result);
           <li data-filter=".filter-app">2018</li>
         </ul>
 
+          <?php
+          $sql="select * from albuns where albumFotografoId=$id";
+          $resultAlbum=mysqli_query($con,$sql);
+          ?>
           <div class="row portfolio-container">
               <!-- app=            card=2019               web=2020-->
 
+
               <?php
-              $sql="select * from albuns where albumFotografoId=$id";
-              $resultAlbum=mysqli_query($con,$sql);
               while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
                   ?>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -172,8 +131,8 @@ $dados=mysqli_fetch_array($result);
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="port2.html"><i class="bx bx-plus"></i></a>
-                          <a href="editaAlbum.php"><i class="far fa-edit"></i></a>
+                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="bx bx-plus"></i></a>
+                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
                           <input type="checkbox">
                       </div>
                   </div>
