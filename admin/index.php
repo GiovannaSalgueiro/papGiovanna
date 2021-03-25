@@ -117,7 +117,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                 <td><img src="<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"> </td>
                 <td><?php echo $dadosAlbuns['albumData']?></td>
                 <td style="text-align: center">9</td>
-                <td><a href="port1"><span class="btn-sm btn-success">Ver album</span></a></td>
+                <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>
                 <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
                 <td><a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbuns['albumId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
             </tr>

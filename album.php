@@ -4,8 +4,6 @@ top1();
 $id=intval($_GET['id']);
 $sql="select * from fotos  where fotoId=$id" ;
 
-
-
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
