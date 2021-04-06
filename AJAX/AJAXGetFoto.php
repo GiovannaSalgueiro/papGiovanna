@@ -1,9 +1,10 @@
 <?php
 include_once ("../includes/body.inc.php");
 $id=intval($_POST['idFoto']);
-$sql="Select * 
-        from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId 
+$sql="Select * ,count(*) as n
+        from fotos inner join gostos on fotoId=gostoFotoId
+        inner join albuns on fotoAlbumId=albumId 
+        inner join fotografos on fotografoId=albumFotografoId         
         where fotoId=$id";
 
 $result = mysqli_query($con, $sql);
@@ -32,7 +33,6 @@ $dados = mysqli_fetch_array($result);
                     </div>
 
                 </div>
-
                 <div class="row">
 
                         <div class="col-8">
@@ -56,27 +56,16 @@ $dados = mysqli_fetch_array($result);
                             <?php
                         }
                         ?>
-
-
-
                     </div>
-
-
-
                 </div>
                 <div class="container text-left">
                     <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                    <small id="gostar" style="text-align: center"> 22 gostos</small>
+                    <small id="gostar" style="text-align: center"> <?php echo $dados['n']?>  gostos</small>
 
                     <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">
                         <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..."></small>&nbsp;<button><i class="fas fa-comment"></i></button></div>
                     </form>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>

@@ -1,7 +1,9 @@
 function gosto() {
     document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-    document.getElementById("gostar").innerHTML = "23 gostos";
+    n += 1;
+    document.getElementById("gostar").innerHTML = n;
 }
+
 
 function mostraFoto(id){
 
