@@ -4,8 +4,6 @@ top1();
 $id=intval($_GET['id']);
 $sql="select * from fotografos where fotografoId=$id" ;
 
-
-
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
@@ -116,7 +114,7 @@ $dados=mysqli_fetch_array($result);
         </ul>
 
           <?php
-          $sql="select * from albuns where albumFotografoId=$id";
+          $sql="select * from albuns where albumFotografoId=$id order by albumData desc";
           $resultAlbum=mysqli_query($con,$sql);
           ?>
           <div class="row portfolio-container">
@@ -127,7 +125,7 @@ $dados=mysqli_fetch_array($result);
               while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
                   ?>
                   <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                      <div class="portfolio-img"><img src="imagens/<?php echo $dadosAlbum['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
+                      <div class="portfolio-img"><img src="<?php echo $dadosAlbum['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>

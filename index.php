@@ -79,7 +79,7 @@ $result=mysqli_query($con,$sql);
             </div>
 
             <?php
-            $sql="select * from albuns limit 6";
+            $sql="select * from albuns order by albumData desc limit 6";
             $resultAlbum=mysqli_query($con, $sql);
             ?>
 
