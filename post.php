@@ -1,13 +1,12 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql = "select *, count(*) as n from fotos left join gostos on fotoId=gostoFotoId inner join albuns on fotoAlbumId=albumId group by fotoId, fotoURL order by albumData desc";
+$sql = "select *, count(gostoFotoId) as n from fotos inner join albuns on fotoAlbumId=albumId left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
 $result = mysqli_query($con, $sql);
 
 ?>
 
 <body>
-
 
 
 <!-- ======= Hero Section ======= -->
@@ -55,13 +54,6 @@ $result = mysqli_query($con, $sql);
         </div>
     </section>
 </main><!-- End #main -->
-
-<!-- ======= Post ======= -->
-
-<div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-</div>
-
-<!-- End Post -->
 
 
 <!-- ======= PERFIL ======= -->
@@ -116,19 +108,6 @@ $result = mysqli_query($con, $sql);
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
 <script>
     function fecha(){
         $('#regista').modal('toggle');

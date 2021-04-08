@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select * from fotografos where fotografoId=$id" ;
+$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -45,7 +45,9 @@ $dados=mysqli_fetch_array($result);
                 </div>
               </div>
               <div class="row mt-n4">
+
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+
                   <div class="count-box">
                     <i class="icofont-heart-alt" style="color:#FA5858;"></i>
                     <span data-toggle="counter-up">25</span>
@@ -56,7 +58,7 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                    <span data-toggle="counter-up">4</span>
+                    <span data-toggle="counter-up"><?php echo $dados['p']?></span>
                     <p><strong>Projetos</strong> concluidos</p>
                   </div>
                 </div>

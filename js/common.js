@@ -20,3 +20,18 @@ function mostraFoto(id){
         }
     })
 }
+
+function fillTableFotografos(txt = '') {
+    $.ajax({
+        url: "AJAX/AJAXFillFotografo.php",
+        type: "post",
+        data: {
+            txt: txt
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    })
+}
+
+

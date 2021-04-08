@@ -42,8 +42,7 @@ $dados = mysqli_fetch_array($result);
                         </div>
                     <?php
                     $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
-            inner join fotos on fotoId=comentarioFotoId
-            ";
+            inner join fotos on fotoId=comentarioFotoId where fotoId=$id";
                     $resultTexto = mysqli_query($con, $sql);
                     ?>
                     <div class="col-4" style="height: 200px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
