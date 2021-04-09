@@ -1,5 +1,5 @@
 <?php
-include_once("../includes/body.inc.php");
+include_once("includes/body.inc.php");
 top1();
 
 
@@ -9,7 +9,22 @@ $sql="Select * , count(gostoFotoId) as n
             left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
 $result = mysqli_query($con, $sql);
 ?>
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFoto.php",
+            type:"post",
+            data:{
+                idFoto:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a foto:'+result+"?"))
 
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+</script>
 <body>
 
 <main id="main">
@@ -42,12 +57,12 @@ $result = mysqli_query($con, $sql);
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
                     <td><a href="criador.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
-                    <td><img src="<?php echo $dados['fotoURL']?>" width="102"> </td>
+                    <td><img src="../<?php echo $dados['fotoURL']?>" width="102"> </td>
                     <td style="text-align: center"><a href="album.php?id=<?php echo $dados['albumId']?>" ><i class="fas fa-images" style="color: #ffb727"></i>&nbsp;<?php echo $dados['albumNome']?></td></a>
                     <td><?php echo $dados['n']?>  gostos</td>
                     <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
                     <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
+                    <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
                 </tr>
                     <?php
                 }

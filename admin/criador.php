@@ -5,7 +5,23 @@ $sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
 $result = mysqli_query($con, $sql);
 $resultCriador = mysqli_query($con, $sql);
 ?>
+<script>
+    function confirmaEliminaCriador(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFotografp.php",
+            type:"post",
+            data:{
+                idFotografo:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar o/a fotografo:'+result+"?"))
 
+                    window.location="eliminaFotografo.php?id=" + id;
+            }
+        })
+    }
+
+</script>
 <body>
 <main id="main">
 
@@ -37,14 +53,14 @@ $resultCriador = mysqli_query($con, $sql);
                     <td><?php echo $dados['fotografoId']?></td>
                     <td><?php echo $dados['fotografoNome']?></td>
                     <td><?php echo $dados['fotografoEmail']?></td>
-                    <td><img src="<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
+                    <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
 
                     <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-primary"><?php echo $dados['perfilEstado']?></span></a></td>
 
 
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
                     <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
+                    <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
                 </tr>
                 <?php
                 }
@@ -81,7 +97,7 @@ $resultCriador = mysqli_query($con, $sql);
                 <td><?php echo $dadosCriador['fotografoCidade']?></td>
                 <td><?php echo $dadosCriador['fotografoEmail']?></td>
                 <td><?php echo $dadosCriador['fotografoFreelancer']?></td>
-                <td><img src="<?php echo $dadosCriador['fotografoFotoURL']?>" width="102"></td>
+                <td><img src="../<?php echo $dadosCriador['fotografoFotoURL']?>" width="102"></td>
                 <td><i class="fas fa-check-circle" style="color: green"></i></i></td>
                 <td><i class="fas fa-times-circle" style="color: red"></i></td>
             </tr>

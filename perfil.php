@@ -7,7 +7,23 @@ $sql="select *, count(albumFotografoId) as p from fotografos inner join albuns o
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
+    <script>
+        function confirmaEliminaAlbum(id) {
+            $.ajax({
+                url:"AJAX/AJAXGetNameAlbum.php",
+                type:"post",
+                data:{
+                    idAlbum:id
+                },
+                success:function (result){
+                    if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
 
+                        window.location="eliminaAlbum.php?id=" + id;
+                }
+            })
+        }
+
+    </script>
 
   <!-- ======= Hero Section ======= -->
 
@@ -101,7 +117,7 @@ $dados=mysqli_fetch_array($result);
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
                 <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
-                <div class="col-10"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></div>
+
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
@@ -131,9 +147,9 @@ $dados=mysqli_fetch_array($result);
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="bx bx-plus"></i></a>
+                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
                           <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
-                          <input type="checkbox">
+                          <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
                       </div>
                   </div>
                   <?php

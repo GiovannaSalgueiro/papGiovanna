@@ -1,5 +1,5 @@
 <?php
-include_once("../includes/body.inc.php");
+include_once("includes/body.inc.php");
 top();
 
 $sql="Select * , count(gostoFotoId) as n
@@ -36,7 +36,7 @@ $resultAlbuns = mysqli_query($con, $sql);
             success:function (result){
                 if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
 
-                    window.location="eliminaFoto.php?id=" + id;
+                    window.location="eliminaAlbum.php?id=" + id;
             }
         })
     }
@@ -70,7 +70,7 @@ $resultAlbuns = mysqli_query($con, $sql);
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
-                    <td><img src="<?php echo $dados['fotoURL']?>" width="102"> </td>
+                    <td><img src="../<?php echo $dados['fotoURL']?>" width="102"> </td>
                     <td style="text-align: center"><a href="album.php?id=<?php echo $dados['albumId']?>" ><i class="fas fa-images" style="color: #ffb727"></i>&nbsp;<?php echo $dados['albumNome']?></td></a>
                     <td><?php echo $dados['n']?> gostos</td>
                     <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
@@ -115,7 +115,7 @@ $resultAlbuns = mysqli_query($con, $sql);
             <tr>
                 <td ><?php echo $dadosAlbuns['albumId']?></td>
                 <td style="text-align: center"><?php echo $dadosAlbuns['albumNome']?></td>
-                <td><img src="<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"> </td>
+                <td><img src="../<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"> </td>
                 <td><?php echo $dadosAlbuns['albumData']?></td>
                 <td style="text-align: center">9</td>
                 <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>

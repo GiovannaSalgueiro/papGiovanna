@@ -81,9 +81,7 @@ function top1(){
             <ul>
                 <li><a href="index.php">Início</a></li>
                 <li><a href="post.php">Publicações</a></li>
-                <li><a href="post.php">Atividade</a></li>
-                <li><a>|</a> </li>
-                <li><a href="perfil.php">Perfil</a> </li>
+                <li><a href="criador.php">Fotografos</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->
