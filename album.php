@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select * from fotos  where fotoId=$id" ;
+$sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -21,7 +21,7 @@ $dados=mysqli_fetch_array($result);
 
                     <i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i>
               <br>
-              <a href="#" data-toggle="modal" data-target="#adiciona" style="text-align: right"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
+              <a href="adicionaFoto.php?id=<?php echo $dados["albumId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
 
           </div>
       <br>
@@ -89,32 +89,6 @@ $dados=mysqli_fetch_array($result);
   <!-- End PORT -->
 
 
-
-  <!-- ======= Adiciona ======= -->
-  <div class="modal fade" id="adiciona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <form action="confirmaNovaFoto.php" method="post" enctype="multipart/form-data">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title">Adiciona Fotografias</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <label>Escolha a fotografia para essa Galeria</label>
-                  <p></p>
-                  <input type="file" name="fotoURL">
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-warning" value="Adiciona">Adicionar</button>
-              </div>
-          </div>
-      </div>
-  </form>
-  </div>
-  <!--End Login -->
 
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
