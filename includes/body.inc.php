@@ -1,5 +1,6 @@
 <?php
 include_once ("config.inc.php");
+session_start();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 
@@ -72,11 +73,22 @@ function top(){
             <li><a href="post.php">Publicações</a></li>
             <li><a href="post.php">Atividade</a></li>
             <li><a>|</a> </li>
+            <?php
+                if(!isset($_SESSION['id'])){
+            ?>
             <li><a href="#" data-toggle="modal" data-target="#login">Login</a> </li>
 
 
 
             <li><a href="#" data-toggle="modal" data-target="#regista">Registar</a>&nbsp;</li>
+            <?php
+                }else{
+                    ?>
+                     <li><a href="#" data-toggle="modal" data-target="#login"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="#" data-toggle="modal" data-target="#login">Logout</a> </li>
+                    <?php
+                }
+ ?>
         </ul>
     </nav><!-- .nav-menu -->
 

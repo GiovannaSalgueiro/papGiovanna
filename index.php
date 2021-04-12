@@ -7,7 +7,7 @@ $result=mysqli_query($con,$sql);
 
 ?>
 
-
+<h1><?php if(isset($_SESSION['id'])) echo $_SESSION['nome']?></h1>
 <main id="main">
 
     <!-- ======= Top post ======= -->
