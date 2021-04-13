@@ -1,11 +1,9 @@
 <?php
 include_once("includes/body.inc.php");
-top();
 
+top1();
 ?>
 
-
-<body>
 
 
   <main id="main">

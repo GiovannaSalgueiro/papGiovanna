@@ -1,9 +1,51 @@
 <?php
 include_once("includes/body.inc.php");
-top();
 
+
+$sql="select * from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=1" ;
+
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 ?>
 <head>
+    <title>BluPost</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+
+    <meta content='' name='descriptison'>
+    <meta content='' name='keywords'>
+    <script>
+        $(document).ready(function(){
+            $("#abrir").toggle(1000, function(){
+            });
+            $("#regist").click(function(){
+
+                $("#abrir").toggle(1000, function(){
+                });
+            });
+        });
+    </script>
+
+    <!-- Font awesome -->
+    <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
+
+    <!-- Favicons -->
+    <link href='assets/img/favico.png' rel='icon'>
+    <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
+
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
+
+
+    <!-- Vendor CSS Files -->
+    <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='assets/vendor/icofont/icofont.min.css' rel='stylesheet'>
+    <link href='assets/vendor/boxicons/css/boxicons.min.css' rel='stylesheet'>
+    <link href='assets/vendor/owl.carousel/assets/owl.carousel.min.css' rel='stylesheet'>
+    <link href='assets/vendor/venobox/venobox.css' rel='stylesheet'>
+
+    <!-- Template Main CSS File -->
+    <link href='assets/css/style.css' rel='stylesheet'>
 
     <script>
         $(document).ready(function(){
@@ -19,6 +61,23 @@ top();
 </head>
 <body>
 
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
+    <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li class="active"><a href="index.php">Início</a></li>
+            <li><a href="post.php">Publicações</a></li>
+            <li><a href="post.php">Atividade</a></li>
+            <li><a>|</a> </li>
+            <li><a href="#" data-toggle="modal" data-target="#perfil">Perfil</a></li>
+
+        </ul>
+    </nav><!-- .nav-menu -->
+
+
+</header><!-- End Header -->
+
+
 <main id="main">
 
     <!-- ======= About Me Section ======= -->
@@ -31,7 +90,7 @@ top();
             </div>
 
             <div class="row">
-                <img src="assets/img/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+                <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                         <p id="favorito" onclick="favorito()"><i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i></p>
@@ -40,19 +99,16 @@ top();
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> Ana Silva</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> 918 632 176 </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> Maceira, Leiria</li>
-                                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Idade:</strong> 18</li> -->
+                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong><?php echo $dados['fotografoNome']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> <?php echo $dados['fotografoTelemovel']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> <?php echo $dados['fotografoCidade']?></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-
-                                    <!-- <li><i class="icofont-rounded-right"></i> <strong>Grau:</strong> Amador</li> -->
-                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> anaSilva@gmail.com</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponível</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong><?php echo $dados['fotografoFreelancer']?></li>
                                 </ul>
                             </div>
                         </div>
@@ -114,30 +170,33 @@ top();
                 <a href="portfolio.php?id=7&ano=2020"><li >2020</li></a>
                 <li >2019</li>
 
-
-
                 <li >2018</li>
             </ul>
-
+            <?php
+            $sql = "select * from albuns where albumFotografoId=1";
+            $resultAlbuns = mysqli_query($con, $sql);
+            ?>
             <div class="row portfolio-container">
                 <!-- app=            card=2019               web=2020-->
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-img"><img src="img/principal1.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Sessão de fografia dos bébes de Março</h4>
-                        <p>22.11.2020</p>
-                        <a href="port1.php"><i class="bx bx-plus"></i></a>
+                <?php
+                while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="<?php echo $dadosAlbuns['albumCapaURL']?>"  class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4><?php echo $dadosAlbuns['albumNome']?></h4>
+                            <p><?php echo $dadosAlbuns['albumData']?></p>
+                            <a href="album.php?id=<?php echo $dados['albumId']?>"><i class="fas fa-plus" style="color: #ffb727"></i></a>
+                            <a href="editaAlbum.php"><i class="far fa-edit"></i></a>
+                            <input type="checkbox">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Almoço Americano</h4>
-                        <p>15.10.2019</p>
-                        <a href="port2.html"><i class="bx bx-plus"></i></a>
-                    </div>
-                </div>
+                    <?php
+
+                }
+                ?>
+
 
 
             </div>

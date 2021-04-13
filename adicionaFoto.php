@@ -3,7 +3,7 @@ include_once ("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['id']);
-$sql="select * from albuns where albumId=$id";
+$sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
@@ -18,53 +18,49 @@ $dados=mysqli_fetch_array($result);
         <div class="container">
 
             <div class="section-title">
-                <span>Adicionar novo album</span>
-                <h2>Adicionar novo album</h2>
+                <span>Adicionar nova foto</span>
+                <h2>Adicionar nova foto</h2>
             </div>
-            <form action="confirmaNovoAlbum.php" method="post" enctype="multipart/form-data">
+
+
+
+            <form action="confirmaNovaFoto.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $id?>">
 
+                <img src="<?php echo $dados['albumCapaURL']?>">
+
+
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                    <small><input type="file" name="albumCapaURL"></small>
+
 
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-lg-4">
                                 <br>
                                 <ul>
-                                    <li> <strong>Nome do album:</strong></li>
+                                    <li> <strong>Nome da foto:</strong></li>
+                                    <small> Este nome não aparecerá no site</small>
                                 </ul>
                             </div>
                             <div class="col-lg-8">
                                 <br>
                                 <ul>
-                                    <small><input type="text" name="albumNome"></small>
+                                    <small><input type="text" name="fotoNome"></small>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
                                 <br>
-                                <ul>
-                                    <li> <strong>Data do album:</strong></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-8">
-                                <br>
-                                <ul>
-                                    <small><input type="date" name="albumData"></small>
-                                </ul>
-                            </div>
-                        </div>
 
+                            </div>
+                        </div>
                         <div class="col-lg-12"  style="text-align: center">
-                            <button type="Submit" class="btn btn-warning">Adiciona</button><br>
+                        <small><input type="file" name="fotoURL"></small>
+                        </div>
+                        <div class="col-lg-12"  style="text-align: center">
+                            <br><button type="Submit" class="btn btn-warning">Adiciona</button><br>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-
         </div>
     </section><!-- End About Me Section -->
 

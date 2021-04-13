@@ -1,60 +1,29 @@
 <?php
 include_once("includes/body.inc.php");
-
-
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="select * from fotografos inner join albuns where fotografoId=albumFotografoId" ;
+top1();
+$id=intval($_GET['id']);
+$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
-    <head>
-        <title>BluPost</title>
-        <meta charset='utf-8'>
-        <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <script>
+        function confirmaEliminaAlbum(id) {
+            $.ajax({
+                url:"AJAX/AJAXGetNameAlbum.php",
+                type:"post",
+                data:{
+                    idAlbum:id
+                },
+                success:function (result){
+                    if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
 
-        <meta content='' name='descriptison'>
-        <meta content='' name='keywords'>
-        <!-- Font awesome -->
-        <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
+                        window.location="eliminaAlbum.php?id=" + id;
+                }
+            })
+        }
 
-        <!-- Favicons -->
-        <link href='assets/img/favico.png' rel='icon'>
-        <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
-
-        <!-- Google Fonts-->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
-
-
-        <!-- Vendor CSS Files -->
-        <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
-        <link href='assets/vendor/icofont/icofont.min.css' rel='stylesheet'>
-        <link href='assets/vendor/boxicons/css/boxicons.min.css' rel='stylesheet'>
-        <link href='assets/vendor/owl.carousel/assets/owl.carousel.min.css' rel='stylesheet'>
-        <link href='assets/vendor/venobox/venobox.css' rel='stylesheet'>
-
-        <!-- Template Main CSS File -->
-        <link href='assets/css/style.css' rel='stylesheet'>
-    </head>
-
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
-
-      <nav class="nav-menu d-none d-lg-block">
-          <ul>
-              <li><a href="index.php">Início</a></li>
-              <li><a href="post.php">Publicações</a></li>
-              <li><a href="post.php">Atividade</a></li>
-              <li><a>|</a> </li>
-              <li><a href="ana.php">Perfil</a> </li>
-
-          </ul>
-      </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
+    </script>
 
   <!-- ======= Hero Section ======= -->
 
@@ -73,7 +42,7 @@ $dados=mysqli_fetch_array($result);
           <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"> <i class="far fa-edit" style="color: #ffb459; text-align: right"></i></a>
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i></a>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
@@ -92,7 +61,9 @@ $dados=mysqli_fetch_array($result);
                 </div>
               </div>
               <div class="row mt-n4">
+
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+
                   <div class="count-box">
                     <i class="icofont-heart-alt" style="color:#FA5858;"></i>
                     <span data-toggle="counter-up">25</span>
@@ -103,7 +74,7 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                    <span data-toggle="counter-up">4</span>
+                    <span data-toggle="counter-up"><?php echo $dados['p']?></span>
                     <p><strong>Projetos</strong> concluidos</p>
                   </div>
                 </div>
@@ -145,8 +116,8 @@ $dados=mysqli_fetch_array($result);
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php?albumFotografoId="<?php echo $dados["albumFotografoId"]?>><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
-                <div class="col-10"><a><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a></div>
+                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
+
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
@@ -160,27 +131,32 @@ $dados=mysqli_fetch_array($result);
           <li data-filter=".filter-app">2018</li>
         </ul>
 
-        <div class="row portfolio-container">
-<!-- app=            card=2019               web=2020-->
-
           <?php
-          while ($dados=mysqli_fetch_array($result)) {
+          $sql="select * from albuns where albumFotografoId=$id order by albumData desc";
+          $resultAlbum=mysqli_query($con,$sql);
           ?>
-              <div class="col-lg-4 col-md-8 portfolio-item filter-web">
-                  <div class="portfolio-img"><img src="imagens/<?php echo $dados['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
-                  <div class="portfolio-info">
-                      <h4><?php echo $dados['albumNome']?></h4>
-                      <p><?php echo $dados['albumData']?></p>
-                      <a href="port2.html"><i class="bx bx-plus"></i></a>
-                      <input type="checkbox">
+          <div class="row portfolio-container">
+              <!-- app=            card=2019               web=2020-->
+
+
+              <?php
+              while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
+                  ?>
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                      <div class="portfolio-img"><img src="<?php echo $dadosAlbum['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
+                      <div class="portfolio-info">
+                          <h4><?php echo $dadosAlbum['albumNome']?></h4>
+                          <p><?php echo $dadosAlbum['albumData']?></p>
+                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
+                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
+                          <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
+                      </div>
                   </div>
-              </div>
+                  <?php
+              }
+              ?>
 
-         <?php
-          }
-           ?>
-
-        </div>
+          </div>
       </div>
     </section><!-- End My Portfolio Section -->
 

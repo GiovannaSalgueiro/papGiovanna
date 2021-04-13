@@ -1,10 +1,32 @@
 <?php
 include_once("includes/body.inc.php");
-top();
+top1();
 
+
+$sql="Select * , count(gostoFotoId) as n
+        from fotos inner join albuns on fotoAlbumId=albumId 
+        inner join fotografos on fotografoId=albumFotografoId 
+            left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
+$result = mysqli_query($con, $sql);
 ?>
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFoto.php",
+            type:"post",
+            data:{
+                idFoto:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a foto:'+result+"?"))
 
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+</script>
 <body>
+
 <main id="main">
 
     <!-- ======= Posts ======= -->
@@ -19,68 +41,32 @@ top();
         <div class="container">
 
             <table class="table table-hover table-striped">
+
                 <tr>
-                    <th>Id da Fotos </th>
-                    <th> Nome do álbum </th>
-                    <th> Capa </th>
+                    <th>Id</th>
+                    <th> Criador</th>
+                    <th> Fotografia</th>
+                    <th> Album da fotografia</th>
+                    <th> Nº de gostos</th>
+                    <th> Comentários</th>
                     <th colspan="3"> Opções </th>
                 </tr>
+                <?php
+                while ($dados = mysqli_fetch_array($result)) {
+                    ?>
                 <tr>
-                    <td>16</td>
-                    <td>Sessão fotográfica da primavera</td>
-                    <td><img src="img/1.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><a href="#" data-toggle="modal" data-target="#post1"><span class="btn-sm btn-success">Detalhes</span></a></td>
+                    <td><?php echo $dados['fotoId']?></td>
+                    <td><a href="criador.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
+                    <td><img src="../<?php echo $dados['fotoURL']?>" width="102"> </td>
+                    <td style="text-align: center"><a href="album.php?id=<?php echo $dados['albumId']?>" ><i class="fas fa-images" style="color: #ffb727"></i>&nbsp;<?php echo $dados['albumNome']?></td></a>
+                    <td><?php echo $dados['n']?>  gostos</td>
+                    <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
+                    <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
+                    <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
                 </tr>
-                <tr>
-                    <td>17</td>
-                    <td>Almoço Americano</td>
-                    <td><img src="assets/img/portfolio/portfolio-details-2.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>Sessão fotográfica da primavera</td>
-                    <td><img src="img/2.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td>Sessão fotográfica da primavera</td>
-                    <td><img src="img/3.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td>Pandora</td>
-                    <td><img src="img/a.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td>Pandora</td>
-                    <td><img src="img/c.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td>Sessão fotográfica da primavera</td>
-                    <td><img src="img/6.jpg" width="102"> </td>
-                    <td><span class="btn-sm btn-primary">Edita</span></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
-                    <td><span class="btn-sm btn-success">Detalhes</span></td>
-                </tr>
+                    <?php
+                }
+                ?>
             </table>
             <br>
         </div>
@@ -88,7 +74,40 @@ top();
     </section>
 </main><!-- End #main -->
 <!-- ======= Post ======= -->
+<div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <table class="table table-hover table-striped">
+                        <tr>
+                            <th colspan="12">Comentarios</th>
+                        </tr>
+                        <tr>
+                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
+                            <th><i class="fas fa-trash-alt"></i></th>
+                        </tr>
+                        <tr>
+                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
+                            <th><i class="fas fa-trash-alt"></i></th>
+                        </tr>
+                        <tr>
+                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
+                            <th><i class="fas fa-trash-alt"></i></th>
+                        </tr>
+                        <tr>
+                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
+                            <th><i class="fas fa-trash-alt"></i></th>
+                        </tr>
 
+                    </table>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="post1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

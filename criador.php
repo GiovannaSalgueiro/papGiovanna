@@ -1,23 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
-top();
+top1();
+$id=intval($_GET['id']);
+$sql="select * from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=".$id;
 
+$result=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($result);
 ?>
-<head>
-    <title>BluPost</title>
 
-    <script>
-        $(document).ready(function(){
-            $("#abrir").toggle(1000, function(){
-            });
-            $("#regist").click(function(){
-
-                $("#abrir").toggle(1000, function(){
-                });
-            });
-        });
-    </script>
-</head>
 <body>
 
 
@@ -33,27 +23,25 @@ top();
             </div>
 
             <div class="row">
-                <img src="assets/img/me.jpg" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+                <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-                        <i class="far fa-star" style="color: #ffb459; text-align: right"></i>
+                        <p id="favorito" onclick="favorito()"><i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i></p>
+                        <small id="favoritar">seguir</small>
                         <div class="row">
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> Ana Silva</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> 918 632 176 </li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> Maceira, Leiria</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Idade:</strong> 18</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong><?php echo $dados['fotografoNome']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> <?php echo $dados['fotografoTelemovel']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> <?php echo $dados['fotografoCidade']?></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-
-                                    <li><i class="icofont-rounded-right"></i> <strong>Grau:</strong> Amador</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> anaSilva@gmail.com</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponível</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong><?php echo $dados['fotografoFreelancer']?></li>
                                 </ul>
                             </div>
                         </div>
@@ -92,10 +80,7 @@ top();
                         </div>
                     </div><!-- End .content-->
                     <br>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/realdonaldtrump/?hl=pt" class="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fas fa-globe"></i></a>
-                    </div>
+
                 </div>
             </div>
 
@@ -120,32 +105,29 @@ top();
                 <li data-filter=".filter-app">2018</li>
             </ul>
 
+            <?php
+            $sql="select * from albuns where albumFotografoId=$id order by albumData desc";
+            $resultAlbuns = mysqli_query($con, $sql);
+            ?>
             <div class="row portfolio-container">
                 <!-- app=            card=2019               web=2020-->
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-img"><img src="img/principal1.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Sessão de fografia dos bébes de Março</h4>
-                        <p>22.11.2020</p>
-                        <a href="port1.html"><i class="bx bx-plus"></i></a>
+                <?php
+                while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="<?php echo $dadosAlbuns['albumCapaURL']?>"  class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4><?php echo $dadosAlbuns['albumNome']?></h4>
+                            <p><?php echo $dadosAlbuns['albumData']?></p>
+                            <a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><i class="bx bx-plus"></i></a>
+
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-                    <div class="portfolio-info">
-                        <h4>Almoço Americano</h4>
-                        <p>15.10.2019</p>
-                        <a href="port2.html"><i class="bx bx-plus"></i></a>
-                    </div>
-                </div>
+                    <?php
 
-
-
-
-
-
-            </div>
+                }
+                ?>
 
         </div>
     </section><!-- End My Portfolio Section -->
@@ -265,20 +247,6 @@ top();
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-
-
-    <script>
-        function gosto() {
-            document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-            document.getElementById("gostar").innerHTML = "23 gostos";
-        }
-    </script>
-    <script>
-        function gosto1() {
-            document.getElementById("gosto1").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-            document.getElementById("gostar1").innerHTML = "11 gostos";
-        }
-    </script>
 
 
 </body>
