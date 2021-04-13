@@ -20,9 +20,9 @@ $dados=mysqli_fetch_array($result);
           <br>
           <div class="content pl-lg-4 d-flex flex-column justify-content-center">
 
-                    <i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i>
+
               <br>
-              <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
+              <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
 
           </div>
       <br>
@@ -40,7 +40,7 @@ $dados=mysqli_fetch_array($result);
 
                     </a>
                     <br>
-                    <input type="checkbox">
+                    <a href="eliminaFoto.php?id=<?php echo $id?>"><h6 style="text-align: center"><i class="fas fa-trash-alt" style="color: #ffb459;"></i><small> Eliminar foto</small></h6></a>
                 </div>
             <?php
             }
