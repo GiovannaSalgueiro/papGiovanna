@@ -1,6 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
+
 $id=intval($_GET['id']);
 $sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id" ;
 
@@ -21,7 +22,7 @@ $dados=mysqli_fetch_array($result);
 
                     <i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i>
               <br>
-              <a href="adicionaFoto.php?id=<?php echo $dados["albumId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
+              <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a>
 
           </div>
       <br>

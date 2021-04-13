@@ -1,11 +1,10 @@
 <?php
 include_once ("includes/body.inc.php");
 
-$id=intval($_POST['id']);
 $nome=addslashes($_POST['fotoNome']);
 $imagem=$_FILES['fotoURL']['name'];
 $novoNome="imagens/".$imagem;
-$album=addslashes($_POST['fotoAlbumId']);
+$album=addslashes($_GET['id']);
 
 
 copy($_FILES['fotoURL']['tmp_name'],$novoNome);

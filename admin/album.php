@@ -19,7 +19,7 @@ $dados = mysqli_fetch_array($result);
 
         <div class="container">
             <br>
-            <a href="ana.php#portfolio">Voltar</a>
+            <a href="album.php?id=<?php echo $dados["albumId"]?>">Voltar</a>
             <br>
             <br>
             <div class="section-title">

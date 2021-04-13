@@ -61,7 +61,6 @@ $dados=mysqli_fetch_array($result);
                 </div>
             </form>
         </div>
-
         </div>
     </section><!-- End About Me Section -->
 

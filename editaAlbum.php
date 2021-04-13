@@ -21,7 +21,7 @@ $dados=mysqli_fetch_array($result);
             <div class="row">
                 <img src="<?php echo $dados['albumCapaURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
             <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                <small><input type="file" name="capaAlbum"></small>
+                <small><input type="file" name="albumCapaURL" src="../<?php echo $dados['albumCapaURL']?>"></small>
                 <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                     <div class="row">
                         <div class="col-lg-4">
@@ -34,8 +34,8 @@ $dados=mysqli_fetch_array($result);
                         <div class="col-lg-8">
                             <br>
                             <ul>
-                                <small><input type="text" name="nomeAlbum" value="<?php echo $dados['albumNome']?>"></small>
-                                <p><small><input type="text" name="dataAlbum" value="<?php echo $dados['albumData']?>"></small>
+                                <small><input type="text" name="albumNome" value="<?php echo $dados['albumNome']?>"></small>
+                                <p><small><input type="text" name="albumData" value="<?php echo $dados['albumData']?>"></small>
                             </ul>
                         </div>
 

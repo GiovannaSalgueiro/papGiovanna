@@ -1,10 +1,10 @@
 <?php
-include_once ("includes/body.inc.php");
+include_once("includes/body.inc.php");
 
 $id=intval($_POST['id']);
-$nome=addslashes($_POST['nomeAlbum']);
-$data=addslashes($_POST['dataAlbum']);
-$id=intval($_POST['id']);
+$nome=addslashes($_POST['albumNome']);
+$data=addslashes($_POST['albumData']);
+
 $imagem=$_FILES['albumCapaURL']['name'];
 $novoNome="imagens/".$imagem;
 
