@@ -37,7 +37,9 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <a href="#" data-toggle="modal" data-target="#port1-1">
                         <div class="portfolio-img"><img src="<?php echo $dadosAlbum['fotoURL']; ?>" class="img-fluid" alt=""></div>
+
                     </a>
+                    <br>
                     <input type="checkbox">
                 </div>
             <?php
