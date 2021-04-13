@@ -8,7 +8,22 @@ $sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFoto.php",
+            type:"post",
+            data:{
+                idFoto:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a foto:'+result+"?"))
 
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+</script>
 
   <!-- ======= Hero Section ======= -->
 
@@ -31,16 +46,16 @@ $dados=mysqli_fetch_array($result);
         <div class="row portfolio-container">
             <?php
             $sql="select * from fotos where fotoAlbumId=$id";
-            $resultAlbum=mysqli_query($con,$sql);
-            while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
+            $resultFoto=mysqli_query($con,$sql);
+            while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
                 ?>
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <a href="#" data-toggle="modal" data-target="#port1-1">
-                        <div class="portfolio-img"><img src="<?php echo $dadosAlbum['fotoURL']; ?>" class="img-fluid" alt=""></div>
+                        <div class="portfolio-img"><img src="<?php echo $dadosFoto['fotoURL']; ?>" class="img-fluid" alt=""></div>
 
                     </a>
                     <br>
-                    <a href="eliminaFoto.php?id=<?php echo $id?>"><h6 style="text-align: center"><i class="fas fa-trash-alt" style="color: #ffb459;"></i><small> Eliminar foto</small></h6></a>
+                    <a href="#" onclick="confirmaElimina(<?php echo $dadosFoto['fotoId']?>);"><h6 style="text-align: center"><i class="fas fa-trash-alt" style="color: #ffb459;"></i><small> Eliminar foto</small></h6></a>
                 </div>
             <?php
             }
