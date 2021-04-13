@@ -3,15 +3,14 @@ include_once ("includes/body.inc.php");
 
 $nome=addslashes($_POST['fotoNome']);
 $imagem=$_FILES['fotoURL']['name'];
-$novoNome="imagens/".$imagem;
 $album=addslashes($_GET['id']);
 
-
+$novoNome="imagens/".$imagem;
 copy($_FILES['fotoURL']['tmp_name'],$novoNome);
 
-$sql="insert into fotos(fotoNome,fotoURL,fotoAlbumId) values('".$nome."','imagens/".$imagem."','".$album."',);";
+echo $sql="insert into fotos(fotoNome,fotoURL,fotoAlbumId) values('".$nome."','".$novoNome."','".$album."');";
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 mysqli_query($con,$sql);
-header("location:album.php");
+header("location: album.php?id=$album");
 ?>

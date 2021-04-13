@@ -3,7 +3,7 @@ include_once ("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['id']);
-$sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id";
+$sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=".$id;
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
@@ -24,7 +24,7 @@ $dados=mysqli_fetch_array($result);
 
 
 
-            <form action="confirmaNovaFoto.php" method="post" enctype="multipart/form-data">
+            <form action="confirmaNovaFoto.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $id?>">
 
                 <img src="<?php echo $dados['albumCapaURL']?>">
