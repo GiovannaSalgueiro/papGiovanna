@@ -1,9 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
+$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId where perfilEstado='ativo'";
 $result = mysqli_query($con, $sql);
-$resultCriador = mysqli_query($con, $sql);
 ?>
 <script>
     function confirmaEliminaCriador(id) {
@@ -14,9 +13,23 @@ $resultCriador = mysqli_query($con, $sql);
                 idFotografo:id
             },
             success:function (result){
-                if(confirm('Confirma que deseja eliminar o/a fotografo:'+result+"?"))
+                if(confirm('Confirma que deseja eliminar o/a fotografo:' +result+"?"))
 
                     window.location="eliminaFotografo.php?id=" + id;
+            }
+        })
+    }
+    function confirmaEliminaPerfil(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNamePerfil.php",
+            type:"post",
+            data:{
+                idPerfil:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar o perfil:' +result+"?"))
+
+                    window.location="eliminaPerfil.php?id=" + id;
             }
         })
     }
@@ -76,32 +89,27 @@ $resultCriador = mysqli_query($con, $sql);
             <span>Aceitar/rejeitar</span>
             <h2>Aceitar/rejeitar</h2>
         </div>
-
+        <?php
+        $sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId where perfilEstado='inativo'";
+        $resultPerfil=mysqli_query($con, $sql);
+        ?>
         <table class="table table-hover table-striped">
 
             <tr>
-                <th> Nome</th>
-                <th> Telemovel </th>
-                <th> Email </th>
-                <th> Cidade </th>
-                <th> Freelance </th>
-                <th> Capa </th>
+                <th> Id</th>
+                <th> Nome </th>
                 <th colspan="3"> Opções </th>
             </tr>
             <?php
-            while ($dadosCriador = mysqli_fetch_array($resultCriador)) {
-                ?>
+            while ($dadosPerfil=mysqli_fetch_array($resultPerfil)) {
+            ?>
             <tr>
-                <td><?php echo $dadosCriador['fotografoNome']?></td>
-                <td><?php echo $dadosCriador['fotografoTelemovel']?></td>
-                <td><?php echo $dadosCriador['fotografoCidade']?></td>
-                <td><?php echo $dadosCriador['fotografoEmail']?></td>
-                <td><?php echo $dadosCriador['fotografoFreelancer']?></td>
-                <td><img src="../<?php echo $dadosCriador['fotografoFotoURL']?>" width="102"></td>
-                <td><i class="fas fa-check-circle" style="color: green"></i></i></td>
-                <td><i class="fas fa-times-circle" style="color: red"></i></td>
+                <td><?php echo $dadosPerfil['perfilId']?></td>
+                <td><?php echo $dadosPerfil['perfilNome']?></td>
+                <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><i class="fas fa-check-circle" style="color: green"></i></i></a></td>
+                <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['perfilId']?>);"><i class="fas fa-times-circle" style="color: red"></i></a></td>
             </tr>
-                <?php
+            <?php
             }
             ?>
 
