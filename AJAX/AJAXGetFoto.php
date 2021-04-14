@@ -1,5 +1,7 @@
 <?php
 include_once ("../includes/body.inc.php");
+
+
 $id=intval($_POST['idFoto']);
 $sql="Select * ,count(*) as n
         from fotos inner join gostos on fotoId=gostoFotoId
@@ -10,6 +12,7 @@ $sql="Select * ,count(*) as n
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
+
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">

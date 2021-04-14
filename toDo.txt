@@ -1,0 +1,9 @@
+/*
+ criar um JS para ver se  gosta/não gosta via AJAX:
+
+ No AJAX Faz: tira/coloca o gosto com o id da foto e da sessão
+
+ no result traz a classe correspondente.
+
+
+*/
