@@ -32,11 +32,26 @@ $resultAlbuns = mysqli_query($con, $sql);
             type:"post",
             data:{
                 idAlbum:id
+
             },
             success:function (result){
                 if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
 
                     window.location="eliminaAlbum.php?id=" + id;
+            }
+        })
+    }
+    function confirmaEliminaCom(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetComentario.php",
+            type:"post",
+            data:{
+                idComentarioFoto:id
+            },
+            success:function (result){
+                if(confirm('Deseja eliminar o comentario ?'))
+                    window.location="eliminaComentario.php?id=" + id;
+
             }
         })
     }
@@ -154,8 +169,8 @@ $resultAlbuns = mysqli_query($con, $sql);
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
                         ?>
                         <tr>
-                            <th><small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span> <?php echo $dadosTexto['comentarioTexto']?></small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
+                            <th><small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small></th>
+                            <th><a href="#" onclick="confirmaEliminaCom(<?php echo $dados['comentarioId']?>);"><i class="fas fa-trash-alt"></i></a></th>
                         </tr>
                             <?php
                         }

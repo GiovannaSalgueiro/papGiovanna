@@ -42,7 +42,7 @@ $dados=mysqli_fetch_array($result);
           <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i></a>
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
               <div class="row">
                 <div class="col-lg-6">
                   <br>
@@ -116,7 +116,7 @@ $dados=mysqli_fetch_array($result);
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i></a></div>
+                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
 
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
