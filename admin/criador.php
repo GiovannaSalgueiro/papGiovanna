@@ -8,7 +8,7 @@ $resultCriador = mysqli_query($con, $sql);
 <script>
     function confirmaEliminaCriador(id) {
         $.ajax({
-            url:"AJAX/AJAXGetNameFotografp.php",
+            url:"AJAX/AJAXGetNameFotografo.php",
             type:"post",
             data:{
                 idFotografo:id
