@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] sessoes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1oKeI5sQLADVNb2hq1nZz28UURR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AJAX" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="" />
+      <created>1613039626744</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613039626744</updated>
+      <workItem from="1613039627885" duration="494000" />
+      <workItem from="1613091720117" duration="37000" />
+      <workItem from="1613125884901" duration="25000" />
+      <workItem from="1613442086570" duration="33000" />
+      <workItem from="1613471120816" duration="340000" />
+      <workItem from="1613525847509" duration="29000" />
+      <workItem from="1613609011858" duration="85000" />
+      <workItem from="1613664677719" duration="5208000" />
+      <workItem from="1613695809269" duration="20000" />
+      <workItem from="1613696539369" duration="126000" />
+      <workItem from="1614041537621" duration="330000" />
+      <workItem from="1614130479907" duration="29000" />
+      <workItem from="1614161772576" duration="99000" />
+      <workItem from="1614247450086" duration="14000" />
+      <workItem from="1614302812767" duration="15000" />
+      <workItem from="1614849881360" duration="1183000" />
+      <workItem from="1614852379370" duration="32000" />
+      <workItem from="1614873495098" duration="2412000" />
+      <workItem from="1615167890537" duration="50000" />
+      <workItem from="1615366356990" duration="48000" />
+      <workItem from="1615765816997" duration="350000" />
+      <workItem from="1615819996774" duration="614000" />
+      <workItem from="1615975169111" duration="2014000" />
+      <workItem from="1616068767508" duration="1188000" />
+      <workItem from="1616145916905" duration="33000" />
+      <workItem from="1616151911287" duration="743000" />
+      <workItem from="1616376527763" duration="18000" />
+      <workItem from="1616377267347" duration="58000" />
+      <workItem from="1616586651044" duration="661000" />
+      <workItem from="1616683667332" duration="19000" />
+      <workItem from="1617633762362" duration="440000" />
+      <workItem from="1617751355725" duration="107000" />
+      <workItem from="1617751613675" duration="38000" />
+      <workItem from="1618235038170" duration="1635000" />
+      <workItem from="1618238466400" duration="623000" />
+    </task>
+    <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
+      <created>1613668497028</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613668497028</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Administração">
+      <created>1613668861631</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613668861631</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Administração inicial">
+      <created>1613669277572</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613669277572</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[leandro] Includes">
+      <created>1614876128152</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614876128152</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[leandro] Base de dados versão 1.0">
+      <created>1614876163628</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614876163628</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[leandro] Modais por AJAX.">
+      <created>1615977169542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615977169543</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[leandro] AJAXGetFoto.php">
+      <created>1616069335968</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616069335968</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[leandro] base de dados versão 2.0">
+      <created>1616586706646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616586706646</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[leandro] versão 2.5 da base de dados">
+      <created>1617634148091</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617634148091</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[leandro] sessoes">
+      <created>1618236576800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1618236576800</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Novo layout da página principal. Pequenos ajustes ao portfólio." />
+    <MESSAGE value="Administração" />
+    <MESSAGE value="Administração inicial" />
+    <MESSAGE value="[leandro] Includes" />
+    <MESSAGE value="[leandro] Base de dados versão 1.0" />
+    <MESSAGE value="[leandro] Modais por AJAX." />
+    <MESSAGE value="[leandro] AJAXGetFoto.php" />
+    <MESSAGE value="[leandro] base de dados versão 2.0" />
+    <MESSAGE value="[leandro] versão 2.5 da base de dados" />
+    <MESSAGE value="[leandro] sessoes" />
+    <option name="LAST_COMMIT_MESSAGE" value="[leandro] sessoes" />
+  </component>
+</project>
