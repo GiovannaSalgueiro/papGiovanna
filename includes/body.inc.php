@@ -84,7 +84,7 @@ function top(){
             <?php
                 }else{
                     ?>
-                     <li><a href="#" data-toggle="modal" data-target="#login"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="#" data-toggle="modal" data-target="#conta"><?php echo $_SESSION['nome']?></a> </li>
                      <li><a href="#" data-toggle="modal" data-target="#login">Logout</a> </li>
                     <?php
                 }
@@ -267,6 +267,39 @@ function bottom(){
                         </div>
                         <h8>Ainda não tem conta?</h8>
                         <a href="#" onclick="fecha()" data-toggle="modal" data-target="#regista"><button type="submit" class="btn btn-outline-warning">Registar</button></a>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-warning">Submeter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Login -->
+
+    <!-- ======= Editar conta======= -->
+    <div class="modal fade" id="conta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputEmail">Email:</label>
+                            <input type="email" class="form-control" id="InputEmail1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Palavra-passe:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.              </small>
+
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
