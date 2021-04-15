@@ -138,6 +138,8 @@ function top1(){
 
         <!-- Template Main CSS File -->
         <link href='assets/css/style.css' rel='stylesheet'>
+
+
     </head>
     <body>
 <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
@@ -414,7 +416,7 @@ function bottom(){
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="js/common.js"></script>
 
     </body>
 

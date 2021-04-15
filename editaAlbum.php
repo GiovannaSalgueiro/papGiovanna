@@ -21,13 +21,13 @@ $dados=mysqli_fetch_array($result);
             <div class="row">
                 <img src="<?php echo $dados['albumCapaURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
             <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                <small><input type="file" name="albumCapaURL" src="../<?php echo $dados['albumCapaURL']?>"></small>
+
                 <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                     <div class="row">
                         <div class="col-lg-4">
                             <br>
                             <ul>
-                                <li> <strong>Nome do album:</strong></li>
+                                <li> <strong>Nome do album:</strong></li><br>
                                 <li> <strong>Data:</strong></li>
                             </ul>
                         </div>
@@ -35,11 +35,15 @@ $dados=mysqli_fetch_array($result);
                             <br>
                             <ul>
                                 <small><input type="text" name="albumNome" value="<?php echo $dados['albumNome']?>"></small>
-                                <p><small><input type="text" name="albumData" value="<?php echo $dados['albumData']?>"></small>
-                            </ul>
-                        </div>
 
-                        <div class="col-lg-12"  style="text-align: center">
+                            </ul>
+                            <ul>
+                                <small><input type="text" name="albumData" value="<?php echo $dados['albumData']?>"></small>
+                            </ul>
+                        </div><div class="col-lg-12"  style="text-align: center">
+                        <small><input type="file" name="albumCapaURL" src="../<?php echo $dados['albumCapaURL']?>"></small>
+                        </div>
+                        <div class="col-lg-12"  style="text-align: center"><br><br>
                             <button type="Submit" class="btn btn-warning">Edita</button><br>
                         </div>
 
@@ -48,6 +52,6 @@ $dados=mysqli_fetch_array($result);
             </div>
             </div>
         </form>
-        <br>
-    </div>
+
+    </div><br><hr>
 </section>

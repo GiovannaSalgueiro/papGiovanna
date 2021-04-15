@@ -13,5 +13,5 @@ $sql="insert into albuns(albumNome,albumData,albumFotografoId,albumCapaURL) valu
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 mysqli_query($con,$sql);
-header("location: perfil.php");
+header("location: perfil.php?id=$id");
 ?>

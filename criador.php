@@ -2,7 +2,8 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select * from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=".$id;
+$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId
+        inner join favoritos on fotografoId=favoritoFotografoId where fotografoId=".$id;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -26,8 +27,25 @@ $dados=mysqli_fetch_array($result);
                 <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-                        <p id="favorito" onclick="favorito()"><i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i></p>
-                        <small id="favoritar">seguir</small>
+
+                        <span id="favorito" onclick="favorito(<?php echo $id?>)" align="left">
+                            <?php
+                            // verifica se o utilizador favorita o criador
+                            $sql="select * from favoritos where favoritoPerfilId=".$_SESSION['id']." and favoritoFotografoId=".$id;
+                            mysqli_query($con,$sql);
+                            if(mysqli_affected_rows($con)>0){
+                                ?>
+                                <i class="fas fa-star fa-2x" style="color: #ffb459"></i>
+                                <?php
+                            }else{
+                                ?>
+                                <i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+                                <?php
+                            }
+                            ?>
+
+                        </span>
+                         <small id="favoritar">seguir</small>
                         <div class="row">
                             <div class="col-lg-6">
                                 <br>
@@ -57,7 +75,7 @@ $dados=mysqli_fetch_array($result);
                             <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                 <div class="count-box">
                                     <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                                    <span data-toggle="counter-up">4</span>
+                                    <span data-toggle="counter-up"><?php echo $dados['p']?></span>
                                     <p><strong>Projetos</strong> concluidos</p>
                                 </div>
                             </div>

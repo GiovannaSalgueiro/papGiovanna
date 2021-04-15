@@ -27,12 +27,49 @@ function gosto(id) {
     */
 
 }
+function favorito(id) {
+    $.ajax({
+        url:"AJAX/AJAXPutFavoritoFoto.php",
+        type:"post",
+        data:{
+            idFotografo:id
+        },
+        success:function (result){
+            $.ajax({
+                url:"AJAX/AJAXGetFavoritoFoto.php",
+                type:"post",
+                data:{
+                    idFotografo:id
+                },
+                success:function (result){
+                    $('#favorito').html(result);
+
+                }
+            });
+
+        }
+    });
+}
+function comentario(id) {
+    $.ajax({
+        url:"AJAX/AJAXPutComentarioFoto.php",
+        type:"post",
+        data:{
+            idFoto:id
+        },
+        success:function (result){
+            ;
+
+        }
+    });
+
+
+}
 
 
 function mostraFoto(id){
-
     $.ajax({
-        url:"AJAX/AJAXGetFoto.php",
+       url:"AJAX/AJAXGetFoto.php",
         type:"post",
         data:{
             idFoto:id
@@ -46,17 +83,19 @@ function mostraFoto(id){
 
 }
 
+
 function fillTableFotografos(txt = '') {
     $.ajax({
         url: "AJAX/AJAXFillFotografo.php",
-        type: "post",
-        data: {
+       type: "post",
+       data: {
             txt: txt
-        },
-        success: function (result) {
-            $('#tableContent').html(result);
-        }
-    })
+          },
+       success: function (result) {
+            //        $('#tableContent').html(result);
+         }
+      });
+
 }
 
 

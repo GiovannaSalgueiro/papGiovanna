@@ -3,7 +3,8 @@ include_once("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['id']);
-$sql="select * from fotos inner join albuns on fotoAlbumId=albumId where fotoId=$id" ;
+$sql="select * from fotos inner join albuns on fotoAlbumId=albumId
+        inner join fotografos on albumFotografoId=fotografoId where fotoId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -32,10 +33,14 @@ $dados=mysqli_fetch_array($result);
     <!-- ======= My Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
+
+
           <br>
+          <small><a href="perfil.php">Voltar</a></small>
+          <br>
+
+
           <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-
-
               <br>
               <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
 

@@ -1,7 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql = "select *, count(gostoFotoId) as n from fotos inner join albuns on fotoAlbumId=albumId left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
+$sql = "select *, count(gostoFotoId) as n from fotos inner join albuns on fotoAlbumId=albumId 
+        left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -26,31 +27,23 @@ $result = mysqli_query($con, $sql);
             <div class="row">
                 <?php
                 while ($dados = mysqli_fetch_array($result)) {
-                ?>
-                <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="post-box">
-                        <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
-                            <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
-                        </a>
-                        <div class="portfolio-info">
-                            <h4 class="title"><?php echo $dados['n']?> gostos</h4>
+                    ?>
+                    <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="post-box">
 
-                            <a href="<?php echo $dados['fotoURL']?>" data-gall="portfolioGallery" class="venobox preview-link">
-                                <svg color="#4F4F4F" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg></a>
+                            <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
+                                <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
+                            </a>
+                            <h7 class="title"><?php echo $dados['n']?> gosto</h7>
 
                         </div>
                     </div>
-                </div>
                     <?php
+
                 }
                 ?>
+
             </div>
-
-
         </div>
     </section>
 </main><!-- End #main -->
@@ -115,12 +108,7 @@ $result = mysqli_query($con, $sql);
     }
 
 </script>
-<script>
-    function gosto() {
-        document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
-        document.getElementById("gostar").innerHTML = "23 gostos";
-    }
-</script>>
+
 
 </body>
 <?php

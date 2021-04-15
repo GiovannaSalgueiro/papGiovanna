@@ -53,7 +53,8 @@ $dados = mysqli_fetch_array($result);
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
                         ?>
                         <p class="text-justify p-2 bg-light">
-                            <small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small>
+                            <small><span class="text-primary ">
+                            <strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small>
                         </p>
                             <?php
                         }
@@ -84,7 +85,8 @@ $dados = mysqli_fetch_array($result);
 
 
                     <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">
-                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..."></small>&nbsp;<button><i class="fas fa-comment"></i></button></div>
+                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 80%"></small>&nbsp;
+                            <button><i class="fas fa-comment"></i></button></div>
                     </form>
                 </div>
             </div>

@@ -63,7 +63,7 @@ $dados=mysqli_fetch_array($result);
                     </div>
                 </div>
             </form>
-        </div>
+        </div><br><hr>
 
         </div>
     </section><!-- End About Me Section -->

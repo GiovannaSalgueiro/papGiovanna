@@ -98,6 +98,10 @@ $result = mysqli_query($con, $sql);
             <tr>
                 <th> Id</th>
                 <th> Nome </th>
+                <th> Estado </th>
+                <th> Email </th>
+                <th> Palavra Passe </th>
+                <th> Criador </th>
                 <th colspan="3"> Opções </th>
             </tr>
             <?php
@@ -106,8 +110,12 @@ $result = mysqli_query($con, $sql);
             <tr>
                 <td><?php echo $dadosPerfil['perfilId']?></td>
                 <td><?php echo $dadosPerfil['perfilNome']?></td>
-                <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><i class="fas fa-check-circle" style="color: green"></i></i></a></td>
-                <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['perfilId']?>);"><i class="fas fa-times-circle" style="color: red"></i></a></td>
+                <td><?php echo $dadosPerfil['perfilEstado']?></td>
+                <td>JSHDIASHDIJHASi</td>
+                <td>************</td>
+                <td>Sim</td>
+                <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
+                <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['perfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
             </tr>
             <?php
             }
