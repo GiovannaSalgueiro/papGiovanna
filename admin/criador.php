@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId where perfilEstado='ativo'";
+$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
 $result = mysqli_query($con, $sql);
 ?>
 <script>
@@ -86,11 +86,11 @@ $result = mysqli_query($con, $sql);
 
     <div class="container">
         <div class="section-title">
-            <span>Aceitar/rejeitar</span>
-            <h2>Aceitar/rejeitar</h2>
+            <span>Contas</span>
+            <h2>Contas</h2>
         </div>
         <?php
-        $sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId where perfilEstado='inativo'";
+        $sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
         $resultPerfil=mysqli_query($con, $sql);
         ?>
         <table class="table table-hover table-striped">
