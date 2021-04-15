@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] sessoes">
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXGetGostoFoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXPutLikeFoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v3.0.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-    </list>
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] Base de dados versão 3.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +104,7 @@
       <workItem from="1618238466400" duration="623000" />
       <workItem from="1618395534916" duration="1754000" />
       <workItem from="1618478329082" duration="34000" />
-      <workItem from="1618478965905" duration="3107000" />
+      <workItem from="1618478965905" duration="3247000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -197,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618396679380</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[leandro] AJAX gostos">
+      <created>1618483073815</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1618483073815</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[leandro] Base de dados versão 3.0">
+      <created>1618483172226</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618483172226</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +235,8 @@
     <MESSAGE value="[leandro] versão 2.5 da base de dados" />
     <MESSAGE value="idea" />
     <MESSAGE value="[leandro] sessoes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[leandro] sessoes" />
+    <MESSAGE value="[leandro] AJAX gostos" />
+    <MESSAGE value="[leandro] Base de dados versão 3.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="[leandro] Base de dados versão 3.0" />
   </component>
 </project>
