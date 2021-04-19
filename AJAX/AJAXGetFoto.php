@@ -18,7 +18,7 @@ $dados = mysqli_fetch_array($result);
         <div class="modal-header">
             <h1 id="teste"></h1>
 
-            <a href="perfil.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome'].$id?></h7></a>
+            <a href="criador.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -32,7 +32,7 @@ $dados = mysqli_fetch_array($result);
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="album.php?id=<?php echo $dados['albumId']?>"><h8><?php echo $dados['albumNome']?></h8></a>
+                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h8><?php echo $dados['albumNome']?></h8></a>
                     </div>
 
                 </div>
@@ -54,7 +54,7 @@ $dados = mysqli_fetch_array($result);
                         ?>
                         <p class="text-justify p-2 bg-light">
                             <small><span class="text-primary ">
-                            <strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small>
+                            <strong><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp;<?php echo $dadosTexto['comentarioTexto']?></small>
                         </p>
                             <?php
                         }

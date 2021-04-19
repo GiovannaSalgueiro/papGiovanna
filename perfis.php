@@ -2,7 +2,9 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
+$sql="select *, count(albumFotografoId) as p from fotografos inner join favoritos on fotografoId=favoritoFotografoId
+    inner join albuns on fotografoId=albumFotografoId
+         where fotografoId=".$id;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -34,16 +36,31 @@ $dados=mysqli_fetch_array($result);
       <div class="container">
 
         <div class="section-title">
-          <span>Perfil</span>
-          <h2>Perfil</h2>
+          <span>Sobre mim</span>
+          <h2>Sobre mim</h2>
         </div>
 
         <div class="row">
           <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
-              <div class="row">
+                <span id="favorito" onclick="favorito(<?php echo $id?>)" align="left">
+                            <?php
+                            // verifica se o utilizador favorita o criador
+                            $sql="select * from favoritos where favoritoPerfilId=".$_SESSION['id']." and favoritoFotografoId=".$id;
+                            mysqli_query($con,$sql);
+                            if(mysqli_affected_rows($con)>0){
+                                ?>
+                                <i class="fas fa-star fa-2x" style="color: #ffb459"></i>
+                                <?php
+                            }else{
+                                ?>
+                                <i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+                                <?php
+                            }
+                            ?>
+
+                        </span><div class="row">
                 <div class="col-lg-6">
                   <br>
                   <ul>
@@ -93,7 +110,7 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-star" style="color: #ffb459;"></i>
-                    <span data-toggle="counter-up">4</span>
+                    <span data-toggle="counter-up">5</span>
                     <p><strong>Recomendado</strong> Pessoas que gostaram do meu trabalho e recomendam.</p>
                   </div>
                 </div>
@@ -118,11 +135,7 @@ $dados=mysqli_fetch_array($result);
 
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-            <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
 
-            </div>
-          <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
 
           <br>
@@ -150,10 +163,8 @@ $dados=mysqli_fetch_array($result);
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
-                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
-                          <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
-                      </div>
+                          <a href="albuns.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
+                         </div>
                   </div>
                   <?php
               }

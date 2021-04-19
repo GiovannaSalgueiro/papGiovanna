@@ -17,7 +17,7 @@ $result=mysqli_query($con,$sql);
            <div class="section-title">
                <span>Top Posts</span>
                <h2>Top Posts</h2>
-               <p>Imagens mais populares da semana</p>
+               <p>Imagens mais populares</p>
            </div>
 
 
@@ -93,7 +93,7 @@ $result=mysqli_query($con,$sql);
                         <div class="portfolio-info">
                             <h4><?php echo $dadosAlbum['albumNome']?></h4>
                             <p><?php echo $dadosAlbum['albumData']?></p>
-                            <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="fas fa-plus" style="color: #ffb727"></i></a>
+                            <a href="albuns.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
 
