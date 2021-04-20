@@ -13,12 +13,12 @@ $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
 
-<div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal-dialog modal-lg" style="min-height: 500px">
+    <div class="modal-content" style="min-height: 500px">
         <div class="modal-header">
             <h1 id="teste"></h1>
 
-            <a href="criador.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
+            <a href="perfis.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -32,7 +32,7 @@ $dados = mysqli_fetch_array($result);
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h8><?php echo $dados['albumNome']?></h8></a>
+                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h6><?php echo $dados['albumNome']?></h6></a>
                     </div>
 
                 </div>
@@ -40,7 +40,7 @@ $dados = mysqli_fetch_array($result);
 
                         <div class="col-8">
 
-                            <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
+                            <img width="500" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
 
                         </div>
                     <?php
@@ -48,7 +48,7 @@ $dados = mysqli_fetch_array($result);
             inner join fotos on fotoId=comentarioFotoId where fotoId=$id";
                     $resultTexto = mysqli_query($con, $sql);
                     ?>
-                    <div class="col-4" style="height: 200px;overflow-y: scroll;" id="comentarios"> <!-- alterar por PHP a altura da div (imagem) -->
+                    <div class="col-4" style="overflow-y: scroll;" id="comentarios"> <!-- alterar por PHP a altura da div (imagem) -->
                         <?php
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
                         ?>
@@ -61,6 +61,7 @@ $dados = mysqli_fetch_array($result);
                         ?>
                     </div>
                 </div>
+
                 <div class="container text-left">
                     <div id="gostos">
                         <span id="gosto" onclick="gosto(<?php echo $id?>)" align="left">
@@ -85,7 +86,7 @@ $dados = mysqli_fetch_array($result);
 
 
                     <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">
-                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 80%"></small>&nbsp;
+                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
                             <button><i class="fas fa-comment"></i></button></div>
                     </form>
                 </div>

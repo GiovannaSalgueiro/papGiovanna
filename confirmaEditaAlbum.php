@@ -17,5 +17,5 @@ if($imagem!=''){
 $sql.=" where albumId=".$id;
 
 mysqli_query($con,$sql);
-header("location:perfil.php?id=1");
+header("location:perfil.php?id=$id");
 ?>

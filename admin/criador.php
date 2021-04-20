@@ -113,7 +113,7 @@ $result = mysqli_query($con, $sql);
                 <td><?php echo $dadosPerfil['perfilEstado']?></td>
                 <td>JSHDIASHDIJHASi</td>
                 <td>************</td>
-                <td>Sim/não</td>
+                <td>Sim/nãon</td>
                 <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
                 <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['perfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
             </tr>

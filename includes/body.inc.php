@@ -71,7 +71,7 @@ function top(){
             <li class="active"><a href="index.php">Início</a></li>
             <!--   <li><a href="#services">Top Posts</a></li>  -->
             <li><a href="post.php">Publicações</a></li>
-            <li><a href="post.php">Atividade</a></li>
+            <li><a href="atividade.php">Atividade</a></li>
             <li><a>|</a> </li>
             <?php
                 if(!isset($_SESSION['id'])){
@@ -84,7 +84,7 @@ function top(){
             <?php
                 }else{
                     ?>
-                     <li><a href="#" data-toggle="modal" data-target="#conta"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="#" data-toggle="modal" data-target="#perfil"><?php echo $_SESSION['nome']?></a> </li>
                      <li><a href="#" data-toggle="modal" data-target="#login">Logout</a> </li>
                     <?php
                 }
@@ -148,7 +148,7 @@ function top1(){
         <ul>
             <li><a href="index.php">Início</a></li>
             <li><a href="post.php">Publicações</a></li>
-            <li><a href="post.php">Atividade</a></li>
+            <li><a href="atividade.php">Atividade</a></li>
             <li><a>|</a> </li>
             <li><a href="perfil.php">Perfil</a> </li>
 
@@ -162,77 +162,8 @@ function bottom(){
 
     if(HOME){
     ?>
-
-    <div class="modal fade" id="top" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <a href="ana.php"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;Ana Silva</h7></a>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="text-center">
-
-                        <div class="row">
-                            <div class="col-8">
-                                <img width="320" src="assets/img/portfolio/port-1.jpg" class="post-img" alt="">
-                            </div>
-                            <div class="col-4" style="height: 400px;overflow-y: scroll;"> <!-- alterar por PHP a altura da div (imagem) -->
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary"><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-                                <p class="text-center p-2 bg-light">
-                                    <small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small>
-                                </p>
-
-                            </div>
-
-                        </div>
-                        <div class="container text-center">
-                            <span id="gosto" onclick="gosto()" align="left"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                            <small id="gostar" style="text-align: center"> 22 gostos</small>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
+<div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
 
     <!-- End Top -->
 <?php
@@ -281,11 +212,11 @@ function bottom(){
     <!--End Login -->
 
     <!-- ======= Editar conta======= -->
-    <div class="modal fade" id="conta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="perfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Login</h5>
+                    <h5 class="modal-title" id="exampleModalLabel1">Perfil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -305,13 +236,59 @@ function bottom(){
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-warning">Submeter</button>
+                    <button type="submit" class="btn btn-warning">Editar perfil</button>
                 </div>
             </div>
         </div>
     </div>
     <!--End Login -->
+
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Send Us a Message</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Comments</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ======= Registar======= -->
     <div class="modal fade" id="regista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

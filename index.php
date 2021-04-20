@@ -141,42 +141,8 @@ $result=mysqli_query($con,$sql);
                             <a href="port2.html"><i class="bx bx-plus"></i></a>
                         </div>
                     </div>
-
-
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-img"><img src="img/5.jpg" height="231" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Sessão de fografia dos bébes de Março</h4>
-                            <p>22.11.2020</p>
-                            <a href="port1.html"><i class="bx bx-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Almoço Americano</h4>
-                            <p>15.10.2019</p>
-                            <a href="port2.html"><i class="bx bx-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-                        <div class="portfolio-info">
-                            <h4>Almoço Americano</h4>
-                            <p>15.10.2019</p>
-                            <a href="port2.html"><i class="bx bx-plus"></i></a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-
-
-            </div>
+              </div>
 
         </div>
     </section>--><!-- End My Portfolio Section -->
@@ -184,8 +150,7 @@ $result=mysqli_query($con,$sql);
 
 
 </main><!-- End #main -->
-<div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-</div>
+
 
 <?php
 bottom(HOME);

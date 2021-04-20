@@ -2,10 +2,9 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select *, count(albumFotografoId) as p from fotografos inner join favoritos on fotografoId=favoritoFotografoId
+$sql="select *, count(albumFotografoId) as p from fotografos 
     inner join albuns on fotografoId=albumFotografoId
          where fotografoId=".$id;
-
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 ?>
@@ -86,7 +85,12 @@ $dados=mysqli_fetch_array($result);
 
                   <div class="count-box">
                     <i class="icofont-heart-alt" style="color:#FA5858;"></i>
-                    <span data-toggle="counter-up">25</span>
+                      <span data-toggle="counter-up"><?php $sqlGosto="select count(gostoPerfilId) from gostos inner join fotos on gostoFotoId=fotoId inner join albuns on fotoAlbumId=albumId
+inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
+                      $sqlGosto2=mysqli_query($con,$sqlGosto);
+                          $dadosGosto=mysqli_fetch_array($sqlGosto2);
+                          $gosto=(int)$dadosGosto['count(gostoPerfilId)']; echo $gosto;?>
+                      </span>
                     <p><strong>Gostos</strong> Total de gostos</p>
                   </div>
                 </div>
@@ -110,7 +114,11 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-star" style="color: #ffb459;"></i>
-                    <span data-toggle="counter-up">5</span>
+                    <span data-toggle="counter-up"><?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
+                        $sqlFav=mysqli_query($con,$sqlfav2);
+                        $dadosFav=mysqli_fetch_array($sqlFav);
+                        $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;?>
+                    </span>
                     <p><strong>Recomendado</strong> Pessoas que gostaram do meu trabalho e recomendam.</p>
                   </div>
                 </div>
