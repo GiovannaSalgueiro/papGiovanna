@@ -47,6 +47,7 @@ function top(){
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/common.js"></script>
+
     <script>
         $(document).ready(function(){
             $("#abrir").toggle(1000, function(){
@@ -56,6 +57,7 @@ function top(){
                 $("#abrir").toggle(1000, function(){
                 });
             });
+
         });
     </script>
 </head>
@@ -84,11 +86,12 @@ function top(){
             <?php
                 }else{
                     ?>
-                     <li><a href="#" data-toggle="modal" data-target="#perfil"><?php echo $_SESSION['nome']?></a> </li>
-                     <li><a href="#" data-toggle="modal" data-target="#login">Logout</a> </li>
+                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
  ?>
+
         </ul>
     </nav><!-- .nav-menu -->
 
@@ -111,6 +114,7 @@ function top(){
 }
 function top1(){
     ?>
+
     <head>
         <title>BluPost</title>
         <meta charset='utf-8'>
@@ -122,7 +126,7 @@ function top1(){
         <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
 
         <!-- Favicons -->
-        <link href='assets/img/favico.png' rel='icon'>
+        <link href='imagens/favico.png' rel='icon'>
         <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
 
         <!-- Google Fonts-->
@@ -139,7 +143,6 @@ function top1(){
         <!-- Template Main CSS File -->
         <link href='assets/css/style.css' rel='stylesheet'>
 
-
     </head>
     <body>
 <header id="header" class="fixed-top  d-flex justify-content-center align-items-center header-transparent">
@@ -150,7 +153,22 @@ function top1(){
             <li><a href="post.php">Publicações</a></li>
             <li><a href="atividade.php">Atividade</a></li>
             <li><a>|</a> </li>
-            <li><a href="perfil.php">Perfil</a> </li>
+            <?php
+                if(!isset($_SESSION['id'])){
+            ?>
+            <li><a href="#" data-toggle="modal" data-target="#login">Login</a> </li>
+
+
+
+            <li><a href="#" data-toggle="modal" data-target="#regista">Registar</a>&nbsp;</li>
+            <?php
+                }else{
+                    ?>
+                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="logout.php">Logout</a></li>
+                    <?php
+                }
+ ?>
 
         </ul>
     </nav><!-- .nav-menu -->

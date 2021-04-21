@@ -4,7 +4,6 @@ top();
 
 $sql = "select *, count(gostoFotoId) as n from fotos inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3";
 $result=mysqli_query($con,$sql);
-
 ?>
 
 <!-- <h1><?php if(isset($_SESSION['id'])) echo $_SESSION['nome']?></h1> -->
@@ -31,7 +30,7 @@ $result=mysqli_query($con,$sql);
                        <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
                            <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
                        </a>
-                       <h7 class="title"><?php echo $dados['n']?> gosto</h7>
+                       <h7 class="title"><?php echo $dados['n']?> gostos</h7>
 
                    </div>
                </div>

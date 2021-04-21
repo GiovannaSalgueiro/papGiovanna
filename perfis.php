@@ -150,9 +150,9 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
           <li data-filter="*" class="filter-active">Todos</li>
-          <li data-filter=".filter-card">2020</li>
-          <li data-filter=".filter-web">2019</li>
-          <li data-filter=".filter-app">2018</li>
+          <li data-filter=".filter-card">2021</li>
+          <li data-filter=".filter-web">2020</li>
+          <li data-filter=".filter-app">2019</li>
         </ul>
 
           <?php

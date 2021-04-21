@@ -38,6 +38,7 @@ $dados=mysqli_fetch_array($result);
           <br>
           <small><a href="index.php">Voltar</a></small>
           <br>
+          <br>
 
       <br>
       <br>
@@ -49,8 +50,8 @@ $dados=mysqli_fetch_array($result);
             while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
                 ?>
                 <div class="col-lg-4 col-md-6 portfolio-item">
-                    <a href="#" data-toggle="modal" data-target="#port1-1">
-                        <div class="portfolio-img"><img src="<?php echo $dadosFoto['fotoURL']; ?>" class="img-fluid" alt=""></div>
+                    <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dadosFoto['fotoId']?>)">
+                        <img src="<?php echo $dadosFoto['fotoURL']; ?>" class="img-fluid" alt="">
 
                     </a>
                     <br></div>

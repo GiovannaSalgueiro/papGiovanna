@@ -1,6 +1,12 @@
 <?php
 include_once("includes/body.inc.php");
 $id=intval($_GET['id']);
+
+$sqlFotografo="select * from albuns where albumId=".$id;
+$resultFotografo=mysqli_query($con,$sqlFotografo);
+$dadosFotografo=mysqli_fetch_array($resultFotografo);
+$fotografoId=(int)$dadosFotografo['albumFotografoId'];
+
 $sql="select fotoId from fotos where fotoAlbumId=$id";
 $result=mysqli_query($con,$sql);
 while($dados=mysqli_fetch_array($result)){
@@ -13,6 +19,6 @@ while($dados=mysqli_fetch_array($result)){
 }
 $sql= "delete from albuns where albumId=".$id;
 mysqli_query($con,$sql);
-header("location:index.php");
+header("location:perfil.php?id=$fotografoId");
 
 ?>

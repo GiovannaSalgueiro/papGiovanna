@@ -56,7 +56,14 @@ $dados=mysqli_fetch_array($result);
                   <br>
                   <ul>
                     <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
-                    <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong><?php echo $dados['fotografoFreelancer']?></li>
+
+                        <?php if($dados['fotografoFreelancer']=== 'sim'){?>
+                        <li><i class="icofont-rounded-right"></i> <strong>Freelance: </strong>disponível
+                        <?php
+                        }else{?>
+                        <li><i class="icofont-rounded-right"></i> <strong>Freelance: </strong>indisponível
+                            <?php }?>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -69,7 +76,12 @@ $dados=mysqli_fetch_array($result);
 
                   <div class="count-box">
                     <i class="icofont-heart-alt" style="color:#FA5858;"></i>
-                    <span data-toggle="counter-up">25</span>
+                      <span data-toggle="counter-up"><?php $sqlGosto="select count(gostoPerfilId) from gostos inner join fotos on gostoFotoId=fotoId inner join albuns on fotoAlbumId=albumId
+inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
+                          $sqlGosto2=mysqli_query($con,$sqlGosto);
+                          $dadosGosto=mysqli_fetch_array($sqlGosto2);
+                          $gosto=(int)$dadosGosto['count(gostoPerfilId)']; echo $gosto;?>
+                      </span>
                     <p><strong>Gostos</strong> Total de gostos</p>
                   </div>
                 </div>
@@ -93,7 +105,11 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-star" style="color: #ffb459;"></i>
-                    <span data-toggle="counter-up">4</span>
+                      <span data-toggle="counter-up"><?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
+                          $sqlFav=mysqli_query($con,$sqlfav2);
+                          $dadosFav=mysqli_fetch_array($sqlFav);
+                          $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;?>
+                    </span>
                     <p><strong>Recomendado</strong> Pessoas que gostaram do meu trabalho e recomendam.</p>
                   </div>
                 </div>
@@ -129,9 +145,9 @@ $dados=mysqli_fetch_array($result);
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
           <li data-filter="*" class="filter-active">Todos</li>
-          <li data-filter=".filter-card">2020</li>
-          <li data-filter=".filter-web">2019</li>
-          <li data-filter=".filter-app">2018</li>
+          <li data-filter=".filter-card">2021</li>
+            <li data-filter=".filter-web">2020</li>
+            <li data-filter=".filter-app">2019</li>
         </ul>
 
           <?php

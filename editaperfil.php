@@ -48,15 +48,19 @@ $dados=mysqli_fetch_array($result);
                                     <li><small><input type="text" name="fotografoTelemovel" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
                                     <li><small><input type="text" name="fotografoCidade" value="<?php echo $dados['fotografoCidade']?>"></small></li><br>
                                     <li><small><input type="text" name="fotografoEmail" value="<?php echo $dados['fotografoEmail']?>"></small></li><br>
-                                    <li><small><input type="radio" id="disponivel" name="freelance" value="disponivel">
-                                            <label for="disponivel">Disponivel</label>
-                                            <input type="radio" id="female" name="freelance" value="indisponivel">
-                                            <label for="indisponivel">Indisponivel</label><br></small></li>
-
-
-
-
-
+                                    <?php
+                                     if ($dados['fotografoFreelancer']==='sim'){?>
+                                         <li><small><input checked type="radio" id="sim" name="freelance" value="sim">
+                                            <label for="sim">Disponivel</label>
+                                            <input type="radio" id="nao" name="freelance" value="nao">
+                                            <label for="nao">Indisponivel</label><br></small></li>
+                                     <?php } else{
+                                    ?>
+                                         <li><small><input type="radio" id="sim" name="freelance" value="sim">
+                                            <label for="sim">Disponivel</label>
+                                            <input checked type="radio" id="nao" name="freelance" value="nao">
+                                            <label for="nao">Indisponivel</label><br></small></li>
+                                    <?php } ?>
 
                                             </select>
                                         </small></li>

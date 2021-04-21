@@ -85,10 +85,10 @@ $dados = mysqli_fetch_array($result);
                     </div>
 
 
-                    <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">
-                        <div class="container text-right"><small><input type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
-                            <button><i class="fas fa-comment"></i></button></div>
-                    </form>
+                <!--    <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">-->
+                        <div class="container text-right"><small><input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
+                            <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button></div>
+                    <!-- </form>  -->
                 </div>
             </div>
         </div>

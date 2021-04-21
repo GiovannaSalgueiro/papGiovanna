@@ -34,8 +34,6 @@ $result = mysqli_query($con, $sql);
                             <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
                                 <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
                             </a>
-                            <h7 class="title"><?php echo $dados['n']?> gosto</h7>
-
                         </div>
                     </div>
                     <?php

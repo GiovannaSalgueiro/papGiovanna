@@ -51,14 +51,17 @@ function favorito(id) {
     });
 }
 function comentario(id) {
-    $.ajax({
+
+
+   $.ajax({
         url:"AJAX/AJAXPutComentarioFoto.php",
         type:"post",
         data:{
-            idFoto:id
+            idFoto: id,
+            txt: $('#comentarioTexto').val()
         },
         success:function (result){
-            ;
+
 
         }
     });
