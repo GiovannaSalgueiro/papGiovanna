@@ -48,7 +48,7 @@ $dados = mysqli_fetch_array($result);
                             while ($dadosAlbum = mysqli_fetch_array($resultAlbum )) {
                             ?>
                             <td><?php echo $dadosAlbum ['fotoId']?></td>
-                            <td><img src="<?php echo $dadosAlbum['fotoURL']?>" width="102"> </td>
+                            <td><img src="../<?php echo $dadosAlbum['fotoURL']?>" width="102"> </td>
                             <td  style="text-align: center">22</td>
                             <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
                             <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>

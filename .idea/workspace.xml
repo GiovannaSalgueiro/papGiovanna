@@ -1,67 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Conta albuns&#10;Conta gostos&#10;Conta favoritos ( no perfil do fotografo)&#10;Mostrafoto no resto do site">
-      <change afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/camera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/camera2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/favico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/perfil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/joao1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/joao2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/port-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/port-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/port-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/port-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portfolio-details-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/portofolio-a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/testimonials-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Favoritos">
+      <change afterPath="$PROJECT_DIR$/imagens/TVI_ficcao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/nos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/rtpmemory.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/sicmulher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/tvi.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXPutComentarioFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXPutComentarioFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albuns.php" beforeDir="false" afterPath="$PROJECT_DIR$/albuns.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/boy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/coracao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/favico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/favicon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/joao1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/joao2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/me.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/port-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/port-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/port-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/port-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portfolio-details-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/portofolio-a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/testimonials-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmaEditaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaEditaPerfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editaperfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaperfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eliminaAlbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/eliminaAlbum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eliminaFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/eliminaFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Pedro.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +119,7 @@
       <workItem from="1618826909406" duration="9039000" />
       <workItem from="1618906887904" duration="12235000" />
       <workItem from="1618993114347" duration="15624000" />
+      <workItem from="1619079611692" duration="2835000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
