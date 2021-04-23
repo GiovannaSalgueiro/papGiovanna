@@ -124,6 +124,15 @@ function bottom(){
         <script src="assets/vendor/venobox/venobox.min.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/common.js"></script>
+    <script>
+        $('document').ready(function(){
+            fillTableFotografos();
+            $('#search').keyup(function (){
+                fillTableFotografos(this.value);
+            });
+        })
+    </script>
 
     <?php
 }

@@ -32,7 +32,7 @@ $dados = mysqli_fetch_array($result);
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h6><?php echo $dados['albumNome']?></h6></a>
+                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h6><i class="far fa-images"></i> <?php echo $dados['albumNome']?></h6></a>
                     </div>
 
                 </div>
@@ -54,7 +54,7 @@ $dados = mysqli_fetch_array($result);
                         ?>
                         <p class="text-justify p-2 bg-light">
                             <small><span class="text-primary ">
-                            <strong><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp;<?php echo $dadosTexto['comentarioTexto']?></small>
+                            <strong ><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp<?php echo $dadosTexto['comentarioTexto']?></small>
                         </p>
                             <?php
                         }
@@ -63,8 +63,8 @@ $dados = mysqli_fetch_array($result);
                 </div>
 
                 <div class="container text-left">
-                    <div id="gostos">
-                        <span id="gosto" onclick="gosto(<?php echo $id?>)" align="left">
+                    <div id="gostos" >
+                        <span id="gosto" onclick="gosto(<?php echo $id?>)">
                             <?php
                             // verifica se o utilizador gosta da foto
                             $sql="select * from gostos where gostoPerfilId=".$_SESSION['id']." and gostoFotoId=".$id;
@@ -83,12 +83,10 @@ $dados = mysqli_fetch_array($result);
                             </span>
 
                     </div>
-
-
-                <!--    <form action="confirmaNovoComentario.php" method="post" enctype="multipart/form-data">-->
-                        <div class="container text-right"><small><input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
-                            <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button></div>
-                    <!-- </form>  -->
+                        <div class="container text-right">
+                            <small><input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
+                            <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button>
+                        </div>
                 </div>
             </div>
         </div>
