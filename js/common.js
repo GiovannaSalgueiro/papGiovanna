@@ -61,7 +61,7 @@ function comentario(id) {
             txt: $('#comentarioTexto').val()
         },
         success:function (result){
-
+        mostraFoto(id);
 
         }
     });
@@ -79,7 +79,7 @@ function mostraFoto(id){
         },
         success:function (result){
             $('#top1').html(result);
-            $('#top1').modal('toggle');
+            $('#top1').modal('show');
 
         }
     });

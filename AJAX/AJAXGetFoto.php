@@ -37,12 +37,10 @@ $dados = mysqli_fetch_array($result);
 
                 </div>
                 <div class="row">
-
                         <div class="col-8">
-
                             <img width="500" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
-
                         </div>
+
                     <?php
                     $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
             inner join fotos on fotoId=comentarioFotoId where fotoId=$id";
@@ -81,7 +79,6 @@ $dados = mysqli_fetch_array($result);
                             ?>
                                 <small id="gostar" style="text-align: center"> <?php echo $dados['n']?>  gostos</small>
                             </span>
-
                     </div>
                         <div class="container text-right">
                             <small><input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
@@ -91,6 +88,4 @@ $dados = mysqli_fetch_array($result);
             </div>
         </div>
     </div>
-
-
 </div>

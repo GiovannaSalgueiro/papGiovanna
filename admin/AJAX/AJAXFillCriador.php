@@ -2,7 +2,7 @@
 // dados na base de dados
 include_once("../includes/body.inc.php");
 $txt=addslashes($_POST['txt']);
-$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId where fotografoNome LIKE '$txt%'";
+$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
 
 $result=mysqli_query($con,$sql);
 ?>
@@ -28,4 +28,25 @@ $result=mysqli_query($con,$sql);
     }
     ?>
 </section>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $('document').ready(function(){
+        fillTableFotografos();
+        $('#search').keyup(function (){
+            fillTableFotografos(this.value);
+        });
+    })
+</script>
+
 

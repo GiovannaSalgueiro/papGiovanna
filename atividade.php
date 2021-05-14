@@ -1,21 +1,14 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql = "select *, count(gostoFotoId) as n from fotos inner join albuns on fotoAlbumId=albumId 
-        left join gostos on fotoId=gostoFotoId 
-        inner join fotografos on albumFotografoId=fotografoId 
-        inner join perfis on fotografoPerfilId=perfilId 
-        inner join favoritos on perfilId=favoritoPerfilId  
-group by fotoId, fotoURL order by albumData desc where favoritoPerfilId=".$_SESSION['id']." and favoritoFotografoId=".$id;
+$sql="SELECT * from favoritos INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on perfilId = fotografoPerfilId inner join albuns on fotografoId = albumFotografoId
+				inner join fotos on albumId = fotoAlbumId where favoritoFotografoId=fotografoPerfilId AND favoritoPerfilId=".$_SESSION['id'];
 $result = mysqli_query($con, $sql);
 
 ?>
 
 <body>
-
-
 <!-- ======= Hero Section ======= -->
-
 <main id="main">
 
     <!-- ======= Posts ======= -->
@@ -27,6 +20,7 @@ $result = mysqli_query($con, $sql);
                 <span>Atividade</span>
                 <h2>Atividade</h2>
             </div>
+
             <!-- <small>Pesquisar:</small><br><input type="text" id="search"> -->
             <div class="row">
                 <?php
@@ -38,7 +32,6 @@ $result = mysqli_query($con, $sql);
                             <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
                                 <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
                             </a>
-                            <h7 class="title"><?php echo $dados['n']?> gosto</h7>
 
                         </div>
                     </div>

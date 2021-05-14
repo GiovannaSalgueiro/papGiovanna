@@ -1,8 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql = "select *, count(gostoFotoId) as n from fotos inner join albuns on fotoAlbumId=albumId 
-        left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
+$sql = "select * from fotos inner join albuns on fotoAlbumId=albumId order by albumData desc";
 $result = mysqli_query($con, $sql);
 
 ?>

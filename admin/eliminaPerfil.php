@@ -12,7 +12,9 @@ while($dados=mysqli_fetch_array($result)){
     $sql3= "delete from fotos where fotoId=".$dados['perfilId'];
     $sql4= "delete from comentarios where comentarioFotoId=".$dados['perfilId'];
     $sql5= "delete from gostos where gostoFotoId=".$dados['perfilId'];
-
+print_r($sql5);
+print_r($sql5);
+print_r($sql5);
     mysqli_query($con,$sql5);
     mysqli_query($con,$sql4);
     mysqli_query($con,$sql3);
