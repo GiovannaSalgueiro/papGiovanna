@@ -106,7 +106,12 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-clock-time" style="color: #2cbdee;"></i>
-                    <span data-toggle="counter-up">0.5</span>
+                    <span data-toggle="counter-up">
+                        <?php
+                        $n=intval(date("Y")) - $dados['fotografoAnoInicio'];
+                        echo $n==0?" - ":$n;
+                        ?>
+                    </span>
                     <p><strong>Anos de experiencia </strong> </p>
                   </div>
                 </div>

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Tentei fazer o fillCriadores e o pesquisa">
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v3.5.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/asfdasfa.jpg" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/imagens/TVI_ficcao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/nos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/rtpmemory.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/sicmulher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/tvi.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXPutComentarioFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXPutComentarioFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/AJAX/AJAXFillCriador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/AJAX/AJAXFillCriador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/eliminaFotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/eliminaFotografo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/eliminaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/eliminaPerfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,6 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
     </key>
@@ -126,9 +120,6 @@
       <workItem from="1618906887904" duration="12235000" />
       <workItem from="1618993114347" duration="15624000" />
       <workItem from="1619079611692" duration="2850000" />
-      <workItem from="1619424858566" duration="8593000" />
-      <workItem from="1620050387582" duration="605000" />
-      <workItem from="1621004909770" duration="1704000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -256,14 +247,7 @@
       <option name="project" value="LOCAL" />
       <updated>1619086299189</updated>
     </task>
-    <task id="LOCAL-00019" summary="Tentei fazer o fillCriadores e o pesquisa">
-      <created>1619191759919</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1619191759919</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +284,6 @@
     <MESSAGE value="Favoritos" />
     <MESSAGE value="Conta albuns&#10;Conta gostos&#10;Conta favoritos ( no perfil do fotografo)&#10;Mostrafoto no resto do site" />
     <MESSAGE value="conta.php" />
-    <MESSAGE value="Tentei fazer o fillCriadores e o pesquisa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tentei fazer o fillCriadores e o pesquisa" />
+    <option name="LAST_COMMIT_MESSAGE" value="conta.php" />
   </component>
 </project>
