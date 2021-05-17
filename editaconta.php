@@ -41,25 +41,35 @@ $dados=mysqli_fetch_array($result);
                                 <br>
                                 <ul>
                                     <li><small><input type="text" name="contaNome" value="<?php echo $dados['perfilNome']?>"></small></li><br>
-                                    <li><small><input type="text" name="fotografoEmail" value="fesd"></small></li><br>
-                                    <li><small><input type="text" name="contaPP" value="*************"></small></li><br>
+                                    <li><small><input type="text" name="fotografoEmail" value="<?php echo $dados['perfilEmail']?>"></small></li><br>
+                                    <li><small><input type="text" name="contaPP" value="<?php echo $dados['perfilPassword']?>"></small></li><br>
 
                                 </ul>
                             </div>
                             <div class="col-lg-3">
                                 <br>
                                 <ul>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Fotografo:</strong></li><br>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Fotógrafo:</strong></li><br>
                                 </ul>
                             </div>
                             <div class="col-lg-3">
                                 <br>
                                 <ul>
-                                    <li><small><input type="text" name="contaCriador" value="sim"></small></li><br>
-                                    <i class="fas fa-camera"></i><strong>Mudar para conta de fotografo</strong>
-
+                                    <li><small><input type="text" name="contaCriador" value="<?php echo $dados['perfilFotografo']?>"></small></li><br>
                                 </ul>
                             </div>
+                            <div class="col-lg-9">
+                                    <?php
+                                    if ($dados['perfilFotografo']==='sim'){?>
+
+                                    <?php } else{
+                                        ?>
+                                        <i class="fas fa-camera" style="color: #ffb727"></i> <strong>Mudar para conta como fotógrafo</strong>
+                                    <?php } ?>
+                            </div>
+
+
+
 
 
                             <div class="col-lg-12"  style="text-align: center">

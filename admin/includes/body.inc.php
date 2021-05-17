@@ -37,7 +37,7 @@ function top(){
             <ul>
                 <li><a href="index.php">Início</a></li>
                 <li><a href="post.php">Publicações</a></li>
-                <li><a href="criador.php">Fotografos</a></li>
+                <li><a href="criador.php">Fotógrafos</a></li>
             </ul>
         </nav><!-- .nav-menu -->
     </header><!-- End Header -->
