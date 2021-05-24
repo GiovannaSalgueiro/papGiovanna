@@ -45,19 +45,23 @@ $dados=mysqli_fetch_array($result);
 
         <div class="row portfolio-container">
             <?php
-            $sql="select * from fotos where fotoAlbumId=$id";
-            $resultFoto=mysqli_query($con,$sql);
-            while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
-                ?>
-                <div class="col-lg-4 col-md-6 portfolio-item">
-                    <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dadosFoto['fotoId']?>)">
-                        <img src="<?php echo $dadosFoto['fotoURL']; ?>" class="img-fluid" alt="">
 
-                    </a>
-                    <br></div>
-            <?php
-            }
-            ?>
+                $sql="select * from fotos where fotoAlbumId=$id";
+                $resultFoto=mysqli_query($con,$sql);
+                while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item">
+                        <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dadosFoto['fotoId']?>)">
+                            <img src="<?php echo $dadosFoto['fotoURL']; ?>" class="img-fluid" alt="">
+
+                        </a>
+                        <br></div>
+                    <?php
+                }
+             ?>
+
+
+
         </div>
 
   </main><!-- End #main -->

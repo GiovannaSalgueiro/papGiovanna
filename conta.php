@@ -40,15 +40,39 @@ $dados=mysqli_fetch_array($result);
                       <a href="sett.php"><i class="fas fa-cog" style="color: #ffb459; text-align: right"></i><small> Definições do perfil</small></a>
                       <br>
                       <br>
+
                       <div class="row">
                           <div class="col-lg-4" style="text-align: center">
-                              <h8><strong> 5 Publicações</strong></h8>
+                              <br>
+                              <br>
+                              <?php
+                              $sqlP="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
+
+                              $resultP=mysqli_query($con,$sqlP);
+                              $dadosP=mysqli_fetch_array($resultP);
+                              ?>
+                              <h8><strong> <?php echo $dadosP['p']?> Publicações</strong></h8>
                           </div>
                           <div class="col-lg-4" style="text-align: center">
-                              <h8><strong> 105 Seguidores</strong></h8>
+                              <br>
+                              <br>
+                              <h8><strong>
+                                  <?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
+                                          $sqlFav=mysqli_query($con,$sqlfav2);
+                                          $dadosFav=mysqli_fetch_array($sqlFav);
+                                          $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;
+                                  ?> Seguidores</strong></h8>
+
                           </div>
                           <div class="col-lg-4" style="text-align: center">
-                              <h8><strong> 205 Seguindo</strong></h8>
+                              <br>
+                              <br>
+                              <h8><strong>
+                              <?php $sqlSeg2="select count(favoritoPerfilId) from favoritos where favoritoPerfilId=".$id;
+                              $sqlSeg=mysqli_query($con,$sqlSeg2);
+                              $dadosSeg=mysqli_fetch_array($sqlSeg);
+                              $seg=(int)$dadosSeg['count(favoritoPerfilId)']; echo $seg;
+                              ?> Seguindo</strong></h8>
                           </div>
                       </div>
 

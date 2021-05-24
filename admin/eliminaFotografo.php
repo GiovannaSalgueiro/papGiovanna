@@ -5,7 +5,6 @@ $id=intval($_GET['id']);
 $sql="select fotografoId from fotografos where fotografoId=".$id;
 $result=mysqli_query($con,$sql);
 
-
 while($dados=mysqli_fetch_array($result)){
     $sql2= "delete from albuns where albumFotografoId=".$dados['fotografoId'];
     $sql3= "delete from fotos where fotoAlbumId=".$dados['fotografoId'];

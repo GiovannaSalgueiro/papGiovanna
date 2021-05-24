@@ -112,7 +112,8 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-star" style="color: #ffb459;"></i>
-                      <span data-toggle="counter-up"><?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
+                      <span data-toggle="counter-up">
+                          <?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
                           $sqlFav=mysqli_query($con,$sqlfav2);
                           $dadosFav=mysqli_fetch_array($sqlFav);
                           $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;?>

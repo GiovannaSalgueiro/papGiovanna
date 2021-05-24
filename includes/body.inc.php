@@ -21,8 +21,8 @@ function top(){
     <script src='https://kit.fontawesome.com/e8e2985ace.js' crossorigin='anonymous'></script>
 
     <!-- Favicons -->
-    <link href='assets/img/favico.png' rel='icon'>
-    <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
+    <link href='imagens/favico.png' rel='icon'>
+        <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
 
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
@@ -86,7 +86,9 @@ function top(){
             <?php
                 }else{
                     ?>
-                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a> </li>
+
+                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
+                     <li><span class="notif">3</span></li>
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
