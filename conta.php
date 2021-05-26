@@ -46,12 +46,12 @@ $dados=mysqli_fetch_array($result);
                               <br>
                               <br>
                               <?php
-                              $sqlP="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
+                              $sqlP="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotografoId=$id" ;
 
                               $resultP=mysqli_query($con,$sqlP);
                               $dadosP=mysqli_fetch_array($resultP);
                               ?>
-                              <h8><strong> <?php echo $dadosP['p']?> Publicações</strong></h8>
+                              <h8><strong> <?php echo $dadosP['f']?> Publicações</strong></h8>
                           </div>
                           <div class="col-lg-4" style="text-align: center">
                               <br>

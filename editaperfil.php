@@ -62,8 +62,6 @@ $dados=mysqli_fetch_array($result);
                                             <label for="nao">Indisponivel</label><br></small></li>
                                     <?php } ?>
 
-                                            </select>
-                                        </small></li>
                                 </ul>
                             </div>
 
