@@ -4,6 +4,7 @@ session_start();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 
+
 function top(){
     ?>
     <!DOCTYPE html>
@@ -245,18 +246,18 @@ function bottom(){
                     <form action="registar.php" method="post">
                         <div class="form-group">
                             <label>Nome:</label>
-                            <input type="name" class="form-control" name="perfilNome" aria-describedby="emailHelp">
+                            <input type="name" class="form-control" name="perfilNome" required>
 
                         </div>
                         <div class="form-group">
                             <label>Email:</label>
-                            <input type="email" class="form-control" name="perfilEmail">
+                            <input type="email" class="form-control" name="perfilEmail" required>
                         </div>
                         <div class="form-group">
                             <label>Palavra-passe</label>
-                            <input type="password" class="form-control" name="perfilPassword">
+                            <input type="password" class="form-control" name="perfilPassword" required>
                             <label>Confirmar Palavra-passe</label>
-                            <input type="password" class="form-control" id="InputPassword2">
+                            <input type="password" class="form-control" name="perfilPassword" required>
                             <small class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
                         </div>
 

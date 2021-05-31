@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Publicaçoes contasgem">
-      <change afterPath="$PROJECT_DIR$/imagens/batismoC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/registar.php" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="login.php&#10;editaconta.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmaEditaConta.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaEditaConta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editaconta.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaconta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registar.php" beforeDir="false" afterPath="$PROJECT_DIR$/registar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +126,7 @@
       <workItem from="1621845315375" duration="6781000" />
       <workItem from="1622104800451" duration="2122000" />
       <workItem from="1622215250387" duration="2423000" />
+      <workItem from="1622449194459" duration="1839000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -278,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622044084448</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="login.php&#10;editaconta.php">
+      <created>1622449220680</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1622449220680</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +322,7 @@
     <MESSAGE value="Tentei fazer o fillCriadores e o pesquisa" />
     <MESSAGE value="edita perfil- detalhes&#10;base dados" />
     <MESSAGE value="Publicaçoes contasgem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Publicaçoes contasgem" />
+    <MESSAGE value="login.php&#10;editaconta.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="login.php&#10;editaconta.php" />
   </component>
 </project>
