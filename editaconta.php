@@ -47,16 +47,16 @@ $dados=mysqli_fetch_array($result);
                                     <?php
                                     if ($dados['perfilFotografo']==='sim'){?>
                                         <li><small>
-                                                <input checked type="radio" id="sim" name="fotografo" value="sim">
+                                                <input checked type="radio" id="sim" name="perfilFotografo" value="sim">
                                                 <label for="sim">Sim</label>
-                                                <input type="radio" id="nao" name="fotografo" value="nao">
+                                                <input type="radio" id="nao" name="perfilFotografo" value="nao">
                                                 <label for="nao">Não</label><br></small></li>
                                     <?php } else{
                                         ?>
                                         <li><small>
-                                                <input type="radio" id="sim" name="fotografo" value="sim">
+                                                <input type="radio" id="sim" name="perfilFotografo" value="sim">
                                                 <label for="sim">Sim</label>
-                                                <input checked type="radio" id="nao" name="fotografo" value="nao">
+                                                <input checked type="radio" id="nao" name="perfilFotografo" value="nao">
                                                 <label for="nao">Não</label><br></small></li>
                                     <?php } ?>
 

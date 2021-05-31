@@ -203,14 +203,14 @@ function bottom(){
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="login.php" method="post" >
                         <div class="form-group">
-                            <label for="InputEmail">Email:</label>
-                            <input type="email" class="form-control" id="InputEmail1">
+                            <label>Email:</label>
+                            <input type="text" class="form-control" name="perfilEmail">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Palavra-passe:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label>Palavra-passe:</label>
+                            <input type="password" class="form-control" name="perfilPassword">
                             <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.              </small>
 
                         </div>
@@ -220,96 +220,17 @@ function bottom(){
                         </div>
                         <h8>Ainda não tem conta?</h8>
                         <a href="#" onclick="fecha()" data-toggle="modal" data-target="#regista"><button type="submit" class="btn btn-outline-warning">Registar</button></a>
-                    </form>
-                </div>
-                <div class="modal-footer">
+                    <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-warning">Submeter</button>
                 </div>
+                </form>
+                </div>
+
             </div>
         </div>
     </div>
     <!--End Login -->
-
-    <!-- ======= Editar conta======= -->
-    <div class="modal fade" id="perfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Perfil</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="InputEmail">Email:</label>
-                            <input type="email" class="form-control" id="InputEmail1">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Palavra-passe:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                            <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.              </small>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">Editar perfil</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End Login -->
-
-    <div id="myModal" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Send Us a Message</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Comments</label>
-                                <textarea class="form-control"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Send Email</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ======= Registar======= -->
     <div class="modal fade" id="regista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -321,31 +242,28 @@ function bottom(){
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="registar.php" method="post">
                         <div class="form-group">
-                            <label for="InputName">Nome:</label>
-                            <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp">
+                            <label>Nome:</label>
+                            <input type="name" class="form-control" name="perfilNome" aria-describedby="emailHelp">
 
                         </div>
                         <div class="form-group">
-                            <label for="InputEmail">Email:</label>
-                            <input type="email" class="form-control" id="InputEmail">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="perfilEmail">
                         </div>
                         <div class="form-group">
-                            <label for="InputPassword1">Palavra-passe</label>
-                            <input type="password" class="form-control" id="InputPassword1">
-                            <label for="InputPassword1">Confirmar Palavra-passe</label>
+                            <label>Palavra-passe</label>
+                            <input type="password" class="form-control" name="perfilPassword">
+                            <label>Confirmar Palavra-passe</label>
                             <input type="password" class="form-control" id="InputPassword2">
-                            <small id="emailHelp" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
+                            <small class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
                         </div>
-                        <!-- <div class="form-group form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">criador de conteudo</label>
-                        </div> -->
 
-
-
-                        <!-- <a href="criador.html"><small class="form-text text-muted">Criar conta como criador de conteudo</small></a> -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-warning">Submeter</button>
+                    </div>
                     </form>
                     <br>
                     <button id="regist"><small class="form-text text-muted">Criar conta como criador de conteudo</small></button>
@@ -370,10 +288,7 @@ function bottom(){
                     </div>
 
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-warning">Submeter</button>
-                    </div>
+
                 </div>
             </div>
         </div>
