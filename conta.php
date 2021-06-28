@@ -17,8 +17,9 @@ $dados=mysqli_fetch_array($result);
       <div class="container">
 
         <div class="section-title">
-          <span>Perfil</span>
-          <h2>Perfil</h2>
+          <span>Conta</span>
+          <h2>Conta</h2>
+            <h8><strong><a href="perfil.php?id=<?php echo $id ?>"> Ir para o meu perfil</a></strong></h8>
         </div>
 
           <div class="section-title">
@@ -42,18 +43,7 @@ $dados=mysqli_fetch_array($result);
                       <br>
 
                       <div class="row">
-                          <div class="col-lg-4" style="text-align: center">
-                              <br>
-                              <br>
-                              <?php
-                              $sqlP="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotografoId=$id" ;
-
-                              $resultP=mysqli_query($con,$sqlP);
-                              $dadosP=mysqli_fetch_array($resultP);
-                              ?>
-                              <h8><strong> <?php echo $dadosP['f']?> Publicações</strong></h8>
-                          </div>
-                          <div class="col-lg-4" style="text-align: center">
+                          <div class="col-lg-8" style="text-align: center">
                               <br>
                               <br>
                               <h8><strong>

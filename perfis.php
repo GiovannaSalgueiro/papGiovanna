@@ -130,7 +130,40 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
               </div>
             </div><!-- End .content-->
             <br>
+              <div class="row">
+                  <div class="col-lg-4" style="text-align: center">
+                      <br>
+                      <br>
+                      <?php
+                      $sqlP="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotografoId=$id" ;
 
+                      $resultP=mysqli_query($con,$sqlP);
+                      $dadosP=mysqli_fetch_array($resultP);
+                      ?>
+                      <h8><strong> <?php echo $dadosP['f']?> Publicações</strong></h8>
+                  </div>
+                  <div class="col-lg-4" style="text-align: center">
+                      <br>
+                      <br>
+                      <h8><strong>
+                              <?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
+                              $sqlFav=mysqli_query($con,$sqlfav2);
+                              $dadosFav=mysqli_fetch_array($sqlFav);
+                              $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;
+                              ?> Seguidores</strong></h8>
+
+                  </div>
+                  <div class="col-lg-4" style="text-align: center">
+                      <br>
+                      <br>
+                      <h8><strong>
+                              <?php $sqlSeg2="select count(favoritoPerfilId) from favoritos where favoritoPerfilId=".$id;
+                              $sqlSeg=mysqli_query($con,$sqlSeg2);
+                              $dadosSeg=mysqli_fetch_array($sqlSeg);
+                              $seg=(int)$dadosSeg['count(favoritoPerfilId)']; echo $seg;
+                              ?> Seguindo</strong></h8>
+                  </div>
+              </div>
           </div>
         </div>
 
@@ -155,9 +188,10 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">
           <li data-filter="*" class="filter-active">Todos</li>
-          <li data-filter=".filter-card" >2021</li>
-          <li data-filter=".filter-web">2020</li>
-          <li data-filter=".filter-app">2019</li>
+
+          <li data-filter=".filter-card" value="2021" >2021</li>
+          <li data-filter=".filter-web" value="2020">2020</li>
+          <li data-filter=".filter-app" value="2019"2019</li>
         </ul>
 
           <?php

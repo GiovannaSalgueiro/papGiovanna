@@ -167,7 +167,7 @@ function top1(){
             <?php
                 }else{
                     ?>
-                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a> </li>
+                     <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
@@ -212,7 +212,7 @@ function bottom(){
                         <div class="form-group">
                             <label>Palavra-passe:</label>
                             <input type="password" class="form-control" name="perfilPassword">
-                            <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.              </small>
+                            <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
 
                         </div>
                         <div class="form-group form-check">
