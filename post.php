@@ -30,9 +30,10 @@ $result = mysqli_query($con, $sql);
                     <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="post-box">
 
-                            <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
-                                <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
-                            </a>
+                                <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
+                                    <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
+                                </a>
+
                         </div>
                     </div>
                     <?php

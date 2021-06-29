@@ -4,6 +4,7 @@ top();
 
 $sql = "select *, count(gostoFotoId) as n from fotos inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3";
 $result=mysqli_query($con,$sql);
+
 ?>
 
 <!-- <h1><?php if(isset($_SESSION['id'])) echo $_SESSION['nome']?></h1> -->

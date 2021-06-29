@@ -4,9 +4,10 @@ session_start();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 
-
+ // error_reporting(E_ERROR | E_PARSE);     Retirar os erros
 function top(){
     ?>
+
     <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +61,18 @@ function top(){
             });
 
         });
-    </script>
+
+    function submeterRegisto(){
+        const frm = document.getElementById("regForm");
+        let pass1 = document.getElementById("pass1").value;
+        let pass2 = document.getElementById("pass2").value;
+        if (pass1==pass2){
+            frm.submit();
+        }else {
+            alert("Passwords não coincidem!!!")
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -74,7 +86,14 @@ function top(){
             <li class="active"><a href="index.php">Início</a></li>
             <!--   <li><a href="#services">Top Posts</a></li>  -->
             <li><a href="post.php">Publicações</a></li>
-            <li><a href="atividade.php">Atividade</a></li>
+            <?php
+                if(isset($_SESSION['id'])){
+            ?>
+                <li><a href="atividade.php">Atividade</a></li>
+            <?php
+                }
+                    ?>
+
             <li><a>|</a> </li>
             <?php
                 if(!isset($_SESSION['id'])){
@@ -222,7 +241,6 @@ function bottom(){
                         <h8>Ainda não tem conta?</h8>
                         <a href="#" onclick="fecha()" data-toggle="modal" data-target="#regista"><button type="submit" class="btn btn-outline-warning">Registar</button></a>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-warning">Submeter</button>
                 </div>
                 </form>
@@ -262,8 +280,7 @@ function bottom(){
                         </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-warning">Submeter</button>
+                        <button type="submit" class="btn btn-warning" onclick="submeterRegisto()">Submeter</button>
                     </div>
                     </form>
                     <br>
@@ -330,6 +347,8 @@ function bottom(){
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="js/common.js"></script>
+
+
 
     </body>
 

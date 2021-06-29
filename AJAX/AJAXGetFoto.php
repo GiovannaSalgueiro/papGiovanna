@@ -12,13 +12,33 @@ $sql="Select * ,count(*) as n
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
+<script>
+    function confirmaEliminaCom(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetComentario.php",
+            type:"post",
+            data:{
+                idComentarioFoto:id
+            },
+            success:function (result){
+                if(confirm('Deseja eliminar o comentario ?'))
+                    window.location="eliminaComentario.php?id=" + id;
+
+            }
+        })
+    }
+</script>
+
 
 <div class="modal-dialog modal-lg" style="min-height: 500px">
+
     <div class="modal-content" style="min-height: 500px">
+
         <div class="modal-header">
+
             <h1 id="teste"></h1>
 
-            <a href="perfis.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
+            <a href="perfil.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -52,7 +72,17 @@ $dados = mysqli_fetch_array($result);
                         ?>
                         <p class="text-justify p-2 bg-light">
                             <small><span class="text-primary ">
-                            <strong ><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp<?php echo $dadosTexto['comentarioTexto']?></small>
+                            <strong ><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp<?php echo $dadosTexto['comentarioTexto']?>         </small>
+
+                            <?php
+                            if(isset($_SESSION['id'])){
+                                ?>
+                                <a href="" onclick="confirmaEliminaCom(<?php echo $dadosTexto['comentarioId']?>);"> <i class="fas fa-trash-alt"></i></a>
+                                <?php
+                            }
+                                ?>
+
+                            &nbsp;&nbsp;&nbsp;
                         </p>
                             <?php
                         }

@@ -42,8 +42,49 @@ $dados=mysqli_fetch_array($result);
           <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
           <div class="col-lg-8 d-flex flex-column align-items-stretch">
             <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <!-- <a href="#" data-toggle="modal" data-target="#edita"> --><a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
-              <div class="row">
+              <!-- <a href="#" data-toggle="modal" data-target="#edita"> -->
+                <?php
+
+
+
+                if(isset($_SESSION['id'])){
+                    $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
+                    $sql1="select perfilNome from perfis where perfilId=".$id;
+                    $resultNome=mysqli_query($con,$sqlNome);
+                    $result1=mysqli_query($con,$sql1);
+                    $dadosNome=mysqli_fetch_array($resultNome);
+                    $dados1=mysqli_fetch_array($result1);
+                if($dadosNome['perfilNome']==$dados1['perfilNome']){
+                    ?>
+                    <a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
+
+                    <?php
+                }else{?>
+                    <span id="favorito" onclick="favorito(<?php echo $id?>)" align="left">
+                            <?php
+                            // verifica se o utilizador favorita o criador
+                            $sql="select * from favoritos where favoritoPerfilId=".$_SESSION['id']." and favoritoFotografoId=".$id;
+                            mysqli_query($con,$sql);
+                            if(mysqli_affected_rows($con)>0){
+                                ?>
+                                <i class="fas fa-star fa-2x" style="color: #ffb459"></i>
+                                <?php
+                            }else{
+                                ?>
+                                <i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+                                <?php
+                            }}}else{
+
+                            ?>
+
+                    </span>
+
+                    <?php
+
+                }
+                ?>
+
+                <div class="row">
                 <div class="col-lg-6">
                   <br>
                   <ul>
@@ -178,8 +219,20 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
         </div>
         <div class="content pl-lg-4 d-flex flex-column justify-content-center">
             <div class="row">
-                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
+                <?php
+                    if(isset($_SESSION['id'])){
+                    $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
+                    $sql1="select perfilNome from perfis where perfilId=".$id;
+                    $resultNome=mysqli_query($con,$sqlNome);
+                    $result1=mysqli_query($con,$sql1);
+                    $dadosNome=mysqli_fetch_array($resultNome);
+                    $dados1=mysqli_fetch_array($result1);
+                    if($dadosNome['perfilNome']==$dados1['perfilNome']){
+                ?>
 
+                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
+                    <?php
+                        }}?>
             </div>
           <!-- <a href="#" data-toggle="modal" data-target="#adicionar" style="text-align: right"> -->
         </div>
@@ -209,9 +262,26 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="album.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
+                          <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $id?>"><i class="far fa-eye"></i></a>
+
+                          <?php
+                          if(isset($_SESSION['id'])){
+                          $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
+                          $sql1="select perfilNome from perfis where perfilId=".$id;
+                          $resultNome=mysqli_query($con,$sqlNome);
+                          $result1=mysqli_query($con,$sql1);
+                          $dadosNome=mysqli_fetch_array($resultNome);
+                          $dados1=mysqli_fetch_array($result1);
+                          if($dadosNome['perfilNome']==$dados1['perfilNome']){
+                          ?>
+
                           <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
                           <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
+
+                              <?php
+                          }}?>
+
+
                       </div>
                   </div>
                   <?php

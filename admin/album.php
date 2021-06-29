@@ -10,7 +10,37 @@ $sql="Select *
 $result = mysqli_query( $con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameFoto.php",
+            type:"post",
+            data:{
+                idFoto:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a foto:'+result+"?"))
 
+                    window.location="eliminaFoto.php?id=" + id;
+            }
+        })
+    }
+    function confirmaEliminaAlbum(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameAlbum.php",
+            type:"post",
+            data:{
+                idAlbum:id
+
+            },
+            success:function (result){
+                if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
+
+                    window.location="eliminaAlbum.php?id=" + id;
+            }
+        })
+    }
+</script>
 <body>
 <main id="main">
 
@@ -19,7 +49,7 @@ $dados = mysqli_fetch_array($result);
 
         <div class="container">
             <br>
-            <a href="album.php?id=<?php echo $dados["albumId"]?>">Voltar</a>
+            <a href="index.php">Voltar</a>
             <br>
             <br>
             <div class="section-title">
@@ -52,7 +82,7 @@ $dados = mysqli_fetch_array($result);
                             <td  style="text-align: center">22</td>
                             <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
                             <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
-                            <td><span class="btn-sm btn-danger">Elimina</span></td>
+                            <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></td>
                         </tr>
                             <?php
                         }
