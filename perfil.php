@@ -275,7 +275,7 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                           if($dadosNome['perfilNome']==$dados1['perfilNome']){
                           ?>
 
-                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
+                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $id?>"><i class="far fa-edit"></i></a>
                           <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
 
                               <?php

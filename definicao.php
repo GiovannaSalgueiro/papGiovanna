@@ -21,7 +21,9 @@ top1();
             </div>
 
             <div class="col-lg-12">
-                <li><i class="icofont-rounded-right"></i> <strong>Notifica&ccedil;&otilde;es</strong></li><br>
+                <li><strong>Alguma coisa</strong></li><br>
+                <i class="icofont-rounded-right"></i> <strong>Nasfasfs</strong><br>
+                <i class="icofont-rounded-right"></i> <strong>Notifasfasfações</strong><br>
 
             </div>
             </div>

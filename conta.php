@@ -34,11 +34,19 @@ $dados=mysqli_fetch_array($result);
                   <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                       <div class="col-lg-12" align="right">
 
-                          <i class="fas fa-bell fa-2x" style="color: #ff9900"></i>
+                          <span id=notif onclick="notif()" align="left">
+
+                                <i class="fas fa-bell fa-2x" style="color: #ffb459"></i>
+
+                                <i class="fas fa-bell-slash fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+
+
+                    </span>
+
                       </div>
                       <a href="editaconta.php?id=<?php echo $dados["perfilId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
                       <br>
-                      <a href="definicao.php"><i class="fas fa-cog" style="color: #ffb459; text-align: right"></i><small> Definições do perfil</small></a>
+                      <a href="definicao.php"><i class="fas fa-cog" style="color: #ffb459; text-align: right"></i><small> Definições da conta</small></a>
                       <br>
                       <br>
 

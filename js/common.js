@@ -50,6 +50,7 @@ function favorito(id) {
         }
     });
 }
+
 function comentario(id) {
 
 

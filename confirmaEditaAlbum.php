@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 
 $id=intval($_POST['id']);
+$idCriador=intval($_POST['idCriador']);
 $nome=addslashes($_POST['albumNome']);
 $data=addslashes($_POST['albumData']);
 
@@ -17,5 +18,5 @@ if($imagem!=''){
 $sql.=" where albumId=".$id;
 
 mysqli_query($con,$sql);
-header("location:perfil.php?id=$id");
+header("location:perfil.php?id=$idCriador");
 ?>
