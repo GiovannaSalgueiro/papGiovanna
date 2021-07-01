@@ -7,7 +7,7 @@ $sql="select * from favoritos where favoritoPerfilId=".$_SESSION['id']." and fav
 mysqli_query($con,$sql);
 
 if(mysqli_affected_rows($con)>0) {
-    $sql = "delete from favoritos where favoritoPerfilId=" . $_SESSION['id'] . " and favoritoFotografoId=" . $id;
+    $sql = "delete from favoritos where favoritoPerfilId=".$_SESSION['id']." and favoritoFotografoId=".$id;
 
 }else{
     $sql = "insert into favoritos values(".$_SESSION['id']. "," . $id.")";

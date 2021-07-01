@@ -83,6 +83,13 @@ $dados=mysqli_fetch_array($result);
       <br>
 
         <div class="row portfolio-container">
+            <?php
+                if($dadosF['f']<1){ ?>
+                    <h2>Este album ainda não contem fotografias</h2>
+                    <?php
+                    }else{
+
+                    ?>
 
                 <?php
                 $sql="select * from fotos where fotoAlbumId=$idA";
@@ -109,7 +116,7 @@ $dados=mysqli_fetch_array($result);
                             }}?>
                        </div>
                     <?php
-                }
+                }}
                 ?>
 
         </div>

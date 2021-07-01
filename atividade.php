@@ -1,10 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql="SELECT * from favoritos INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on perfilId = fotografoPerfilId inner join albuns on fotografoId = albumFotografoId
+$sql="SELECT * from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on perfilId = fotografoPerfilId inner join albuns on fotografoId = albumFotografoId
 				inner join fotos on albumId = fotoAlbumId where favoritoFotografoId=fotografoPerfilId AND favoritoPerfilId=".$_SESSION['id'];
-$result = mysqli_query($con, $sql);
 
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$con->set_charset("utf8");
+
+$result = mysqli_query($con, $sql);
 ?>
 
 <body>
@@ -23,7 +26,7 @@ $result = mysqli_query($con, $sql);
 
             <!-- <small>Pesquisar:</small><br><input type="text" id="search"> -->
             <div class="row">
-                <?php
+                <?php echo $sql;
                 while ($dados = mysqli_fetch_array($result)) {
                     ?>
                     <div class="col-md-4 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">

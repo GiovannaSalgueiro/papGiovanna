@@ -50,6 +50,29 @@ function favorito(id) {
         }
     });
 }
+function notif(id) {
+    $.ajax({
+        url:"AJAX/AJAXPutNotif.php",
+        type:"post",
+        data:{
+            idPerfil:id
+        },
+        success:function (result){
+            $.ajax({
+                url:"AJAX/AJAXGetNotif.php",
+                type:"post",
+                data:{
+                    idPerfil:id
+                },
+                success:function (result){
+                    $('#notif').html(result);
+
+                }
+            });
+
+        }
+    });
+}
 
 function comentario(id) {
 

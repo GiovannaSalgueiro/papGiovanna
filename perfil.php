@@ -45,8 +45,6 @@ $dados=mysqli_fetch_array($result);
               <!-- <a href="#" data-toggle="modal" data-target="#edita"> -->
                 <?php
 
-
-
                 if(isset($_SESSION['id'])){
                     $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
                     $sql1="select perfilNome from perfis where perfilId=".$id;
@@ -74,15 +72,11 @@ $dados=mysqli_fetch_array($result);
                                 <i class="far fa-star fa-2x" aria-hidden="true" style="color: #ffb459"></i>
                                 <?php
                             }}}else{
-
+                            }
                             ?>
 
                     </span>
 
-                    <?php
-
-                }
-                ?>
 
                 <div class="row">
                 <div class="col-lg-6">

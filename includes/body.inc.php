@@ -234,11 +234,11 @@ function bottom(){
                             <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
 
                         </div>
-                        <div class="form-group form-check">
+                        <!--<div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Manter-me logado</label>
-                        </div>
-                        <h8>Ainda não tem conta?</h8>
+                        </div>-->
+                         <h8>Ainda não tem conta?</h8>
                         <a href="#" onclick="fecha()" data-toggle="modal" data-target="#regista"><button type="submit" class="btn btn-outline-warning">Registar</button></a>
                     <div class="modal-footer">
                     <button type="submit" class="btn btn-warning">Submeter</button>

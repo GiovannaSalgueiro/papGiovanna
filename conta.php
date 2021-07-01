@@ -39,9 +39,27 @@ $dados=mysqli_fetch_array($result);
                                 <i class="fas fa-bell fa-2x" style="color: #ffb459"></i>
 
                                 <i class="fas fa-bell-slash fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+                                </span>
 
+                            <span id=notif onclick="notif(<?php echo $id?>)" align="left">
+                            <?php
+                            // verifica se o utilizador favorita o criador
+                            $sql="select * from perfis where perfilId=".$_SESSION['id']." and perfilNotificacao=".$id;
+                            mysqli_query($con,$sql);
+                            if(mysqli_affected_rows($con)>0){
+                                ?>
+                                <i class="fas fa-bell fa-2x" style="color: #ffb459"></i>
+                                <?php
+                            }else{
+                                ?>
+                                <i class="fas fa-bell-slash fa-2x" aria-hidden="true" style="color: #ffb459"></i>
+                                <?php
+                            }
+                            ?>
 
                     </span>
+
+
 
                       </div>
                       <a href="editaconta.php?id=<?php echo $dados["perfilId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
