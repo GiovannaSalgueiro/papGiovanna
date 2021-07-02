@@ -3,6 +3,7 @@ include_once("includes/body.inc.php");
 top();
 $sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
 $result = mysqli_query($con, $sql);
+
 ?>
 
 <script>
@@ -76,7 +77,14 @@ $result = mysqli_query($con, $sql);
 
 
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
+
+                    <?php
+                   // $sqlAviso="select count(noticacaoPerfilId) from notificacoes  where fotografoId= " $dadosId['fotografoId'];
+                   // $resultlAviso = mysqli_query($con, $sqllAviso);
+                    ?>
                     <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
+
+
                     <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                         </tr>

@@ -43,6 +43,7 @@ $resultAlbuns = mysqli_query($con, $sql);
     }
     function confirmaEliminaCom(id) {
         $.ajax({
+
             url:"AJAX/AJAXGetComentario.php",
             type:"post",
             data:{
@@ -153,8 +154,10 @@ $resultAlbuns = mysqli_query($con, $sql);
 
 <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <?php
+
     $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
             inner join fotos on fotoId=comentarioFotoId";
+
     $resultTexto = mysqli_query($con, $sql);
     ?>
     <div class="modal-dialog">
@@ -162,8 +165,9 @@ $resultAlbuns = mysqli_query($con, $sql);
             <div class="modal-body">
                 <div class="text-center">
                     <table class="table table-hover table-striped">
+
                         <tr>
-                            <th colspan="12">Comentarios</th>
+                            <th colspan="12"  >Comentarios</th>
                         </tr>
                         <?php
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
@@ -186,42 +190,6 @@ $resultAlbuns = mysqli_query($con, $sql);
 </div>
 <!-- End Top -->
 
-<div class="modal fade" id="post1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="text-center">
-
-                    <img width="320" src="img/1.jpg" class="post-img" alt="">
-
-                    <table class="table table-hover table-striped">
-                        <tr>
-                            <th>Comentarios</th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-                        <tr>
-                            <th><small><span class="text-primary "><strong>Joana Silva:</strong></span>  Adorei ver os ciclistas a passar em frente à minha casa...</small></th>
-                            <th><i class="fas fa-trash-alt"></i></th>
-                        </tr>
-
-                    </table>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 </body>

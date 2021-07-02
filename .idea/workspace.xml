@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="detalhes">
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXPutNotif.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.5.1.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.mwb" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Base de dados- Notif and avisos&#10;alguns detalhes">
+      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.2.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/fig.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md5.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXPutFavoritoFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXPutFavoritoFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +140,8 @@
       <workItem from="1624955667210" duration="13444000" />
       <workItem from="1624981555994" duration="253000" />
       <workItem from="1625041882279" duration="3711000" />
-      <workItem from="1625129032316" duration="4674000" />
+      <workItem from="1625129032316" duration="4713000" />
+      <workItem from="1625214975470" duration="6880000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -329,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625068660794</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Base de dados- Notif and avisos&#10;alguns detalhes">
+      <created>1625154044021</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1625154044021</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +352,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Novo layout da página principal. Pequenos ajustes ao portfólio." />
     <MESSAGE value="Administração" />
     <MESSAGE value="Administração inicial" />
     <MESSAGE value="[leandro] Includes" />
@@ -374,6 +376,7 @@
     <MESSAGE value="Tudo" />
     <MESSAGE value="admin- albuns ( elimina a foto dentro do album)&#10;atividade so apareçe se tem login feito&#10;layout do album melhorado&#10;perfil( perfil.php junto com perfis.php conforme se a sessao esta iniciada ou não" />
     <MESSAGE value="detalhes" />
-    <option name="LAST_COMMIT_MESSAGE" value="detalhes" />
+    <MESSAGE value="Base de dados- Notif and avisos&#10;alguns detalhes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base de dados- Notif and avisos&#10;alguns detalhes" />
   </component>
 </project>
