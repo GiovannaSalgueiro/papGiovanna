@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/definicao.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/registo.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sessao.php" charset="UTF-8" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
 </project>

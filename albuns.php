@@ -3,7 +3,7 @@ include_once("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['id']);
-$sql="select * from fotos inner join albuns on fotoAlbumId=albumId
+$sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
         inner join fotografos on albumFotografoId=fotografoId where fotoId=$id" ;
 
 $result=mysqli_query($con,$sql);
@@ -42,6 +42,15 @@ $dados=mysqli_fetch_array($result);
 
       <br>
       <br>
+
+          <div class="section-title">
+
+              <span><?php echo $dados['fotografoNome']?></span>
+              <h2><?php echo $dados['fotografoNome']?></h2>
+              <h2><?php echo $dados['albumNome']?></h2>
+              <p><?php echo $dados['albumData']?> | <?php echo $dados['f']?></p>
+
+          </div>
 
         <div class="row portfolio-container">
             <?php

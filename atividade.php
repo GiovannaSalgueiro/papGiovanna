@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 top1();
 $sql="SELECT * from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on perfilId = fotografoPerfilId inner join albuns on fotografoId = albumFotografoId
-				inner join fotos on albumId = fotoAlbumId where favoritoFotografoId=fotografoPerfilId AND favoritoPerfilId=".$_SESSION['id'];
+				inner join fotos on albumId=fotoAlbumId where favoritoPerfilId=".$_SESSION['id'];
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");

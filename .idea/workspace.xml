@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Base de dados- Notif and avisos&#10;alguns detalhes">
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.2.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/fig.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/md5.php" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Base de dados">
+      <change afterPath="$PROJECT_DIR$/admin/loginAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/def.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sessao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albuns.php" beforeDir="false" afterPath="$PROJECT_DIR$/albuns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AJAX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,8 +69,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna" />
+      <recent name="C:\wamp64\www\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
     </key>
@@ -141,7 +147,8 @@
       <workItem from="1624981555994" duration="253000" />
       <workItem from="1625041882279" duration="3711000" />
       <workItem from="1625129032316" duration="4713000" />
-      <workItem from="1625214975470" duration="6880000" />
+      <workItem from="1625214975470" duration="6909000" />
+      <workItem from="1625475163223" duration="5869000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -332,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625154044021</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Base de dados">
+      <created>1625240895840</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1625240895840</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +366,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Administração" />
     <MESSAGE value="Administração inicial" />
     <MESSAGE value="[leandro] Includes" />
     <MESSAGE value="[leandro] Base de dados versão 1.0" />
@@ -377,6 +390,7 @@
     <MESSAGE value="admin- albuns ( elimina a foto dentro do album)&#10;atividade so apareçe se tem login feito&#10;layout do album melhorado&#10;perfil( perfil.php junto com perfis.php conforme se a sessao esta iniciada ou não" />
     <MESSAGE value="detalhes" />
     <MESSAGE value="Base de dados- Notif and avisos&#10;alguns detalhes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base de dados- Notif and avisos&#10;alguns detalhes" />
+    <MESSAGE value="Base de dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base de dados" />
   </component>
 </project>

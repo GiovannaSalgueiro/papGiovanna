@@ -173,7 +173,14 @@ function top1(){
         <ul>
             <li><a href="index.php">Início</a></li>
             <li><a href="post.php">Publicações</a></li>
-            <li><a href="atividade.php">Atividade</a></li>
+            <?php
+                if(isset($_SESSION['id'])){
+            ?>
+                <li><a href="atividade.php">Atividade</a></li>
+            <?php
+                }
+                    ?>
+
             <li><a>|</a> </li>
             <?php
                 if(!isset($_SESSION['id'])){
@@ -186,7 +193,9 @@ function top1(){
             <?php
                 }else{
                     ?>
+
                      <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
+                     <li><span class="notif">3</span></li>
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
