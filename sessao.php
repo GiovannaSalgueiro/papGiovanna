@@ -2,13 +2,15 @@
 include_once("includes/body.inc.php");
 
 
-if(isset($_GET['erro'])) {
+if (isset($_GET['erro'])) {
 
     alert("Nome de utilizador ou palavra-passe errada, tente de novo.");
 }
-function alert($msg) {
+function alert($msg)
+{
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
+
 ?>
     <head>
         <title>BluPost</title>
@@ -25,7 +27,8 @@ function alert($msg) {
         <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
 
         <!-- Google Fonts-->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy'
+              rel='stylesheet'>
 
 
         <!-- Vendor CSS Files -->
@@ -41,82 +44,87 @@ function alert($msg) {
     </head>
 
 
-  <!-- ======= Hero Section ======= -->
+    <!-- ======= Hero Section ======= -->
 
-  <main id="main">
+    <main id="main">
 
-    <!-- ======= My Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-
-          <br>
-          <small><a href="index.php"> <h8>Voltar</h8></a></small>
-          <br>
-          <br>
+        <!-- ======= My Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
 
 
-
-          <div class="section-title">
-
-              <span>Login</span>
-              <h2>Login</h2>
-
-          </div>
-
-          <div class="content pl-lg-4 d-flex flex-column justify-content-center">
-              <br>
-
-              <div class="container">
-                  <form action="confirmaLogin.php" method="post">
-
-                      <div class="container">
-                          <div class="row">
-                              <div class="col-3">
-                              <img src="imagens/perfil.png">
-                              </div>
-                              <div class="col-9"><div class="modal-body">
-
-                                      <div class="form-group">
-                                          <label>Email:</label>
-                                          <input type="text" class="form-control" name="perfilEmail">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="InputPassword1">Palavra-passe:</label>
-                                          <input type="password" class="form-control" name="perfilPassword">
-                                          <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
-                                          <br>
-
-                                      </div>
-
-                                  </div>
-                              </div>
-                          </div>
+                <br>
+                <small><a href="index.php">
+                        <h8>Voltar</h8>
+                    </a></small>
+                <br>
+                <br>
 
 
-                          <div class="modal-footer">
-                              <button type="submit" class="btn btn-warning" style="">Entrar</button>
-                          </div>
-                          <a href="registo.php"><h8><strong>Ainda não tem registo feito? Faça já.<strong></h8></a>
-                      </div>
+                <div class="section-title">
 
-                  </form>
-              </div>
-          </div>
-      <br>
-      <br>
+                    <span>Login</span>
+                    <h2>Login</h2>
 
-        <div class="row portfolio-container">
+                </div>
+
+                <div class="content pl-lg-4 d-flex flex-column justify-content-center">
+                    <br>
+
+                    <div class="container">
+                        <form action="confirmaLogin.php" method="post">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="imagens/perfil.png">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="modal-body">
+
+                                            <div class="form-group">
+                                                <label>Email:</label>
+                                                <input type="text" class="form-control" name="perfilEmail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputPassword1">Palavra-passe:</label>
+                                                <input type="password" class="form-control" name="perfilPassword">
+                                                <small id="emailHelp1" class="form-text text-muted">Nunca compartilhe a
+                                                    sua palavra-passe com mais ninguém.</small>
+                                                <br>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
 
 
-        </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-warning" style="">Entrar</button>
+                                </div>
+                                <a href="registo.php">
+                                    <h8><strong>Ainda não tem registo feito? Faça já.<strong></h8>
+                                </a>
+                            </div>
 
-  </main><!-- End #main -->
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="row portfolio-container">
 
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+                </div>
 
-</body>
+    </main><!-- End #main -->
+
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    </body>
 <?php
 bottom();
 

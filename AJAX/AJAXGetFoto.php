@@ -14,18 +14,22 @@ $dados = mysqli_fetch_array($result);
 ?>
 <script>
     function confirmaEliminaCom(id) {
-        $.ajax({
-            url:"AJAX/AJAXGetComentario.php",
-            type:"post",
-            data:{
-                idComentarioFoto:id
-            },
-            success:function (result){
-                if(confirm('Deseja eliminar o comentario ?'))
-                    window.location="eliminaComentario.php?id=" + id;
+        if(confirm('Deseja eliminar o comentario ?')){
+            $.ajax({
+                url:"AJAX/AJAXDelComentario.php",
+                type:"post",
+                data:{
+                    idComentario:id
+                },
+                success:function (result){
+                alert();
 
-            }
-        })
+                }
+            })
+
+
+        }
+
     }
 </script>
 
@@ -75,7 +79,7 @@ $dados = mysqli_fetch_array($result);
                             <strong ><?php echo $dadosTexto['perfilNome']?></strong></span>&nbsp<?php echo $dadosTexto['comentarioTexto']?>         </small>
 
                             <?php
-                            if(isset($_SESSION['id'])){
+                            if(isset($_SESSION['id'])&&($_SESSION['id']==$dadosTexto['perfilId'])){
                                 ?>
                                 <a href="" onclick="confirmaEliminaCom(<?php echo $dadosTexto['comentarioId']?>);"> <i class="fas fa-trash-alt"></i></a>
                                 <?php

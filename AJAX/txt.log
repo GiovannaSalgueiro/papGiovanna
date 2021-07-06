@@ -1,0 +1,1 @@
+delete from comentarios where comentarioId=31

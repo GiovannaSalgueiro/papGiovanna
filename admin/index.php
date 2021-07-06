@@ -2,6 +2,8 @@
 include_once("includes/body.inc.php");
 top();
 
+
+
 $sql="Select * , count(gostoFotoId) as n
         from fotos inner join albuns on fotoAlbumId=albumId 
         inner join fotografos on fotografoId=albumFotografoId
@@ -82,6 +84,8 @@ $resultAlbuns = mysqli_query($con, $sql);
                     <th colspan="3"> Opções </th>
                 </tr><?php
                 while ($dados = mysqli_fetch_array($result)) {
+
+
                     ?>
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>

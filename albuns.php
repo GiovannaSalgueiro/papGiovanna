@@ -2,9 +2,10 @@
 include_once("includes/body.inc.php");
 top1();
 
-$id=intval($_GET['id']);
+$idA=intval($_GET['idAlbum']);
+$idF=intval($_GET['idFotografo']);
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
-        inner join fotografos on albumFotografoId=fotografoId where fotoId=$id" ;
+        inner join fotografos on albumFotografoId=fotografoId where fotoId=$idA" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -42,20 +43,29 @@ $dados=mysqli_fetch_array($result);
 
       <br>
       <br>
+          <?php
+          $sqlFotografo="select * from fotografos inner join albuns on fotografoId=albumFotografoId where albumFotografoId=$idF";
+          $resultFotografo=mysqli_query($con,$sqlFotografo);
+          $dadosFotografo=mysqli_fetch_array($resultFotografo);
 
+          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotoAlbumId=$idA" ;
+
+          $resultF=mysqli_query($con,$sqlF);
+          $dadosF=mysqli_fetch_array($resultF);
+          ?>
           <div class="section-title">
 
-              <span><?php echo $dados['fotografoNome']?></span>
-              <h2><?php echo $dados['fotografoNome']?></h2>
-              <h2><?php echo $dados['albumNome']?></h2>
-              <p><?php echo $dados['albumData']?> | <?php echo $dados['f']?></p>
+              <span><?php echo $dadosFotografo['fotografoNome']?></span>
+              <h2><?php echo $dadosFotografo['fotografoNome']?></h2>
+              <h2><?php echo $dadosFotografo['albumNome']?></h2>
+              <p><?php echo $dadosFotografo['albumData']?> | <?php echo $dadosF['f']?></p>
 
           </div>
 
         <div class="row portfolio-container">
             <?php
 
-                $sql="select * from fotos where fotoAlbumId=$id";
+                $sql="select * from fotos where fotoAlbumId=$idA";
                 $resultFoto=mysqli_query($con,$sql);
                 while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
                     ?>

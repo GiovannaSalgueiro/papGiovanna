@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Base de dados">
-      <change afterPath="$PROJECT_DIR$/admin/loginAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/def.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/registo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sessao.php" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Login/resgisto novos">
+      <change afterPath="$PROJECT_DIR$/AJAX/AJAXDelComentario.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AJAX/txt2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetComentario.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetComentario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/albuns.php" beforeDir="false" afterPath="$PROJECT_DIR$/albuns.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confirmaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registar.php" beforeDir="false" afterPath="$PROJECT_DIR$/registar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessao.php" beforeDir="false" afterPath="$PROJECT_DIR$/sessao.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AJAX" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,8 +76,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\papGiovanna" />
       <recent name="C:\wamp64\www\papGiovanna\AJAX" />
+      <recent name="C:\wamp64\www\papGiovanna" />
       <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
     </key>
@@ -148,7 +155,8 @@
       <workItem from="1625041882279" duration="3711000" />
       <workItem from="1625129032316" duration="4713000" />
       <workItem from="1625214975470" duration="6909000" />
-      <workItem from="1625475163223" duration="5869000" />
+      <workItem from="1625475163223" duration="6445000" />
+      <workItem from="1625559618183" duration="13769000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -346,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625240895840</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Login/resgisto novos">
+      <created>1625499744926</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1625499744926</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +381,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Administração inicial" />
     <MESSAGE value="[leandro] Includes" />
     <MESSAGE value="[leandro] Base de dados versão 1.0" />
     <MESSAGE value="[leandro] Modais por AJAX." />
@@ -391,6 +405,7 @@
     <MESSAGE value="detalhes" />
     <MESSAGE value="Base de dados- Notif and avisos&#10;alguns detalhes" />
     <MESSAGE value="Base de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base de dados" />
+    <MESSAGE value="Login/resgisto novos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login/resgisto novos" />
   </component>
 </project>

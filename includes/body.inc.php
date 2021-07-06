@@ -5,6 +5,17 @@ $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 
  // error_reporting(E_ERROR | E_PARSE);     Retirar os erros
+
+if (isset($_GET['message'])) {
+
+    alertinativo("Email ou palavra-passe incorretos");
+}
+function alertinativo($message)
+{
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+
 function top(){
     ?>
 
@@ -98,7 +109,7 @@ function top(){
             <?php
                 if(!isset($_SESSION['id'])){
             ?>
-            <li><a href="#" data-toggle="modal" data-target="#login">Login</a> </li>
+            <li><a href="sessao.php">Login</a> </li>
 
 
 
@@ -108,7 +119,7 @@ function top(){
                     ?>
 
                      <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
-                     <li><span class="notif">3</span></li>
+                     <li><span class="notif">44</span></li>
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }

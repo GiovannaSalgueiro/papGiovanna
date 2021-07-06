@@ -8,6 +8,7 @@ include_once ("includes/config.inc.php");
     $pwd=addslashes($_POST['perfilPassword']);
 
 
+
 while ($dados=mysqli_fetch_array($res)){
     if ($email === $dados['perfilEmail'] AND $pwd === $dados['perfilPassword'] AND $dados['perfilEstado'] == 'ativo') {
         session_start();
@@ -20,6 +21,7 @@ while ($dados=mysqli_fetch_array($res)){
         header("location: ".$_SERVER['HTTP_REFERER']);
     }elseif($email != $dados['perfilEmail'] OR $pwd != $dados['perfilPassword'] AND $dados['perfilEstado'] == 'ativo'){
         isset($msg);
+
         header("location: ".$_SERVER['HTTP_REFERER']);
     }
 }

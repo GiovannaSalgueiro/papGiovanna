@@ -1,9 +1,9 @@
 <?php
-include_once ("includes/config.inc.php");
-$con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$nome=addslashes($_POST['nome']);
-$password=md5(addslashes($_POST['password']));
-$sql="select perfilId from perfis where perfilEstado='ativo' and perfilNome ='$nome'";
+include_once("includes/config.inc.php");
+$con = mysqli_connect(HOST, USER, PWD, DATABASE);
+$email = addslashes($_POST['perfilEmail']);
+$password = addslashes($_POST['perfilPassword']);
+/*$sql="select perfilId from perfis where perfilEstado='ativo' and perfilEmail ='$email'";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 if(!isset($dados['perfilId'])){ // não existe o login
@@ -11,20 +11,44 @@ if(!isset($dados['perfilId'])){ // não existe o login
     header("location:login.php?erro");
 }
 else{
-    $sql="select perfilId, perfilPassword, perfilNome from perfis where perfilId =".$dados['perfilId'];
+    $sql="select * from perfis where perfilId =".$dados['perfilId'];
     $result=mysqli_query($con,$sql);
     $dados=mysqli_fetch_array($result);
-    $sistemaLogin=$dados['perfilNome'];
+    $sistemaLogin=$dados['perfilEmail'];
     $sistemaPass=$dados['perfilPassword'];
-    if($dados['perfilPassword']==$sistemaPass && $dados['perfilName']==$sistemaLogin){
+    if($dados['perfilPassword']==$sistemaPass && $dados['perfilEmail']==$sistemaLogin){
         session_start();
         $_SESSION['id'] = $dados['perfilId'];
-        $_SESSION['nome'] = $dados['perfilName'];
+        $_SESSION['nome'] = $dados['perfilNome'];
         header("location:index.php");
     }
     else{
         header("location:login.php?erro");
     }
 
+}*/
+$sql = "select perfilId from perfis where perfilEmail='$email' AND perfilEstado='ativo'";
+$res = mysqli_query($con, $sql);
+$dados = mysqli_fetch_array($res);
+$id = $dados['perfilId'];
+
+
+$sql2 = "select * from perfis where perfilId='$id'";
+// buscar dados
+$res2 = mysqli_query($con, $sql2);
+$dados = mysqli_fetch_array($res2);
+
+// and $dados2['perfilAdmin']=='utilizador'
+
+if ($email == $dados['perfilEmail'] and $password == $dados['perfilPassword']) {
+    session_start();
+    $_SESSION['id'] = $dados['perfilId'];
+    $_SESSION['email'] = $dados['perfilEmail'];
+    $_SESSION['nome'] = $dados['perfilNome'];
+    header("location:index.php");
+
+
+} else {
+    header("location:sessao.php?message");
 }
 ?>

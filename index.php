@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 top();
 
+
 $sql = "select *, count(gostoFotoId) as n from fotos inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3";
 $result=mysqli_query($con,$sql);
 
@@ -81,6 +82,10 @@ $result=mysqli_query($con,$sql);
             <?php
             $sql="select * from albuns order by albumData desc limit 6";
             $resultAlbum=mysqli_query($con, $sql);
+
+            $sqlCriador="select * from fotografos inner join albuns on fotografoId=albumFotografoId ";
+            $resultCriador=mysqli_query($con, $sqlCriador);
+            $dadosCriador=mysqli_fetch_array($resultCriador);
             ?>
 
             <div class="row portfolio-container">
@@ -93,7 +98,7 @@ $result=mysqli_query($con,$sql);
                         <div class="portfolio-info">
                             <h4><?php echo $dadosAlbum['albumNome']?></h4>
                             <p><?php echo $dadosAlbum['albumData']?></p>
-                            <a href="albuns.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
+                            <a href="albuns.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>&fotografo=<?php echo $dadosCriador["fotografoId"]?>"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
 

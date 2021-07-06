@@ -45,9 +45,7 @@ $dados=mysqli_fetch_array($result);
         inner join albuns on fotografoId=albumFotografoId where albumFotografoId=$idF";
           $resultFotografo=mysqli_query($con,$sqlFotografo);
           $dadosFotografo=mysqli_fetch_array($resultFotografo);
-          ?>
 
-          <?php
           $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotoAlbumId=$idA" ;
 
           $resultF=mysqli_query($con,$sqlF);
@@ -85,7 +83,7 @@ $dados=mysqli_fetch_array($result);
         <div class="row portfolio-container">
             <?php
                 if($dadosF['f']<1){ ?>
-                    <h2>Este album ainda n„o contem fotografias</h2>
+                    <h2>Este album ainda n√£o contem fotografias</h2>
                     <?php
                     }else{
 

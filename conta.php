@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
+
 $sql="select * from perfis  where perfilId=$id" ;
 
 $result=mysqli_query($con,$sql);

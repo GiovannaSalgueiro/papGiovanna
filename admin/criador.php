@@ -79,8 +79,9 @@ $result = mysqli_query($con, $sql);
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
 
                     <?php
-                   // $sqlAviso="select count(noticacaoPerfilId) from notificacoes  where fotografoId= " $dadosId['fotografoId'];
-                   // $resultlAviso = mysqli_query($con, $sqllAviso);
+                        //$sqlAviso="select *,count(noticacaoTi) as n from notificacoes  where notificacaoTipo='aviso' and fotografoId=".$dados['fotografoId'];
+                        //$resultAviso=mysqli_query($con, $sqlAviso);
+                       // $dadosAviso=mysqli_fetch_array($resultAviso);
                     ?>
                     <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
 
