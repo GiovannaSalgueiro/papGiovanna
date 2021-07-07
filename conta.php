@@ -65,7 +65,7 @@ $dados=mysqli_fetch_array($result);
                       </div>
                       <a href="editaconta.php?id=<?php echo $dados["perfilId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
                       <br>
-                      <a href="definicao.php"><i class="fas fa-cog" style="color: #ffb459; text-align: right"></i><small> Definições da conta</small></a>
+                      <!--<a href="definicao.php"><i class="fas fa-cog" style="color: #ffb459; text-align: right"></i><small> Definições da conta</small></a>-->
                       <br>
                       <br>
 

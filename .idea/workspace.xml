@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Login/resgisto novos">
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXDelComentario.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AJAX/txt2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Elimina comentarios&#10;Login novo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetComentario.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetComentario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albuns.php" beforeDir="false" afterPath="$PROJECT_DIR$/albuns.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registar.php" beforeDir="false" afterPath="$PROJECT_DIR$/registar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessao.php" beforeDir="false" afterPath="$PROJECT_DIR$/sessao.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +141,8 @@
       <workItem from="1625129032316" duration="4713000" />
       <workItem from="1625214975470" duration="6909000" />
       <workItem from="1625475163223" duration="6445000" />
-      <workItem from="1625559618183" duration="13769000" />
+      <workItem from="1625559618183" duration="13804000" />
+      <workItem from="1625662783732" duration="2417000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -361,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625499744926</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Elimina comentarios&#10;Login novo">
+      <created>1625586792439</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1625586792439</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +374,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[leandro] Includes" />
     <MESSAGE value="[leandro] Base de dados versão 1.0" />
     <MESSAGE value="[leandro] Modais por AJAX." />
     <MESSAGE value="[leandro] AJAXGetFoto.php" />
@@ -406,6 +398,7 @@
     <MESSAGE value="Base de dados- Notif and avisos&#10;alguns detalhes" />
     <MESSAGE value="Base de dados" />
     <MESSAGE value="Login/resgisto novos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login/resgisto novos" />
+    <MESSAGE value="Elimina comentarios&#10;Login novo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Elimina comentarios&#10;Login novo" />
   </component>
 </project>

@@ -196,7 +196,7 @@ function top1(){
             <?php
                 if(!isset($_SESSION['id'])){
             ?>
-            <li><a href="#" data-toggle="modal" data-target="#login">Login</a> </li>
+            <li><a href="sessao.php">Login</a> </li>
 
 
 
