@@ -20,7 +20,19 @@ $dados=mysqli_fetch_array($result);
         <div class="section-title">
           <span>Conta</span>
           <h2>Conta</h2>
-            <h8><strong><a href="perfil.php?id=<?php echo $id ?>"> Ir para o meu perfil</a></strong></h8>
+            <?php
+            if (isset($_SESSION['id'])){
+            $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
+            $resultNome=mysqli_query($con,$sqlNome);
+            $dadosNome=mysqli_fetch_array($resultNome);
+            if($dadosNome['perfilNome']==$dados['perfilNome']){
+                ?>
+
+
+        <h8><strong><a href="perfil.php?id=<?php echo $id ?>"> Ir para o meu perfil</a></strong></h8>
+            <?php
+            }}
+            ?>
         </div>
 
           <div class="section-title">
@@ -35,17 +47,18 @@ $dados=mysqli_fetch_array($result);
                   <div class="content pl-lg-4 d-flex flex-column justify-content-center">
                       <div class="col-lg-12" align="right">
 
-                          <span id=notif onclick="notif()" align="left">
+                         <!-- <span id=notif onclick="notif()" align="left">
 
                                 <i class="fas fa-bell fa-2x" style="color: #ffb459"></i>
 
                                 <i class="fas fa-bell-slash fa-2x" aria-hidden="true" style="color: #ffb459"></i>
                                 </span>
 
-                            <span id=notif onclick="notif(<?php echo $id?>)" align="left">
+                            <span id=notif onclick="notif(</?php echo $id?>)" align="left">
+                            -->
                             <?php
-                            // verifica se o utilizador favorita o criador
-                            $sql="select * from perfis where perfilId=".$_SESSION['id']." and perfilNotificacao=".$id;
+                             // verifica se o utilizador favorita o criador
+                            /*$sql="select * from perfis where perfilId=".$_SESSION['id']." and perfilNotificacao=".$id;
                             mysqli_query($con,$sql);
                             if(mysqli_affected_rows($con)>0){
                                 ?>
@@ -55,12 +68,18 @@ $dados=mysqli_fetch_array($result);
                                 ?>
                                 <i class="fas fa-bell-slash fa-2x" aria-hidden="true" style="color: #ffb459"></i>
                                 <?php
-                            }
+                            }*/
                             ?>
-
+<!--
                     </span>
+                    -->
+                          <?php
+                          $sqlA="select *, count(notificacaoPerfilId) as nAvisos from notificacoes inner join perfis on notificacaoPerfilId=perfilId 
+                     where notificacaoTipo='aviso'";
 
-
+                          $resultA=mysqli_query($con,$sqlA);
+                          $dadosA=mysqli_fetch_array($resultA);
+                          ?>
 
                       </div>
                       <a href="editaconta.php?id=<?php echo $dados["perfilId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>

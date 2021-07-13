@@ -1,18 +1,22 @@
 <?php
 include_once("includes/body.inc.php");
 top();
+
 $sql="Select fotografoId
      , perfilId
      , perfilEstado
-, fotografoNome
-, fotografoEmail
-, fotografoFotoURL
-, count(*) as nAvisos
-from fotografos inner join perfis on fotografoPerfilId=perfilId
-inner join notificacoes on perfilId=notificacaoPerfilId
-where notificacaoTipo='aviso'
-GROUP BY 1";
+    , fotografoNome
+    , fotografoEmail
+    , fotografoFotoURL
+    , notificacaoId
+    , count(notificacaoPerfilId) as nAvisos
+    from fotografos left join perfis on fotografoPerfilId=perfilId
+    left join 
+    (select * from notificacoes where notificacaoTipo='aviso') as tabela on perfilId=tabela.notificacaoPerfilId
+    
+    GROUP BY 1";
 $result = mysqli_query($con, $sql);
+
 
 ?>
 
@@ -75,6 +79,7 @@ $result = mysqli_query($con, $sql);
                 <tr>
 
                     <?php
+
                     while ($dados = mysqli_fetch_array($result)) {
                     ?>
                     <td><?php echo $dados['fotografoId']?></td>

@@ -119,7 +119,7 @@ function top(){
                     ?>
 
                      <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
-                     <li><span class="notif">44</span></li>
+                     <!-- <li><span class="notif">44</span></li> -->
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
@@ -206,7 +206,9 @@ function top1(){
                     ?>
 
                      <li><a href="conta.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['nome']?></a></li>
-                     <li><span class="notif">3</span></li>
+
+
+                     <!-- <li><span class="notif">44</span></li> -->
                      <li><a href="logout.php">Logout</a></li>
                     <?php
                 }
