@@ -2,7 +2,8 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId where fotografoId=$id" ;
+$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId 
+    inner join perfis on perfilId= fotografoPerfilId where perfilId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -256,7 +257,7 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                       <div class="portfolio-info">
                           <h4><?php echo $dadosAlbum['albumNome']?></h4>
                           <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $id?>"><i class="far fa-eye"></i></a>
+                          <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
 
                           <?php
                           if(isset($_SESSION['id'])){
@@ -269,7 +270,7 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                           if($dadosNome['perfilNome']==$dados1['perfilNome']){
                           ?>
 
-                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $id?>"><i class="far fa-edit"></i></a>
+                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
                           <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
 
                               <?php

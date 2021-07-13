@@ -1,7 +1,17 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql="Select * from fotografos inner join perfis on fotografoPerfilId=perfilId";
+$sql="Select fotografoId
+     , perfilId
+     , perfilEstado
+, fotografoNome
+, fotografoEmail
+, fotografoFotoURL
+, count(*) as nAvisos
+from fotografos inner join perfis on fotografoPerfilId=perfilId
+inner join notificacoes on perfilId=notificacaoPerfilId
+where notificacaoTipo='aviso'
+GROUP BY 1";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -73,7 +83,7 @@ $result = mysqli_query($con, $sql);
                     <td><?php echo $dados['fotografoEmail']?></td>
                     <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
 
-                    <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-primary"><?php echo $dados['perfilEstado']?></span></a></td>
+                    <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-<?php echo $dados['perfilEstado']=='ativo'?'prim':'second'?>ary"><?php echo $dados['perfilEstado']?></span></a></td>
 
 
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
@@ -83,7 +93,7 @@ $result = mysqli_query($con, $sql);
                         //$resultAviso=mysqli_query($con, $sqlAviso);
                        // $dadosAviso=mysqli_fetch_array($resultAviso);
                     ?>
-                    <td><span class="btn-sm btn-warning">2&nbsp;<i class="fas fa-bell"></i></span></td>
+                    <td><span class="btn-sm btn-warning"><?php echo $dados['nAvisos']?>&nbsp;<i class="fas fa-bell"></i></span></td>
 
 
                     <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>

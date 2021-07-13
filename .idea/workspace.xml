@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Elimina comentarios&#10;Login novo">
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] Base de dados versão 3.0">
+      <change afterPath="$PROJECT_DIR$/HTML/Joao.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/editarAna.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/eliminaGaleria.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/inner-page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/portfolio-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/album1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/istockphoto-135790647-1024x1024.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Joao.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albuns.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaNovaFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaNovaFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editarAna.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eliminaGaleria.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inner-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-details.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +71,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AJAX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,7 +85,6 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna" />
       <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
@@ -128,21 +151,7 @@
       <workItem from="1621845315375" duration="6781000" />
       <workItem from="1622104800451" duration="2122000" />
       <workItem from="1622215250387" duration="2423000" />
-      <workItem from="1622449194459" duration="2070000" />
-      <workItem from="1622459189982" duration="22000" />
-      <workItem from="1623062331871" duration="1403000" />
-      <workItem from="1623140319784" duration="601000" />
-      <workItem from="1624441868795" duration="2286000" />
-      <workItem from="1624610191933" duration="1793000" />
-      <workItem from="1624868848534" duration="5690000" />
-      <workItem from="1624955667210" duration="13444000" />
-      <workItem from="1624981555994" duration="253000" />
-      <workItem from="1625041882279" duration="3711000" />
-      <workItem from="1625129032316" duration="4713000" />
-      <workItem from="1625214975470" duration="6909000" />
-      <workItem from="1625475163223" duration="6445000" />
-      <workItem from="1625559618183" duration="13804000" />
-      <workItem from="1625662783732" duration="2417000" />
+      <workItem from="1622449194459" duration="1839000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -298,63 +307,7 @@
       <option name="project" value="LOCAL" />
       <updated>1622449220680</updated>
     </task>
-    <task id="LOCAL-00023" summary="registar">
-      <created>1622458710284</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1622458710284</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Tudo">
-      <created>1624869483642</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1624869483642</updated>
-    </task>
-    <task id="LOCAL-00025" summary="admin- albuns ( elimina a foto dentro do album)&#10;atividade so apareçe se tem login feito&#10;layout do album melhorado&#10;perfil( perfil.php junto com perfis.php conforme se a sessao esta iniciada ou não">
-      <created>1624981186966</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1624981186966</updated>
-    </task>
-    <task id="LOCAL-00026" summary="detalhes">
-      <created>1625068660794</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1625068660794</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Base de dados- Notif and avisos&#10;alguns detalhes">
-      <created>1625154044021</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1625154044021</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Base de dados">
-      <created>1625240895840</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1625240895840</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Login/resgisto novos">
-      <created>1625499744926</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1625499744926</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Elimina comentarios&#10;Login novo">
-      <created>1625586792439</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1625586792439</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +327,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Novo layout da página principal. Pequenos ajustes ao portfólio." />
+    <MESSAGE value="Administração" />
+    <MESSAGE value="Administração inicial" />
+    <MESSAGE value="[leandro] Includes" />
     <MESSAGE value="[leandro] Base de dados versão 1.0" />
     <MESSAGE value="[leandro] Modais por AJAX." />
     <MESSAGE value="[leandro] AJAXGetFoto.php" />
@@ -391,14 +348,6 @@
     <MESSAGE value="edita perfil- detalhes&#10;base dados" />
     <MESSAGE value="Publicaçoes contasgem" />
     <MESSAGE value="login.php&#10;editaconta.php" />
-    <MESSAGE value="registar" />
-    <MESSAGE value="Tudo" />
-    <MESSAGE value="admin- albuns ( elimina a foto dentro do album)&#10;atividade so apareçe se tem login feito&#10;layout do album melhorado&#10;perfil( perfil.php junto com perfis.php conforme se a sessao esta iniciada ou não" />
-    <MESSAGE value="detalhes" />
-    <MESSAGE value="Base de dados- Notif and avisos&#10;alguns detalhes" />
-    <MESSAGE value="Base de dados" />
-    <MESSAGE value="Login/resgisto novos" />
-    <MESSAGE value="Elimina comentarios&#10;Login novo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Elimina comentarios&#10;Login novo" />
+    <option name="LAST_COMMIT_MESSAGE" value="login.php&#10;editaconta.php" />
   </component>
 </project>

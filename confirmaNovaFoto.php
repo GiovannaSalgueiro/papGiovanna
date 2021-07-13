@@ -12,5 +12,5 @@ echo $sql="insert into fotos(fotoNome,fotoURL,fotoAlbumId) values('".$nome."','"
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 mysqli_query($con,$sql);
-header("location: album.php?id=$album");
+header("location: album.php?idAlbum=$album");
 ?>

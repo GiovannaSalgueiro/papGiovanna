@@ -3,12 +3,13 @@ include_once("includes/body.inc.php");
 top1();
 
 $idA=intval($_GET['idAlbum']);
-$idF=intval($_GET['idFotografo']);
+
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
         inner join fotografos on albumFotografoId=fotografoId where albumId=$idA" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
+$idF=$dados['albumFotografoId'];
 ?>
 <script>
     function confirmaElimina(id) {

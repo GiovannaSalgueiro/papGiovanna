@@ -2,7 +2,7 @@
 include_once("includes/config.inc.php");
 $con = mysqli_connect(HOST, USER, PWD, DATABASE);
 $email = addslashes($_POST['perfilEmail']);
-$password = addslashes($_POST['perfilPassword']);
+$password = md5(addslashes($_POST['perfilPassword']));
 /*$sql="select perfilId from perfis where perfilEstado='ativo' and perfilEmail ='$email'";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);

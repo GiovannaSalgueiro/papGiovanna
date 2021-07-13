@@ -70,7 +70,7 @@ $dados = mysqli_fetch_array($result);
             inner join fotos on fotoId=comentarioFotoId where fotoId=$id";
                     $resultTexto = mysqli_query($con, $sql);
                     ?>
-                    <div class="col-4" style="overflow-y: scroll;" id="comentarios"> <!-- alterar por PHP a altura da div (imagem) -->
+                    <div class="col-4" style="overflow-y: scroll; height: 354px" id="comentarios"> <!-- alterar por PHP a altura da div (imagem) -->
                         <?php
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
                         ?>
@@ -115,7 +115,7 @@ $dados = mysqli_fetch_array($result);
                             </span>
                     </div>
                         <div class="container text-right">
-                            <small><input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
+                            <input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
                             <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button>
                         </div>
                 </div>

@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 
 $id=intval($_POST['id']);
-$idCriador=intval($_POST['idCriador']);
+$idCriador=intval($_SESSION['id']);
 $nome=addslashes($_POST['albumNome']);
 $data=addslashes($_POST['albumData']);
 
