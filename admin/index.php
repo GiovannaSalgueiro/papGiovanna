@@ -1,16 +1,25 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-
-
-
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $sql="Select * , count(gostoFotoId) as n
         from fotos inner join albuns on fotoAlbumId=albumId 
         inner join fotografos on fotografoId=albumFotografoId
         inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3
         ";
 $result = mysqli_query($con, $sql);
-$resultAlbuns = mysqli_query($con, $sql);
+
+
+$sqlA="Select * from fotos inner join albuns on fotoAlbumId=albumId 
+        inner join fotografos on fotografoId=albumFotografoId    ";
+$resultA = mysqli_query($con, $sqlA);
+$dadosA =mysqli_fetch_array($resultA);
+
+
+
+$sqlId="select * from fotos inner join comentarios on fotoId=comentarioFotoId";
+$resultId = mysqli_query($con, $sqlId);
+$dadosId = mysqli_fetch_array($resultId);
 
 ?>
 <script>
@@ -85,7 +94,6 @@ $resultAlbuns = mysqli_query($con, $sql);
                 </tr><?php
                 while ($dados = mysqli_fetch_array($result)) {
 
-
                     ?>
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
@@ -116,8 +124,10 @@ $resultAlbuns = mysqli_query($con, $sql);
             <p>Últimas entradas</p>
         </div>
         <?php
-        $sql = "select * from albuns inner join fotografos where albumFotografoId=fotografoId order by albumData desc limit 6";
-        $resultAlbuns = mysqli_query($con, $sql);
+
+        $sqlAlbuns = "select * from albuns inner join fotografos where albumFotografoId=fotografoId order by albumData desc limit 6";
+        $resultAlbuns = mysqli_query($con, $sqlAlbuns);
+
         ?>
         <table class="table table-hover table-striped">
 
@@ -158,11 +168,20 @@ $resultAlbuns = mysqli_query($con, $sql);
 
 <div class="modal fade" id="top1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <?php
+    $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 
-    $sql = "select * from perfis inner join comentarios on perfilId=comentarioPerfilId
-            inner join fotos on fotoId=comentarioFotoId";
+    $sqlFotos="select * from fotos ";
+    $res=mysqli_query($con,$sqlFotos);
+    $dadosFotoId=mysqli_fetch_array($res);
 
-    $resultTexto = mysqli_query($con, $sql);
+    $sqlTexto = "select * from comentarios inner join fotos on comentarioFotoId=fotoId
+										inner join perfis on comentarioPerfilId=perfilId
+										where comentarioFotoId=".$dados['fotoId'];
+
+    $resultTexto = mysqli_query($con, $sqlTexto);
+
+
+
     ?>
     <div class="modal-dialog">
         <div class="modal-content">
@@ -175,9 +194,13 @@ $resultAlbuns = mysqli_query($con, $sql);
                         </tr>
                         <?php
                         while ($dadosTexto = mysqli_fetch_array($resultTexto)) {
+
                         ?>
                         <tr>
                             <th><small><span class="text-primary "><strong><?php echo $dadosTexto['perfilNome']?></strong></span><?php echo $dadosTexto['comentarioTexto']?></small></th>
+                        <?php
+                        echo $dadosFotoId['fotoId'];
+                        ?>
                             <th><a href="#" onclick="confirmaEliminaCom(<?php echo $dados['comentarioId']?>);"><i class="fas fa-trash-alt"></i></a></th>
                         </tr>
                             <?php

@@ -2,10 +2,10 @@
 include_once("includes/body.inc.php");
 top1();
 
-$idA=intval($_GET['idAlbum']);
+$id=intval($_GET['idAlbum']);
 
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
-        inner join fotografos on albumFotografoId=fotografoId where albumId=$idA" ;
+        inner join fotografos on albumFotografoId=fotografoId where albumId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -47,7 +47,7 @@ $idF=$dados['albumFotografoId'];
           $resultFotografo=mysqli_query($con,$sqlFotografo);
           $dadosFotografo=mysqli_fetch_array($resultFotografo);
 
-          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotoAlbumId=$idA" ;
+          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotoAlbumId=$id" ;
 
           $resultF=mysqli_query($con,$sqlF);
           $dadosF=mysqli_fetch_array($resultF);
@@ -74,7 +74,7 @@ $idF=$dados['albumFotografoId'];
                   if($dadosNome['perfilNome']==$dados1['perfilNome']){
                       ?>
 
-                      <a href="adicionaFoto.php?id=<?php echo $idA?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
+                      <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
 <?php
                   }}?>
           </div>
@@ -91,7 +91,7 @@ $idF=$dados['albumFotografoId'];
                     ?>
 
                 <?php
-                $sql="select * from fotos where fotoAlbumId=$idA";
+                $sql="select * from fotos where fotoAlbumId=$id";
                 $resultFoto=mysqli_query($con,$sql);
                 while ($dadosFoto=mysqli_fetch_array($resultFoto)) {
                     ?>

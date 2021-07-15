@@ -92,23 +92,26 @@ $dados=mysqli_fetch_array($result);
                           <div class="col-lg-8" style="text-align: center">
                               <br>
                               <br>
-                              <a href="#" data-toggle="modal" data-target="#seguidores" style="color: #444444"> <h8><strong>
+                              <a href="#" data-toggle="modal" data-target="#seguidores" style="color: #444444"></a>
+                                  <h8><strong>
                                   <?php $sqlfav2="select count(favoritoFotografoId) from favoritos where favoritoFotografoId=".$id;
                                           $sqlFav=mysqli_query($con,$sqlfav2);
                                           $dadosFav=mysqli_fetch_array($sqlFav);
                                           $fav=(int)$dadosFav['count(favoritoFotografoId)']; echo $fav;
-                                  ?> Seguidores</strong></h8></a>
+                                  ?> Seguidores</strong></h8>
 
                           </div>
                           <div class="col-lg-4" style="text-align: center">
                               <br>
                               <br>
-                              <a href="#" data-toggle="modal" data-target="#seguindo" style="color: #444444"><h8><strong>
+                              <a href="#" data-toggle="modal" data-target="#seguindo" style="color: #444444"></a>
+
+                                  <h8><strong>
                               <?php $sqlSeg2="select count(favoritoPerfilId) from favoritos where favoritoPerfilId=".$id;
                               $sqlSeg=mysqli_query($con,$sqlSeg2);
                               $dadosSeg=mysqli_fetch_array($sqlSeg);
                               $seg=(int)$dadosSeg['count(favoritoPerfilId)']; echo $seg;
-                              ?> Seguindo</strong></h8></a>
+                              ?> Seguindo</strong></h8>
                           </div>
                       </div>
 

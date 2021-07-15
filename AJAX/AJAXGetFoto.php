@@ -31,6 +31,7 @@ $dados = mysqli_fetch_array($result);
         }
 
     }
+
 </script>
 
 
@@ -81,8 +82,9 @@ $dados = mysqli_fetch_array($result);
                             <?php
                             if(isset($_SESSION['id'])&&($_SESSION['id']==$dadosTexto['perfilId'])){
                                 ?>
+                                <!--<a href="" onclick=""> &nbsp;&nbsp;&nbsp;<i class="fas fa-edit"></i></a>-->
                                 <a href="" onclick="confirmaEliminaCom(<?php echo $dadosTexto['comentarioId']?>);"> <i class="fas fa-trash-alt"></i></a>
-                                <?php
+                                                                <?php
                             }
                                 ?>
 

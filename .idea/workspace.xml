@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Algumas coisas">
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Detalhes da conta&#10;admin fotografos completo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v4.6.5.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +144,9 @@
       <workItem from="1625475163223" duration="6445000" />
       <workItem from="1625559618183" duration="13804000" />
       <workItem from="1625662783732" duration="2447000" />
-      <workItem from="1626176533593" duration="5741000" />
+      <workItem from="1626176533593" duration="6028000" />
+      <workItem from="1626267519112" duration="4610000" />
+      <workItem from="1626354641087" duration="2749000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -364,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625672375711</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Detalhes da conta&#10;admin fotografos completo">
+      <created>1626191772029</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1626191772029</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +392,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[leandro] Modais por AJAX." />
     <MESSAGE value="[leandro] AJAXGetFoto.php" />
     <MESSAGE value="[leandro] base de dados versão 2.0" />
     <MESSAGE value="[leandro] versão 2.5 da base de dados" />
@@ -409,6 +416,7 @@
     <MESSAGE value="Login/resgisto novos" />
     <MESSAGE value="Elimina comentarios&#10;Login novo" />
     <MESSAGE value="Algumas coisas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Algumas coisas" />
+    <MESSAGE value="Detalhes da conta&#10;admin fotografos completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Detalhes da conta&#10;admin fotografos completo" />
   </component>
 </project>
