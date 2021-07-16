@@ -37,7 +37,17 @@ function alert($msg) {
 
         <!-- Template Main CSS File -->
         <link href='assets/css/style.css' rel='stylesheet'>
+        <script>
 
+            function valida() {
+                var erro = false;
+                if($('#msg').html()!='')
+                    return false;
+                return true;
+
+            }
+
+        </script>
     </head>
 
 
@@ -68,7 +78,7 @@ function alert($msg) {
               <br>
 
               <div class="container">
-                  <form action="confirmaLogin.php" method="post">
+                  <form action="registar.php" method="post" onsubmit="return valida()" >
 
                       <div class="container">
                           <div class="row">
@@ -83,15 +93,16 @@ function alert($msg) {
                                       </div>
                                       <div class="form-group">
                                           <label>Email:</label>
-                                          <input type="text" class="form-control" name="perfilEmail">
+                                          <input type="text" class="form-control" id="perfilEmail" name="perfilEmail">
                                       </div>
                                       <div class="form-group">
                                           <label>Palavra-passe</label>
-                                          <input type="password" class="form-control" name="perfilPassword" required>
+                                          <input id="pwd" type="password" class="form-control" name="perfilPassword" required>
                                           <label>Confirmar Palavra-passe</label>
-                                          <input type="password" class="form-control" name="perfilPassword" required>
+                                          <input id="pwd2" type="password" class="form-control" name="perfilPassword2" required>
                                           <small class="form-text text-muted">Nunca compartilhe a sua palavra-passe com mais ninguém.</small>
                                           <br>
+                                          <span class="bg-warning" id="msg"></span>
                                       </div>
 
                                   </div>
@@ -121,7 +132,6 @@ function alert($msg) {
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-</body>
 <?php
 bottom();
 

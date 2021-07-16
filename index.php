@@ -83,7 +83,7 @@ $result=mysqli_query($con,$sql);
             $sql="select * from albuns order by albumData desc limit 6";
             $resultAlbum=mysqli_query($con, $sql);
 
-            $sqlCriador="select * from fotografos inner join albuns on fotografoId=albumFotografoId ";
+            $sqlCriador="select * from fotografos inner join albuns on fotografoPerfilId=albumFotografoId ";
             $resultCriador=mysqli_query($con, $sqlCriador);
             $dadosCriador=mysqli_fetch_array($resultCriador);
             ?>

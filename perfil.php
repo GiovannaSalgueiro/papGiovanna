@@ -2,11 +2,14 @@
 include_once("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId 
+/*
+echo $sql="select *, count(albumFotografoId) as p from fotografos inner join albuns on fotografoId=albumFotografoId 
     inner join perfis on perfilId= fotografoPerfilId where perfilId=$id" ;
-
+*/
+$sql="select * from perfis inner join fotografos on perfilId=fotografoPerfilId where perfilId=".$id;
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
+
 ?>
     <script>
         function confirmaEliminaAlbum(id) {
@@ -47,15 +50,17 @@ $dados=mysqli_fetch_array($result);
                 <?php
 
                 if(isset($_SESSION['id'])){
+                    /*
                     $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
                     $sql1="select perfilNome from perfis where perfilId=".$id;
                     $resultNome=mysqli_query($con,$sqlNome);
                     $result1=mysqli_query($con,$sql1);
                     $dadosNome=mysqli_fetch_array($resultNome);
                     $dados1=mysqli_fetch_array($result1);
-                if($dadosNome['perfilNome']==$dados1['perfilNome']){
+                    */
+                if($id==$_SESSION['id']){
                     ?>
-                    <a href="editaperfil.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
+                    <a href="editaperfil.php?id=<?php echo $dados["fotografoPerfilId"]?>"><i class="fas fa-user-edit" style="color: #ffb459; text-align: right"></i><small> Editar perfil</small></a>
 
                     <?php
                 }else{?>
@@ -83,7 +88,7 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-lg-6">
                   <br>
                   <ul>
-                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> <?php echo $dados['fotografoNome']?></li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong> <?php echo $dados['perfilNome']?></li>
                     <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong> <?php echo $dados['fotografoTelemovel']?></li>
                     <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong> <?php echo $dados['fotografoCidade']?></li>
                   </ul>
@@ -91,7 +96,7 @@ $dados=mysqli_fetch_array($result);
                 <div class="col-lg-6">
                   <br>
                   <ul>
-                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['fotografoEmail']?></li>
+                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong><?php echo $dados['perfilEmail']?></li>
 
                         <?php if($dados['fotografoFreelancer']=== 'sim'){?>
                         <li><i class="icofont-rounded-right"></i> <strong>Freelance: </strong>disponível
@@ -112,11 +117,12 @@ $dados=mysqli_fetch_array($result);
 
                   <div class="count-box">
                     <i class="icofont-heart-alt" style="color:#FA5858;"></i>
-                      <span data-toggle="counter-up"><?php $sqlGosto="select count(gostoPerfilId) from gostos inner join fotos on gostoFotoId=fotoId inner join albuns on fotoAlbumId=albumId
-inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
-                          $sqlGosto2=mysqli_query($con,$sqlGosto);
-                          $dadosGosto=mysqli_fetch_array($sqlGosto2);
-                          $gosto=(int)$dadosGosto['count(gostoPerfilId)']; echo $gosto;?>
+                      <span data-toggle="counter-up"><?php
+                          $sqlGosto="select count(gostoPerfilId) as nGostos from gostos inner join fotos on gostoFotoId=fotoId inner join albuns on fotoAlbumId=albumId
+inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfilId=".$id;
+                          $res=mysqli_query($con,$sqlGosto);
+                          $dadosGosto=mysqli_fetch_array($res);
+                          echo $dadosGosto['nGostos'];?>
                       </span>
                     <p><strong>Gostos</strong> Total de gostos</p>
                   </div>
@@ -125,7 +131,12 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                 <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                    <span data-toggle="counter-up"><?php echo $dados['p']?></span>
+                    <span data-toggle="counter-up"><?php
+                        $sql="select count(*) as nAlbuns from albuns inner join fotografos 
+                        on albumFotografoId=fotografoPerfilId where fotografoPerfilId=".$id;
+                          $res=mysqli_query($con,$sql);
+                          $dadosA=mysqli_fetch_array($res);
+                          echo $dadosA[0];?></span>
                     <p><strong>Projetos</strong> concluidos</p>
                   </div>
                 </div>
@@ -135,8 +146,13 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                     <i class="icofont-clock-time" style="color: #2cbdee;"></i>
                     <span data-toggle="counter-up">
                         <?php
-                            $n=intval(date("Y")) - $dados['fotografoAnoInicio'];
-                            echo $n==0?" - ":$n;
+                            if(!is_null($dados['fotografoAnoInicio'])){
+                                $n=intval(date("Y")) - $dados['fotografoAnoInicio'];
+                                echo $n==0?" - ":$n;
+                            }else{
+                                echo '-';
+                            }
+
                         ?>
 
 
@@ -165,7 +181,7 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
                       <br>
                       <br>
                       <?php
-                      $sqlP="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotografoId=$id" ;
+                      $sqlP="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfilId=$id" ;
 
                       $resultP=mysqli_query($con,$sqlP);
                       $dadosP=mysqli_fetch_array($resultP);
@@ -216,16 +232,11 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
             <div class="row">
                 <?php
                     if(isset($_SESSION['id'])){
-                    $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
-                    $sql1="select perfilNome from perfis where perfilId=".$id;
-                    $resultNome=mysqli_query($con,$sqlNome);
-                    $result1=mysqli_query($con,$sql1);
-                    $dadosNome=mysqli_fetch_array($resultNome);
-                    $dados1=mysqli_fetch_array($result1);
-                    if($dadosNome['perfilNome']==$dados1['perfilNome']){
+
+                    if($id==$_SESSION['id']){
                 ?>
 
-                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
+                <div class="col-2"><a href="adicionaAlbum.php?id=<?php echo $dados["fotografoPerfilId"]?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar album</small></a></div>
                     <?php
                         }}?>
             </div>
@@ -233,57 +244,11 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
         </div>
 
           <br>
+          <!-- ***************************************************************** AJAX -->
+        <div id="portfolioAlbuns">
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center">
-          <li data-filter="*" class="filter-active">Todos</li>
-          <li data-filter=".filter-card">2021</li>
-            <li data-filter=".filter-web">2020</li>
-            <li data-filter=".filter-app">2019</li>
-        </ul>
-
-          <?php
-          $sql="select * from albuns where albumFotografoId=$id order by albumData desc";
-          $resultAlbum=mysqli_query($con,$sql);
-          ?>
-          <div class="row portfolio-container">
-              <!-- app=            card=2019               web=2020-->
-
-
-              <?php
-              while ($dadosAlbum=mysqli_fetch_array($resultAlbum)) {
-                  ?>
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                      <div class="portfolio-img"><img src="<?php echo $dadosAlbum['albumCapaURL']; ?>" class="img-fluid" alt=""></div>
-                      <div class="portfolio-info">
-                          <h4><?php echo $dadosAlbum['albumNome']?></h4>
-                          <p><?php echo $dadosAlbum['albumData']?></p>
-                          <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
-
-                          <?php
-                          if(isset($_SESSION['id'])){
-                          $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
-                          $sql1="select perfilNome from perfis where perfilId=".$id;
-                          $resultNome=mysqli_query($con,$sqlNome);
-                          $result1=mysqli_query($con,$sql1);
-                          $dadosNome=mysqli_fetch_array($resultNome);
-                          $dados1=mysqli_fetch_array($result1);
-                          if($dadosNome['perfilNome']==$dados1['perfilNome']){
-                          ?>
-
-                          <a href="editaAlbum.php?id=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-edit"></i></a>
-                          <a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbum['albumId']?>);"><i class="fas fa-trash-alt" style="color: #ffb459; text-align: right"></i></a>
-
-                              <?php
-                          }}?>
-
-
-                      </div>
-                  </div>
-                  <?php
-              }
-              ?>
-
-          </div>
+        </div>
+        <!-- *******************************************************************************************  -->
       </div>
     </section><!-- End My Portfolio Section -->
 
@@ -385,5 +350,5 @@ inner join fotografos on albumFotografoId=fotografoId where fotografoId=".$id;
 
 </body>
 <?php
-bottom();
+bottom(PERFIL,$id);
 ?>

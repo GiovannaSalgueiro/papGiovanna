@@ -114,6 +114,26 @@ function mostraFoto(id){
 
 }
 
+function fillTablePortfolio(id, ano=-1) {
+    $.ajax({
+        url:"AJAX/AJAXFillPortfolio.php",
+        type:"post",
+        data:{
+            idPerfil:id,
+            ano:ano
+        },
+        success:function (result){
+
+            $('#portfolioAlbuns').html(result);
+        }
+    });
+    /*
+    document.getElementById("gosto").innerHTML = "<i class=\"fas fa-heart\" style='color: red'></i>";
+    n += 1;
+    document.getElementById("gostar").innerHTML = n;
+    */
+
+}
 
 
 

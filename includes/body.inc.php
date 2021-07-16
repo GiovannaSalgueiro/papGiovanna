@@ -113,7 +113,7 @@ function top(){
 
 
 
-            <li><a href="#" data-toggle="modal" data-target="#regista">Registar</a>&nbsp;</li>
+            <li><a href="registo.php" >Registar</a>&nbsp;</li>
             <?php
                 }else{
                     ?>
@@ -220,7 +220,7 @@ function top1(){
 </header><!-- End Header -->
 <?php
 }
-function bottom(){
+function bottom($pag=-1,$id=-1){
 
     if(HOME){
     ?>
@@ -369,6 +369,50 @@ function bottom(){
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="js/common.js"></script>
+    <script>
+        $('document').ready(function (){
+            $( "#perfilEmail" ).focusout(function() {
+                $.ajax({
+                        url: "AJAX/AJAXGetEmail.php",
+                        type: "post",
+                        data: {
+                            email: $('#perfilEmail').val()
+                        },
+                        success: function (result) {
+                            if(result==1)
+                                $('#msg').html('Email já existe na base de dados!');
+                            else
+                                $('#msg').html('');
+                        }
+                    });
+            });
+            $('#pwd').keyup(function (){
+                 if ($('#pwd').val() != $('#pwd2').val()) {
+                    $('#msg').html('Passwords não coincidem!');
+                }else{
+                    $('#msg').html('');
+                }
+            });
+
+            $('#pwd2').keyup(function (){
+                 if ($('#pwd').val() != $('#pwd2').val()) {
+                    $('#msg').html('Passwords não coincidem!');
+                }else{
+                    $('#msg').html('');
+                }
+            });
+
+
+     <?php
+        if($pag==PERFIL){
+            ?>
+            fillTablePortfolio(<?php echo $id?>);
+            <?php
+        }
+     ?>
+
+        });
+    </script>
 
 
 
