@@ -75,8 +75,11 @@ $idF=$dados['albumFotografoId'];
                       ?>
 
                       <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
-<?php
-                  }}?>
+            <?php
+
+                  }
+
+              }?>
           </div>
       <br>
       <br>

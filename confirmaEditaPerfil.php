@@ -2,15 +2,16 @@
 include_once("includes/body.inc.php");
 
 $id=intval($_POST['id']);
-$nome=addslashes($_POST['fotografoNome']);
+$nome=addslashes($_POST['perfilNome']);
 $telemovel=addslashes($_POST['fotografoTelemovel']);
 $fotografofreelance=addslashes($_POST['freelance']);
 $cidade=addslashes($_POST['fotografoCidade']);
-$email=addslashes($_POST['fotografoEmail']);
+$email=addslashes($_POST['perfilEmail']);
 $imagem=$_FILES['fotografoFotoURL']['name'];
 $novoNome="imagens/".$imagem;
 
-$sql="Update fotografos set fotografoNome='".$nome."', fotografoTelemovel='".$telemovel."', fotografoEmail='".$email."', fotografoCidade='".$cidade."', fotografoFreelancer='".$fotografofreelance."'";
+$sql="Update fotografos set  fotografoTelemovel='".$telemovel."', fotografoCidade='".$cidade."', fotografoFreelancer='".$fotografofreelance."'";
+$sql.="Update perfis set perfilNome='".$nome."', perfilEmail='".$email."'";
 
 if($imagem!=''){
     $sql.=", fotografoFotoURL='imagens/".$imagem."'";
@@ -21,7 +22,7 @@ $sql.=" where fotografoId=".$id;
 
 
 mysqli_query($con,$sql);
-header("location: perfil.php?id=".$id);
+//header("location: perfil.php?id=".$id);
 ?>
 
 

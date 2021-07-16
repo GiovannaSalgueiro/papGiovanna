@@ -3,11 +3,6 @@
     $id=intval($_POST['idPerfil']);
     $ano=intval($_POST['ano']);
 
-
-
-
-
-
 ?>
 
 <ul id="portfolio-flters" class="d-flex justify-content-center">

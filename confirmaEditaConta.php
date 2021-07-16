@@ -5,12 +5,10 @@ $id=intval($_POST['id']);
 $nome=addslashes($_POST['perfilNome']);
 
 $email=addslashes($_POST['perfilEmail']);
-$password=addslashes($_POST['perfilPassword']);
-$perfilfotografo=addslashes($_POST['perfilFotografo']);
 
 
 
-$sql="Update perfis set perfilNome='".$nome."',perfilEmail='".$email."', perfilPassword='".$password."', perfilFotografo='".$perfilfotografo."'";
+$sql="Update perfis set perfilNome='".$nome."',perfilEmail='".$email."', perfilPassword='".$password."'";
 
 $sql.=" where perfilId=".$id;
 

@@ -25,9 +25,22 @@ $dados=mysqli_fetch_array($result);
                 <input type="hidden" name="id" value="<?php echo $id?>">
 
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
-                    <small><input type="file" name="albumCapaURL"></small>
 
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <br>
+                                <ul>
+                                    <li> <strong>Capa do album:</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-8">
+                                <br>
+                                <ul>
+                                    <small><input type="file" name="albumCapaURL"></small>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <br>

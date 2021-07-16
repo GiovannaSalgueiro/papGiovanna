@@ -28,7 +28,8 @@ $dados=mysqli_fetch_array($result);
                             <br>
                             <ul>
                                 <li> <strong>Nome do album:</strong></li><br>
-                                <li> <strong>Data:</strong></li>
+                                <li> <strong>Data do album:</strong></li><br>
+                                <li> <strong>Capa do album:</strong></li>
                             </ul>
                         </div>
                         <div class="col-lg-8">
@@ -40,9 +41,12 @@ $dados=mysqli_fetch_array($result);
                             <ul>
                                 <small><input type="text" name="albumData" value="<?php echo $dados['albumData']?>"></small>
                             </ul>
-                        </div><div class="col-lg-12"  style="text-align: center">
-                        <small><input type="file" name="albumCapaURL" src="../<?php echo $dados['albumCapaURL']?>"></small>
+<br>
+                            <ul>
+                                <small><input type="file" name="albumCapaURL" src="../<?php echo $dados['albumCapaURL']?>"></small>
+                            </ul>
                         </div>
+
                         <div class="col-lg-12"  style="text-align: center"><br><br>
                             <button type="Submit" class="btn btn-warning">Edita</button><br>
                         </div>

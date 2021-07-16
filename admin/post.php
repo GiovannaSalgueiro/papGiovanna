@@ -5,7 +5,7 @@ top1();
 
 $sql="Select * , count(gostoFotoId) as n
         from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId 
+        inner join fotografos on fotografoPerfilId=albumFotografoId 
             left join gostos on fotoId=gostoFotoId  group by fotoId, fotoURL order by albumData desc";
 $result = mysqli_query($con, $sql);
 ?>

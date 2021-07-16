@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-$sql="SELECT * from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on favoritoFotografoId = fotografoId inner join albuns on fotografoId = albumFotografoId
+$sql="SELECT * from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on favoritoFotografoId = fotografoPerfilId inner join albuns on fotografoPerfilId = albumFotografoId
 				inner join fotos on albumId=fotoAlbumId where favoritoPerfilId=".$_SESSION['id'];
 
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
@@ -27,7 +27,7 @@ $result = mysqli_query($con, $sql);
             <!-- <small>Pesquisar:</small><br><input type="text" id="search"> -->
             <div class="row">
                 <?php
-                $sqlR="SELECT *,count(fotoAlbumId) as r from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on favoritoFotografoId = fotografoId inner join albuns on fotografoId = albumFotografoId
+                $sqlR="SELECT *,count(fotoAlbumId) as r from favoritos  INNER JOIN perfis on favoritoPerfilId = perfilId inner join fotografos on favoritoFotografoId = fotografoPerfilId inner join albuns on fotografoPerfilId = albumFotografoId
 				inner join fotos on albumId=fotoAlbumId where favoritoPerfilId=".$_SESSION['id'];
                 $resultR = mysqli_query($con, $sqlR);
                 $dadosR= mysqli_fetch_array($resultR);

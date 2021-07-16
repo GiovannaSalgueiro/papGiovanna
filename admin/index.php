@@ -4,14 +4,14 @@ top();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $sql="Select * , count(gostoFotoId) as n
         from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId
+        inner join fotografos on fotografoPerfilId=albumFotografoId
         inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3
         ";
 $result = mysqli_query($con, $sql);
 
 
 $sqlA="Select * from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId    ";
+        inner join fotografos on fotografoPerfilId=albumFotografoId    ";
 $resultA = mysqli_query($con, $sqlA);
 $dadosA =mysqli_fetch_array($resultA);
 
@@ -125,7 +125,7 @@ $dadosId = mysqli_fetch_array($resultId);
         </div>
         <?php
 
-        $sqlAlbuns = "select * from albuns inner join fotografos where albumFotografoId=fotografoId order by albumData desc limit 6";
+        $sqlAlbuns = "select * from albuns inner join fotografos where albumFotografoId=fotografoPerfilId order by albumData desc limit 6";
         $resultAlbuns = mysqli_query($con, $sqlAlbuns);
 
         ?>

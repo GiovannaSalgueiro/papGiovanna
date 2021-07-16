@@ -34,35 +34,22 @@ $dados=mysqli_fetch_array($result);
                                 <ul>
                                     <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong></li><br>
                                     <li><i class="icofont-rounded-right"></i> <strong>Email:</strong></li><br>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Palavra Passe:</strong></li><br>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Fotógrafo:</strong></li><br>
+                                    <li><a href="#" data-toggle="modal" data-target="#password"><i class="icofont-rounded-right"><span style="color: #444444"><strong> Alterar palavra passe</strong></span></i></a></li>
+
+
                                 </ul>
                             </div>
+
                             <div class="col-lg-3">
                                 <br>
                                 <ul>
                                     <li><small><input type="text" name="perfilNome" value="<?php echo $dados['perfilNome']?>"></small></li><br>
                                     <li><small><input type="text" name="perfilEmail" value="<?php echo $dados['perfilEmail']?>"></small></li><br>
-                                    <li><small><input type="text" name="perfilPassword" value="<?php echo $dados['perfilPassword']?>"></small></li><br>
-                                    <?php
-                                    if ($dados['perfilFotografo']==='sim'){?>
-                                        <li><small>
-                                                <input checked type="radio" id="sim" name="perfilFotografo" value="sim">
-                                                <label for="sim">Sim</label>
-                                                <input type="radio" id="nao" name="perfilFotografo" value="nao">
-                                                <label for="nao">Não</label><br></small></li>
-                                    <?php } else{
-                                        ?>
-                                        <li><small>
-                                                <input type="radio" id="sim" name="perfilFotografo" value="sim">
-                                                <label for="sim">Sim</label>
-                                                <input checked type="radio" id="nao" name="perfilFotografo" value="nao">
-                                                <label for="nao">Não</label><br></small></li>
-                                    <?php } ?>
 
                                 </ul>
                             </div>
 
+                        </div>
                             <div class="col-lg-12"  style="text-align: center">
                                 <button type="Submit" class="btn btn-warning">Edita</button><br>
                             </div>
@@ -73,22 +60,54 @@ $dados=mysqli_fetch_array($result);
                     <br>
                 </div>
             </form>
-            <div class="col-lg-9">
-                <?php
-                if ($dados['perfilFotografo']==='sim'){?>
-
-                <?php } else{
-                    ?>
-                    <i class="fas fa-camera" style="color: #ffb727"></i> <strong>Mudar para conta como fotógrafo</strong>
-                <?php } ?>
-            </div>
             </div>
         </div>
     </section><!-- End About Me Section -->
 </main><!-- End #main -->
 
 
+<div class="modal fade" id="password" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Alterar palavra-passe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
+            <div class="modal-body">
+                <form action="login.php" method="post" >
+                    <div class="form-group"><div class="row">
+                            <div class="col-lg-6">
+                                <br>
+                                <ul>
+                                    <strong>Palavra-passe atual:</strong><br><br>
+                                    <strong>Nova palavra-passe:</strong><br><br>
+
+
+
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <br>
+                                <ul>
+                                    <small><input type="text" name="perfilPassword" value=""></small><br><br>
+                                    <small><input type="text" name="perfilPassword" value=""></small><br><br>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+            </div>
+            </form>
+        </div>
+
+    </div>
+</div>
 </body>
 <?php
 bottom();

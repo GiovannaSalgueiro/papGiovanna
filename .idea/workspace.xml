@@ -2,172 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] reformulação de vários ficheiros">
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXFillPortfolio.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AJAX/AJAXGetEmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v5.0.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/IMG_20210504_161803.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/IMG_20210504_161948.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/IMG_20210504_162010.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/TVI_ficcao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/album1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/album2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarve8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/algarveCapa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/anCapa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/asfdasfa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/batismo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/batismoC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/camera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/camera2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascais5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/cascaisCapa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/def.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/dsad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/favico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/fig.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/istockphoto-135790647-1024x1024.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/le.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/leCapa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/lei.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/leiria.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/logoformdigit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/luisa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/maria.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/me.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/na.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/naa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/naz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/naza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/nazaa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/nazar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/nazare.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/nos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/pedro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/perfil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/port-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/portfolio-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/portfolio-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/principal1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/rtpmemory.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/sicmulher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/sist.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/tvi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens_bck/waffsaw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/algarveCapa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/me.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/principal1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/IMG_20210504_161803.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/IMG_20210504_161948.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/IMG_20210504_162010.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/TVI_ficcao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarve8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/algarveCapa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/anCapa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/asfdasfa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/batismo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/batismoC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/camera.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/camera.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/camera2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascais5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/cascaisCapa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/def.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/dsad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/favico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/fig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/g.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/h.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/icon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/istockphoto-135790647-1024x1024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/le.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/leCapa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/lei.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/leiria.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/logoformdigit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/luisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/maria.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/me.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/na.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/naa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/naz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/naza.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/nazaa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/nazar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/nazare.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/nos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/pedro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/port-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/portfolio-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/portfolio-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/principal1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/rtpmemory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/sicmulher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/sist.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/tvi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagens/waffsaw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/config.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registar.php" beforeDir="false" afterPath="$PROJECT_DIR$/registar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registo.php" beforeDir="false" afterPath="$PROJECT_DIR$/registo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXFillPortfolio.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXFillPortfolio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adicionaAlbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/adicionaAlbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/fotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fotografo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade.php" beforeDir="false" afterPath="$PROJECT_DIR$/atividade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaEditaConta.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaEditaConta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaEditaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaEditaPerfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editaAlbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaAlbum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editaconta.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaconta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editaperfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaperfil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

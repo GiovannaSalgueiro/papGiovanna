@@ -2,11 +2,12 @@
 include_once("includes/body.inc.php");
 top();
 
-$sql="Select fotografoId
+$sql="Select fotografoPerfilId
      , perfilId
+     , perfilPassword
      , perfilEstado
-    , fotografoNome
-    , fotografoEmail
+    , perfilNome
+    , perfilEmail
     , fotografoFotoURL
     , notificacaoId
     , count(notificacaoPerfilId) as nAvisos
@@ -58,8 +59,8 @@ $result = mysqli_query($con, $sql);
     <section id="services1" class="services">
 
         <div class="section-title">
-            <span>Criador de Conteudo</span>
-            <h2>Criador de Conteudo</h2>
+            <span>Contas</span>
+            <h2>Contas</h2>
         </div>
 
 
@@ -69,7 +70,7 @@ $result = mysqli_query($con, $sql);
             <table class="table table-hover table-striped">
                 <tr>
                     <th>Id</th>
-                    <th> Nome do Criador </th>
+                    <th> Nome </th>
                     <th> Email</th>
                     <th> Capa </th>
                     <th> Estado </th>
@@ -82,26 +83,27 @@ $result = mysqli_query($con, $sql);
 
                     while ($dados = mysqli_fetch_array($result)) {
                     ?>
-                    <td><?php echo $dados['fotografoId']?></td>
+                    <td><?php echo $dados['fotografoPerfilId']?></td>
 
-                    <td><?php echo $dados['fotografoNome']?></td>
-                    <td><?php echo $dados['fotografoEmail']?></td>
+                    <td><?php echo $dados['perfilNome']?></td>
+                    <td><?php echo $dados['perfilEmail']?></td>
                     <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
+
 
                     <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-<?php echo $dados['perfilEstado']=='ativo'?'prim':'second'?>ary"><?php echo $dados['perfilEstado']?></span></a></td>
 
 
-                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
+                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoPerfilId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
 
                     <?php
-                        //$sqlAviso="select *,count(noticacaoTi) as n from notificacoes  where notificacaoTipo='aviso' and fotografoId=".$dados['fotografoId'];
+                        // $sqlAviso="select *,count(noticacaoTi) as n from notificacoes inner join perfis on notificacaoPerfilId=perfilId where notificacaoTipo='aviso' and perfilId=".$dados['perfilId'];
                         //$resultAviso=mysqli_query($con, $sqlAviso);
-                       // $dadosAviso=mysqli_fetch_array($resultAviso);
+                        //$dadosAviso=mysqli_fetch_array($resultAviso);
                     ?>
                     <td><span class="btn-sm btn-warning"><?php echo $dados['nAvisos']?>&nbsp;<i class="fas fa-bell"></i></span></td>
 
 
-                    <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
+                    <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoPerfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                         </tr>
                 <?php
@@ -114,7 +116,7 @@ $result = mysqli_query($con, $sql);
 
     </section>
 
-    <div class="container">
+    <!--<div class="container">
         <div class="section-title">
             <span>Contas</span>
             <h2>Contas</h2>
@@ -153,7 +155,7 @@ $result = mysqli_query($con, $sql);
 
         </table>
         <br>
-    </div>
+    </div>-->
 
 </main><!-- End #main -->
 

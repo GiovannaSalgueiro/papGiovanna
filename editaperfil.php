@@ -2,10 +2,9 @@
 include_once ("includes/body.inc.php");
 top1();
 $id=intval($_GET['id']);
-$sql="select * from fotografos where fotografoId=$id";
+$sql="select * from fotografos inner join perfis on fotografoPerfilId=perfilId where perfilId=".$id;
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
-
 
 ?>
 
@@ -44,10 +43,10 @@ $dados=mysqli_fetch_array($result);
                             <div class="col-lg-9">
                                 <br>
                                 <ul>
-                                    <li><small><input type="text" name="fotografoNome" value="<?php echo $dados['fotografoNome']?>"></small></li><br>
+                                    <li><small><input type="text" name="perfilNome" value="<?php echo $dados['perfilNome']?>"></small></li><br>
                                     <li><small><input type="text" name="fotografoTelemovel" value="<?php echo $dados['fotografoTelemovel']?>"></small></li><br>
                                     <li><small><input type="text" name="fotografoCidade" value="<?php echo $dados['fotografoCidade']?>"></small></li><br>
-                                    <li><small><input type="text" name="fotografoEmail" value="<?php echo $dados['fotografoEmail']?>"></small></li><br>
+                                    <li><small><input type="text" name="perfilEmail" value="<?php echo $dados['perfilEmail']?>"></small></li><br>
                                     <?php
                                      if ($dados['fotografoFreelancer']==='sim'){?>
                                          <li><small><input checked type="radio" id="sim" name="freelance" value="sim">
