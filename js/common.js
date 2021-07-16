@@ -27,6 +27,10 @@ function gosto(id) {
     */
 
 }
+var $grid = $('.grid').isotope({
+    itemSelector: '.element-item',
+});
+
 function favorito(id) {
     $.ajax({
         url:"AJAX/AJAXPutFavoritoFoto.php",

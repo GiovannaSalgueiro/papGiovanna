@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Detalhes da conta&#10;admin fotografos completo">
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Atualizar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +143,8 @@
       <workItem from="1625662783732" duration="2447000" />
       <workItem from="1626176533593" duration="6028000" />
       <workItem from="1626267519112" duration="4610000" />
-      <workItem from="1626354641087" duration="2749000" />
+      <workItem from="1626354641087" duration="3358000" />
+      <workItem from="1626423603863" duration="1086000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -372,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626191772029</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Atualizar">
+      <created>1626360736425</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1626360736425</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +397,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[leandro] AJAXGetFoto.php" />
     <MESSAGE value="[leandro] base de dados versão 2.0" />
     <MESSAGE value="[leandro] versão 2.5 da base de dados" />
     <MESSAGE value="idea" />
@@ -417,6 +421,7 @@
     <MESSAGE value="Elimina comentarios&#10;Login novo" />
     <MESSAGE value="Algumas coisas" />
     <MESSAGE value="Detalhes da conta&#10;admin fotografos completo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Detalhes da conta&#10;admin fotografos completo" />
+    <MESSAGE value="Atualizar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualizar" />
   </component>
 </project>
