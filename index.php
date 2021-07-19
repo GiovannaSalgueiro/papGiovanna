@@ -98,7 +98,7 @@ $result=mysqli_query($con,$sql);
                         <div class="portfolio-info">
                             <h4><?php echo $dadosAlbum['albumNome']?></h4>
                             <p><?php echo $dadosAlbum['albumData']?></p>
-                            <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>"><i class="far fa-eye"></i></a>
+                            <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $dadosCriador["fotografoPerfilId"]?>"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
 

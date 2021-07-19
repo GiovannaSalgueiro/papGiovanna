@@ -18,11 +18,12 @@ if($imagem!=''){
     copy($_FILES['fotografoFotoURL']['tmp_name'],$novoNome);
 }
 
-$sql.=" where fotografoId=".$id;
+$sql.=" where fotografoPerfilId=".$id;
+$sql.=" where perfilId=".$id;
 
 
 mysqli_query($con,$sql);
-//header("location: perfil.php?id=".$id);
+header("location: perfil.php?id=".$id);
 ?>
 
 

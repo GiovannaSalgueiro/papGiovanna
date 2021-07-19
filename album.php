@@ -3,13 +3,13 @@ include_once("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['idAlbum']);
+$idF=intval($_GET['idFotografo']);
 
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
-        inner join fotografos on albumFotografoId=fotografoId where albumId=$id" ;
+        inner join fotografos on albumFotografoId=fotografoPerfilId where albumId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
-$idF=$dados['albumFotografoId'];
 ?>
 <script>
     function confirmaElimina(id) {
@@ -43,19 +43,21 @@ $idF=$dados['albumFotografoId'];
           <br>
           <?php
           $sqlFotografo="select * from fotografos 
-        inner join albuns on fotografoId=albumFotografoId where albumFotografoId=$idF";
+        inner join albuns on fotografoPerfilId=albumFotografoId 
+inner join perfis on fotografoPerfilId=perfilId where albumFotografoId=$idF";
           $resultFotografo=mysqli_query($con,$sqlFotografo);
           $dadosFotografo=mysqli_fetch_array($resultFotografo);
 
-          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoId where fotoAlbumId=$id" ;
+          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoPerfilId 
+                             where fotoAlbumId=$id" ;
 
           $resultF=mysqli_query($con,$sqlF);
           $dadosF=mysqli_fetch_array($resultF);
           ?>
           <div class="section-title">
 
-              <span><?php echo $dadosFotografo['fotografoNome']?></span>
-              <h2><?php echo $dadosFotografo['fotografoNome']?></h2>
+              <span><?php echo $dadosFotografo['perfilNome']?></span>
+              <h2><?php echo $dadosFotografo['perfilNome']?></h2>
               <h2><?php echo $dadosFotografo['albumNome']?></h2>
               <p><?php echo $dadosFotografo['albumData']?> | <?php echo $dadosF['f']?></p>
 
