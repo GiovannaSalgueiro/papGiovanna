@@ -10,32 +10,29 @@ $sql="Select fotografoPerfilId
     , perfilEmail
     , fotografoFotoURL
     , notificacaoId
-    , count(notificacaoPerfilId) as nAvisos
     from fotografos left join perfis on fotografoPerfilId=perfilId
-    left join 
-    (select * from notificacoes where notificacaoTipo='aviso') as tabela on perfilId=tabela.notificacaoPerfilId
+    left join notificacoes on perfilId=notificacaoPerfilId
     
     GROUP BY 1";
 $result = mysqli_query($con, $sql);
 
 
 ?>
+<!-- $sql="Select fotografoPerfilId
+     , perfilId
+     , perfilPassword
+     , perfilEstado
+    , perfilNome
+    , perfilEmail
+    , fotografoFotoURL
+    , notificacaoId
+    , count(notificacaoPerfilId) as nAvisos
+    from fotografos left join perfis on fotografoPerfilId=perfilId
+    left join
+    (select * from notificacoes where notificacaoTipo='aviso') as tabela on perfilId=tabela.notificacaoPerfilId
 
+    GROUP BY 1";-->
 <script>
-    function confirmaEliminaCriador(id) {
-        $.ajax({
-            url:"AJAX/AJAXGetNameFotografo.php",
-            type:"post",
-            data:{
-                idFotografo:id
-            },
-            success:function (result){
-                if(confirm('Confirma que deseja eliminar o/a fotografo:' +result+"?"))
-
-                    window.location="eliminaFotografo.php?id=" + id;
-            }
-        })
-    }
     function confirmaEliminaPerfil(id) {
         $.ajax({
             url:"AJAX/AJAXGetNamePerfil.php",
@@ -87,7 +84,7 @@ $result = mysqli_query($con, $sql);
 
                     <td><?php echo $dados['perfilNome']?></td>
                     <td><?php echo $dados['perfilEmail']?></td>
-                    <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102"></td>
+                    <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102" height="100"></td>
 
 
                     <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-<?php echo $dados['perfilEstado']=='ativo'?'prim':'second'?>ary"><?php echo $dados['perfilEstado']?></span></a></td>
@@ -100,10 +97,10 @@ $result = mysqli_query($con, $sql);
                         //$resultAviso=mysqli_query($con, $sqlAviso);
                         //$dadosAviso=mysqli_fetch_array($resultAviso);
                     ?>
-                    <td><span class="btn-sm btn-warning"><?php echo $dados['nAvisos']?>&nbsp;<i class="fas fa-bell"></i></span></td>
+                   <!-- <td><span class="btn-sm btn-warning"><?php echo $dados['nAvisos']?>&nbsp;<i class="fas fa-bell"></i></span></td> -->
 
 
-                    <td><a href="#" onclick="confirmaEliminaCriador(<?php echo $dados['fotografoPerfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
+                    <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['fotografoPerfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                         </tr>
                 <?php

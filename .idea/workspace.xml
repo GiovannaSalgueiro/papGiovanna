@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Mudar sql para fotografoPerfilId&#10;Melhorar albuns detalhes&#10;Edita conta, mas sem a palavra passe">
-      <change beforePath="$PROJECT_DIR$/confirmaEditaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaEditaPerfil.php" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="edita a funcionar">
+      <change afterPath="$PROJECT_DIR$/admin/AJAX/AJAXDelComentario.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/AJAX/txt.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/AJAX/txt2.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/comentarios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/Pedro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascais1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascais2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascais4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascais5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascaisCapa.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/fotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fotografo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eliminaFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/eliminaFoto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AJAX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/AJAX" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,10 +76,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
+      <recent name="C:\wamp64\www\papGiovanna\admin" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna" />
-      <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -145,7 +164,8 @@
       <workItem from="1626354641087" duration="3358000" />
       <workItem from="1626423603863" duration="1086000" />
       <workItem from="1626682296327" duration="5338000" />
-      <workItem from="1626769147754" duration="333000" />
+      <workItem from="1626769147754" duration="636000" />
+      <workItem from="1626770999391" duration="9668000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -385,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626447798745</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="edita a funcionar">
+      <created>1626769727882</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1626769727882</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +432,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[leandro] versão 2.5 da base de dados" />
     <MESSAGE value="idea" />
     <MESSAGE value="[leandro] sessoes" />
     <MESSAGE value="[leandro] AJAX gostos" />
@@ -430,6 +456,7 @@
     <MESSAGE value="Detalhes da conta&#10;admin fotografos completo" />
     <MESSAGE value="Atualizar" />
     <MESSAGE value="Mudar sql para fotografoPerfilId&#10;Melhorar albuns detalhes&#10;Edita conta, mas sem a palavra passe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mudar sql para fotografoPerfilId&#10;Melhorar albuns detalhes&#10;Edita conta, mas sem a palavra passe" />
+    <MESSAGE value="edita a funcionar" />
+    <option name="LAST_COMMIT_MESSAGE" value="edita a funcionar" />
   </component>
 </project>

@@ -2,11 +2,20 @@
 include_once("includes/body.inc.php");
 top();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
-$sql="Select * , count(gostoFotoId) as n
-        from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoPerfilId=albumFotografoId
-        inner join gostos on fotoId=gostoFotoId group by fotoId, fotoURL order by n desc limit 3
-        ";
+$sql="select *, ifnull(count(nGostos),0) as nGostos,ifnull(count(nComentarios),0) as nComentarios
+from fotos left join albuns on fotoAlbumId=albumId 
+left join fotografos on fotografoPerfilId=albumFotografoId
+left join perfis on fotografoPerfilId=perfilId
+left join (
+Select fotoId ,count(gostoFotoId) as nGostos
+        from fotos inner join gostos on fotoId=gostoFotoId group by 1 ) as tGostos
+on tGostos.fotoId=fotos.fotoId				
+	left join (				
+Select fotoId , count(comentarioFotoId) as nComentarios
+        from fotos inner join comentarios on fotoId=comentarioFotoId group by 1 ) as tComentarios
+on tComentarios.fotoId=fotos.fotoId					
+ group by fotos.fotoId order by (nGostos+nComentarios) desc limit 3 ";
+
 $result = mysqli_query($con, $sql);
 
 
@@ -80,6 +89,11 @@ $dadosId = mysqli_fetch_array($resultId);
                 <span>Top Posts</span>
                 <h2>Top Posts</h2>
                 <p>Imagens mais populares da semana</p>
+                <?php
+
+                ?>
+
+
             </div>
             <table class="table table-hover table-striped">
 
@@ -92,17 +106,18 @@ $dadosId = mysqli_fetch_array($resultId);
                     <th> Comentários</th>
                     <th colspan="3"> Opções </th>
                 </tr><?php
+
                 while ($dados = mysqli_fetch_array($result)) {
 
                     ?>
                 <tr>
                     <td><?php echo $dados['fotoId']?></td>
-                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoId']?>"><?php echo $dados['fotografoNome']?></td></a>
+                    <td><a href="fotografo.php?id=<?php echo $dados['fotografoPerfilId']?>"><?php echo $dados['perfilNome']?></td></a>
                     <td><img src="../<?php echo $dados['fotoURL']?>" width="102"> </td>
                     <td style="text-align: center"><a href="album.php?id=<?php echo $dados['albumId']?>" ><i class="fas fa-images" style="color: #ffb727"></i>&nbsp;<?php echo $dados['albumNome']?></td></a>
-                    <td><?php echo $dados['n']?> gostos</td>
-                    <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
-                    <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
+                    <td><?php echo $dados['nGostos']?> gostos</td>
+                    <td><a href="comentarios.php?idCom=<?php echo $dados['fotoId']?>"><span class="btn-sm btn-success">Ver comentários <span class="badge-success">(<?php echo $dados['nComentarios']?>)</span></span></a></td>
+                    <!--<td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>-->
                     <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                 </tr>
@@ -149,7 +164,7 @@ $dadosId = mysqli_fetch_array($resultId);
                 <td><?php echo $dadosAlbuns['albumData']?></td>
                 <td style="text-align: center">9</td>
                 <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>
-                <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
+                <!--<td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>-->
                 <td><a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbuns['albumId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
             </tr>
                 <?php

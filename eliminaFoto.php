@@ -11,6 +11,6 @@ echo $sql3= "delete from gostos where gostoFotoId=".$id;
 mysqli_query($con,$sql3);
 mysqli_query($con,$sql2);
 mysqli_query($con,$sql);
-header("location:album.php?id=$albumId");
+header("location:album.php?idAlbum=$albumId");
 
 ?>

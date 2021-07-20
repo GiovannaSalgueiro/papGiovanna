@@ -3,10 +3,10 @@ include_once("includes/body.inc.php");
 top1();
 
 $id=intval($_GET['idAlbum']);
-$idF=intval($_GET['idFotografo']);
 
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
-        inner join fotografos on albumFotografoId=fotografoPerfilId where albumId=$id" ;
+        inner join fotografos on albumFotografoId=fotografoPerfilId inner join perfis on perfilId=fotografoPerfilId  
+        where albumId=$id" ;
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
@@ -41,45 +41,25 @@ $dados=mysqli_fetch_array($result);
           <small><a href="perfil.php?id=<?php echo $dados['albumFotografoId']?>">Voltar</a></small>
           <br>
           <br>
-          <?php
-          $sqlFotografo="select * from fotografos 
-        inner join albuns on fotografoPerfilId=albumFotografoId 
-inner join perfis on fotografoPerfilId=perfilId where albumFotografoId=$idF";
-          $resultFotografo=mysqli_query($con,$sqlFotografo);
-          $dadosFotografo=mysqli_fetch_array($resultFotografo);
 
-          $sqlF="select count(fotoAlbumId) as f from albuns inner join fotos on albumId=fotoAlbumId inner join fotografos on albumFotografoId=fotografoPerfilId 
-                             where fotoAlbumId=$id" ;
-
-          $resultF=mysqli_query($con,$sqlF);
-          $dadosF=mysqli_fetch_array($resultF);
-          ?>
           <div class="section-title">
 
-              <span><?php echo $dadosFotografo['perfilNome']?></span>
-              <h2><?php echo $dadosFotografo['perfilNome']?></h2>
-              <h2><?php echo $dadosFotografo['albumNome']?></h2>
-              <p><?php echo $dadosFotografo['albumData']?> | <?php echo $dadosF['f']?></p>
+              <span><?php echo $dados['perfilNome']?></span>
+              <h2><?php echo $dados['perfilNome']?></h2>
+              <h2><?php echo $dados['albumNome']?></h2>
+              <p><?php echo $dados['albumData']?> | <?php echo $dados['f']?></p>
 
           </div>
 
           <div class="content pl-lg-4 d-flex flex-column justify-content-center">
               <br>
               <?php
-              if(isset($_SESSION['id'])){
-                  $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
-                  $sql1="select perfilNome from perfis where perfilId=".$idF;
-                  $resultNome=mysqli_query($con,$sqlNome);
-                  $result1=mysqli_query($con,$sql1);
-                  $dadosNome=mysqli_fetch_array($resultNome);
-                  $dados1=mysqli_fetch_array($result1);
-                  if($dadosNome['perfilNome']==$dados1['perfilNome']){
-                      ?>
+              if(isset($_SESSION['id'])==$dados['albumFotografoId']){?>
+
 
                       <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
             <?php
 
-                  }
 
               }?>
           </div>
@@ -88,7 +68,7 @@ inner join perfis on fotografoPerfilId=perfilId where albumFotografoId=$idF";
 
         <div class="row portfolio-container">
             <?php
-                if($dadosF['f']<1){ ?>
+                if($dados['f']<1){ ?>
                     <h2>Este album ainda não contem fotografias</h2>
                     <?php
                     }else{
@@ -106,18 +86,14 @@ inner join perfis on fotografoPerfilId=perfilId where albumFotografoId=$idF";
                         </a>
                         <br>
                         <?php
-                        if(isset($_SESSION['id'])){
-                            $sqlNome="select perfilNome from perfis where perfilId=".$_SESSION['id'];
-                            $sql1="select perfilNome from perfis where perfilId=".$idF;
-                            $resultNome=mysqli_query($con,$sqlNome);
-                            $result1=mysqli_query($con,$sql1);
-                            $dadosNome=mysqli_fetch_array($resultNome);
-                            $dados1=mysqli_fetch_array($result1);
-                            if($dadosNome['perfilNome']==$dados1['perfilNome']){
-                                ?>
+                                if(isset($_SESSION['id'])==$dados['albumFotografoId']){
+                                    ?>
+
+
                                 <a href="#" onclick="confirmaElimina(<?php echo $dadosFoto['fotoId']?>);"><h6 style="text-align: center"><i class="fas fa-trash-alt" style="color: #ffb459;"></i><small> Eliminar foto</small></h6></a>
                                 <?php
-                            }}?>
+                                }
+                                ?>
                        </div>
                     <?php
                 }}

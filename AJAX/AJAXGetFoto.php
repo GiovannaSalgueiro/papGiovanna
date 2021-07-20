@@ -1,14 +1,14 @@
 <?php
 include_once ("../includes/body.inc.php");
 
-
 $id=intval($_POST['idFoto']);
-$sql="Select * ,count(*) as n
+
+$sql="Select * , count(*) as n
         from fotos inner join gostos on fotoId=gostoFotoId
         inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId         
+        inner join fotografos on fotografoPerfilId=albumFotografoId 
+        inner join perfis on fotografoPerfilId=perfilId
         where fotoId=$id";
-
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
@@ -43,7 +43,7 @@ $dados = mysqli_fetch_array($result);
 
             <h1 id="teste"></h1>
 
-            <a href="perfil.php?id=<?php echo $dados['fotografoId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['fotografoNome']?></h7></a>
+            <a href="perfil.php?id=<?php echo $dados['fotografoPerfilId']?>"><span style="color:#4F4F4F" class="fas fa-camera-retro"></span><h7 class="title" style="text-align: center; color:#4F4F4F">&nbsp;&nbsp;&nbsp;<?php echo $dados['perfilNome']?></h7></a>
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

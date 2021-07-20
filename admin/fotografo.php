@@ -20,7 +20,7 @@ $dados = mysqli_fetch_array($result);
             </div>
 
             <div class="row">
-                <img src="<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
+                <img src="../<?php echo $dados['fotografoFotoURL']?>" class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start">
                 <div class="col-lg-8 d-flex flex-column align-items-stretch">
                     <div class="content pl-lg-4 d-flex flex-column justify-content-center">
 
