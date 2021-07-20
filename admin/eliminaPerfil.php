@@ -10,8 +10,8 @@ while($dados=mysqli_fetch_array($result)){
     $sql= "delete from fotografos where fotografoPerfilId=".$id;
     $sql2= "delete from albuns where albumFotografoId=".$id;
     $sql3= "delete from fotos where fotoId=".$id;
-    $sql4= "delete from comentarios where comentarioFotoId=".$id;
-    $sql5= "delete from gostos where gostoFotoId=".$id;
+    $sql4= "delete from comentarios where comentarioPerfilId=".$id;
+    $sql5= "delete from gostos where gostoPerfilId=".$id;
     $sql6= "delete from favoritos where favoritoPerfilId=".$id;
 
     mysqli_query($con,$sql6);

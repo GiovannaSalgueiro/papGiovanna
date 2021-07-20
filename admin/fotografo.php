@@ -29,7 +29,7 @@ $dados = mysqli_fetch_array($result);
                                 <br>
                                 <ul>
                                     <li><i class="icofont-rounded-right"></i> <strong>Nome:</strong><?php echo $dados['perfilNome']?></li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong><?php echo $dados['fotografoTelemovel']?></li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Telemovel:</strong><?php echo $dados['fotografoTelemovel']?> </li>
                                     <li><i class="icofont-rounded-right"></i> <strong>Cidade:</strong><?php echo $dados['fotografoCidade']?></li>
                                 </ul>
                             </div>
@@ -111,7 +111,7 @@ inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfi
                 <h2>Portfolio</h2>
             </div>
             <?php
-            $sql = "select * from albuns inner join fotografos where albumFotografoId=fotografoPerfilId";
+            $sql = "select * from albuns inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfilId=".$id;
             $resultAlbuns = mysqli_query($con, $sql);
             ?>
             <table class="table table-hover table-striped">
@@ -120,23 +120,19 @@ inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfi
                     <th>Id da Galeria</th>
                     <th>Nome da Galeria</th>
                     <th> Capa </th>
-                    <th>Nº de fotografias</th>
                     <th>Data</th>
                     <th> Detalhes </th>
                     <th colspan="3"> Opções </th>
                 </tr>
                 <?php
-                $sql="Select * from albuns inner join fotografos where fotografoPerfilId=$id";
                 while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
                     ?>
                 <tr>
                     <td><?php echo $dadosAlbuns['albumId']?></td>
                     <td><?php echo $dadosAlbuns['albumNome']?></td>
                     <td><img src="../<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"></td>
-                    <td>9</td>
                     <td><?php echo $dadosAlbuns['albumData']?></td>
-                    <td><a href="port1"><span class="btn-sm btn-success">Ver album</span></a></td>
-                    <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
+                    <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>
                     <td><span class="btn-sm btn-danger">Elimina</span></td>
 
                 </tr>

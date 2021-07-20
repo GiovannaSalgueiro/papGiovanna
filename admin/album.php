@@ -3,10 +3,12 @@ include_once("includes/body.inc.php");
 top();
 
 $id=intval($_GET['id']);
-$sql="Select * 
+$sql="Select * ,count(fotoAlbumId) as f
         from fotos inner join albuns on fotoAlbumId=albumId 
-        inner join fotografos on fotografoId=albumFotografoId 
+        inner join fotografos on fotografoPerfilId=albumFotografoId inner join perfis on fotografoPerfilId=perfilId
         where fotoAlbumId=$id";
+
+
 $result = mysqli_query( $con, $sql);
 $dados = mysqli_fetch_array($result);
 ?>
@@ -54,10 +56,10 @@ $dados = mysqli_fetch_array($result);
             <br>
             <div class="section-title">
 
-                <span><?php echo $dados['fotografoNome']?></span>
-                <h2><?php echo $dados['fotografoNome']?></h2>
+                <span><?php echo $dados['perfilNome']?></span>
+                <h2><?php echo $dados['perfilNome']?></h2>
                 <h2><?php echo $dados['albumNome']?></h2>
-                <p><?php echo $dados['albumData']?> | 9 fotografias</p>
+                <p><?php echo $dados['albumData']?> | <?php echo $dados['f']?></p>
 
             </div>
             <section id="topPost" class="services">
@@ -67,21 +69,23 @@ $dados = mysqli_fetch_array($result);
                         <tr>
                             <th> Id</th>
                             <th> Fotografia </th>
-                            <th> Nº de gostos </th>
                             <th> Comentários</th>
                             <th colspan="3"> Opções </th>
                         </tr>
                         <tr>
                             <?php
+
+
+
+
                             $sql="select * from fotos where fotoAlbumId=$id";
                             $resultAlbum=mysqli_query($con,$sql);
                             while ($dadosAlbum = mysqli_fetch_array($resultAlbum )) {
                             ?>
                             <td><?php echo $dadosAlbum ['fotoId']?></td>
                             <td><img src="../<?php echo $dadosAlbum['fotoURL']?>" width="102"> </td>
-                            <td  style="text-align: center">22</td>
-                            <td><a href="#" data-toggle="modal" data-target="#top1"><span class="btn-sm btn-success">Ver comentários</span></a></td>
-                            <td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>
+                            <td><a href="comentarios.php?idCom=<?php echo $dados['fotoId']?>"><span class="btn-sm btn-success">Ver comentários</span></a></td>
+
                             <td><a href="#" onclick="confirmaElimina(<?php echo $dados['fotoId']?>);"><span class="btn-sm btn-danger">Elimina</span></td>
                         </tr>
                             <?php

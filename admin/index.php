@@ -90,13 +90,11 @@ $dadosId = mysqli_fetch_array($resultId);
                 <span>Top Posts</span>
                 <h2>Top Posts</h2>
                 <p>Imagens mais populares da semana</p>
-                <?php
 
-                ?>
 
 
             </div>
-            <?php echo $sql;?>
+
             <table class="table table-hover table-striped">
 
                 <tr>
@@ -110,7 +108,7 @@ $dadosId = mysqli_fetch_array($resultId);
                 </tr><?php
 
                 while ($dados = mysqli_fetch_array($result)) {
-                    print_r($dados);
+
                     ?>
                 <tr>
 
@@ -143,8 +141,9 @@ $dadosId = mysqli_fetch_array($resultId);
         </div>
         <?php
 
-        $sqlAlbuns = "select * from albuns inner join fotografos where albumFotografoId=fotografoPerfilId order by albumData desc limit 6";
+        $sqlAlbuns = "select * from albuns     inner join fotografos on albumFotografoId=fotografoPerfilId order by albumData desc limit 6";
         $resultAlbuns = mysqli_query($con, $sqlAlbuns);
+
 
         ?>
         <table class="table table-hover table-striped">
@@ -154,18 +153,18 @@ $dadosId = mysqli_fetch_array($resultId);
                 <th> Nome do álbum </th>
                 <th> Capa </th>
                 <th> Data </th>
-                <th> Nº de Fotos </th>
                 <th> Detalhes </th>
                 <th colspan="3"> Opções </th>
             </tr><?php
+
             while ($dadosAlbuns = mysqli_fetch_array($resultAlbuns)) {
+
                 ?>
             <tr>
                 <td ><?php echo $dadosAlbuns['albumId']?></td>
                 <td style="text-align: center"><?php echo $dadosAlbuns['albumNome']?></td>
                 <td><img src="../<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"> </td>
                 <td><?php echo $dadosAlbuns['albumData']?></td>
-                <td style="text-align: center">9</td>
                 <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>
                 <!--<td><span class="btn-sm btn-warning"><i class="fas fa-bell"></i> &nbsp;Aviso</span></td>-->
                 <td><a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbuns['albumId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>

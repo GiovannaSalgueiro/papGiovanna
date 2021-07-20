@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 top1();
 
-$sql="select *, ifnull(count(nGostos),0) as nGostos,ifnull(count(nComentarios),0) as nComentarios
+$sql="select *, ifnull(nGostos,0) as nGostos,ifnull(nComentarios,0) as nComentarios
 from fotos left join albuns on fotoAlbumId=albumId 
 left join fotografos on fotografoPerfilId=albumFotografoId
 left join perfis on fotografoPerfilId=perfilId
@@ -13,8 +13,10 @@ on tGostos.fotoId=fotos.fotoId
 	left join (				
 Select fotoId , count(comentarioFotoId) as nComentarios
         from fotos inner join comentarios on fotoId=comentarioFotoId group by 1 ) as tComentarios
-on tComentarios.fotoId=fotos.fotoId					
+on tComentarios.fotoId=fotos.fotoId				
  group by fotos.fotoId order by  albumData desc ";
+
+
 
 $result = mysqli_query($con, $sql);
 ?>

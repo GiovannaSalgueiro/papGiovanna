@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="[leandro] Base de dados versão 5.0">
-      <change afterPath="$PROJECT_DIR$/imagens/pae.jpg" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Caminhos">
+      <change afterPath="$PROJECT_DIR$/imagens/cascais6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/admin/AJAX/txt.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/eliminaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/eliminaPerfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/fotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fotografo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

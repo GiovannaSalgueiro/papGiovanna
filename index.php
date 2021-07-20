@@ -32,7 +32,7 @@ $result=mysqli_query($con,$sql);
                        <a href="#" data-toggle="modal" onclick="mostraFoto(<?php echo $dados['fotoId']?>)">
                            <img width="320" src="<?php echo $dados['fotoURL']?>" class="post-img" alt="">
                        </a>
-                       <h7 class="title"><?php echo $dados['n']?> gostos</h7>
+                       <h7 class="title"><?php echo $dados['n']?>gostos</h7>
 
                    </div>
                </div>
@@ -96,6 +96,7 @@ $result=mysqli_query($con,$sql);
                     <div class="col-lg-4 col-md-6 portfolio-item">
                         <div class="portfolio-img"><img src="<?php echo $dadosAlbum['albumCapaURL']?>"  class="img-fluid" alt=""></div>
                         <div class="portfolio-info">
+
                             <h4><?php echo $dadosAlbum['albumNome']?></h4>
                             <p><?php echo $dadosAlbum['albumData']?></p>
                             <a href="album.php?idAlbum=<?php echo $dadosAlbum["albumId"]?>&idFotografo=<?php echo $dadosCriador["fotografoPerfilId"]?>"><i class="far fa-eye"></i></a>

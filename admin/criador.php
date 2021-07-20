@@ -70,7 +70,6 @@ $result = mysqli_query($con, $sql);
                     <th> Nome </th>
                     <th> Email</th>
                     <th> Capa </th>
-                    <th> Estado </th>
                     <th> Perfil </th>
                     <th colspan="3"> Opções </th>
                 </tr>
@@ -87,9 +86,6 @@ $result = mysqli_query($con, $sql);
                     <td><img src="../<?php echo $dados['fotografoFotoURL']?>" width="102" height="100"></td>
 
 
-                    <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-<?php echo $dados['perfilEstado']=='ativo'?'prim':'second'?>ary"><?php echo $dados['perfilEstado']?></span></a></td>
-
-
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoPerfilId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
 
                     <?php
@@ -100,7 +96,8 @@ $result = mysqli_query($con, $sql);
                    <!-- <td><span class="btn-sm btn-warning"><?php echo $dados['nAvisos']?>&nbsp;<i class="fas fa-bell"></i></span></td> -->
 
 
-                    <td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['fotografoPerfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
+                    <!--<td><a href="#" onclick="confirmaEliminaPerfil(<?php echo $dados['fotografoPerfilId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>-->
+                    <td><a href="ativo-inativo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-<?php echo $dados['perfilEstado']=='ativo'?'prim':'second'?>ary"><?php echo $dados['perfilEstado']?></span></a></td>
 
                         </tr>
                 <?php

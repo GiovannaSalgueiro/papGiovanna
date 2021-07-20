@@ -1,1 +1,1 @@
-delete from comentarios where comentarioId=6
+delete from comentarios where comentarioId=2
