@@ -10,8 +10,11 @@ $email=addslashes($_POST['perfilEmail']);
 $imagem=$_FILES['fotografoFotoURL']['name'];
 $novoNome="imagens/".$imagem;
 
+
+$sql="Update perfis set perfilNome='".$nome."', perfilEmail='".$email."' where perfilId=".$id;
+mysqli_query($con,$sql);
+
 $sql="Update fotografos set  fotografoTelemovel='".$telemovel."', fotografoCidade='".$cidade."', fotografoFreelancer='".$fotografofreelance."'";
-$sql.="Update perfis set perfilNome='".$nome."', perfilEmail='".$email."'";
 
 if($imagem!=''){
     $sql.=", fotografoFotoURL='imagens/".$imagem."'";
@@ -19,8 +22,6 @@ if($imagem!=''){
 }
 
 $sql.=" where fotografoPerfilId=".$id;
-$sql.=" where perfilId=".$id;
-
 
 mysqli_query($con,$sql);
 header("location: perfil.php?id=".$id);
