@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 top();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$con->set_charset("utf8");
 $sql="select *, ifnull(count(nGostos),0) as nGostos,ifnull(count(nComentarios),0) as nComentarios
 from fotos left join albuns on fotoAlbumId=albumId 
 left join fotografos on fotografoPerfilId=albumFotografoId

@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="edita a funcionar">
-      <change afterPath="$PROJECT_DIR$/admin/AJAX/AJAXDelComentario.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/AJAX/txt.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/AJAX/txt2.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/comentarios.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/Pedro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/cascais1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/cascais2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/cascais4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/cascais5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagens/cascaisCapa.jpg" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Admin comentarios&#10;Elimina perfis">
+      <change afterPath="$PROJECT_DIR$/imagens/cascais3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/cascais6.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/fotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fotografo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eliminaFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/eliminaFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editaconta.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaconta.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +152,7 @@
       <workItem from="1626423603863" duration="1086000" />
       <workItem from="1626682296327" duration="5338000" />
       <workItem from="1626769147754" duration="636000" />
-      <workItem from="1626770999391" duration="9668000" />
+      <workItem from="1626770999391" duration="11608000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
@@ -412,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626769727882</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Admin comentarios&#10;Elimina perfis">
+      <created>1626788915492</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1626788915492</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="idea" />
     <MESSAGE value="[leandro] sessoes" />
     <MESSAGE value="[leandro] AJAX gostos" />
     <MESSAGE value="[leandro] Base de dados versão 3.0" />
@@ -457,6 +450,7 @@
     <MESSAGE value="Atualizar" />
     <MESSAGE value="Mudar sql para fotografoPerfilId&#10;Melhorar albuns detalhes&#10;Edita conta, mas sem a palavra passe" />
     <MESSAGE value="edita a funcionar" />
-    <option name="LAST_COMMIT_MESSAGE" value="edita a funcionar" />
+    <MESSAGE value="Admin comentarios&#10;Elimina perfis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin comentarios&#10;Elimina perfis" />
   </component>
 </project>

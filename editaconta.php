@@ -20,8 +20,8 @@ $dados=mysqli_fetch_array($result);
         <div class="container">
 
             <div class="section-title">
-                <span>Editar o perfil</span>
-                <h2>Editar o perfil</h2>
+                <span>Editar o conta</span>
+                <h2>Editar o conta</h2>
             </div>
             <form action="confirmaEditaConta.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $id;?>">
