@@ -3,7 +3,7 @@ include_once("includes/body.inc.php");
 top();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
-$sql="select *, ifnull(count(nGostos),0) as nGostos,ifnull(count(nComentarios),0) as nComentarios
+$sql="select *, ifnull(nGostos,0) as nGostos,ifnull(nComentarios,0) as nComentarios
 from fotos left join albuns on fotoAlbumId=albumId 
 left join fotografos on fotografoPerfilId=albumFotografoId
 left join perfis on fotografoPerfilId=perfilId
@@ -15,7 +15,7 @@ on tGostos.fotoId=fotos.fotoId
 Select fotoId , count(comentarioFotoId) as nComentarios
         from fotos inner join comentarios on fotoId=comentarioFotoId group by 1 ) as tComentarios
 on tComentarios.fotoId=fotos.fotoId					
- group by fotos.fotoId order by (nGostos+nComentarios) desc limit 3 ";
+ order by (nGostos+nComentarios) desc limit 3 ";
 
 $result = mysqli_query($con, $sql);
 
@@ -96,6 +96,7 @@ $dadosId = mysqli_fetch_array($resultId);
 
 
             </div>
+            <?php echo $sql;?>
             <table class="table table-hover table-striped">
 
                 <tr>
@@ -109,9 +110,10 @@ $dadosId = mysqli_fetch_array($resultId);
                 </tr><?php
 
                 while ($dados = mysqli_fetch_array($result)) {
-
+                    print_r($dados);
                     ?>
                 <tr>
+
                     <td><?php echo $dados['fotoId']?></td>
                     <td><a href="fotografo.php?id=<?php echo $dados['fotografoPerfilId']?>"><?php echo $dados['perfilNome']?></td></a>
                     <td><img src="../<?php echo $dados['fotoURL']?>" width="102"> </td>

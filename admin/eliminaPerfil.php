@@ -7,12 +7,12 @@ $result=mysqli_query($con,$sql);
 
 
 while($dados=mysqli_fetch_array($result)){
-    $sql= "delete from fotografos where fotografoPerfilId=".$dados['perfilId'];
-    $sql2= "delete from albuns where albumFotografoId=".$dados['perfilId'];
-    $sql3= "delete from fotos where fotoId=".$dados['perfilId'];
-    $sql4= "delete from comentarios where comentarioFotoId=".$dados['perfilId'];
-    $sql5= "delete from gostos where gostoFotoId=".$dados['perfilId'];
-    $sql6= "delete from favoritos where favoritoPerfilId=".$dados['perfilId'];
+    $sql= "delete from fotografos where fotografoPerfilId=".$id;
+    $sql2= "delete from albuns where albumFotografoId=".$id;
+    $sql3= "delete from fotos where fotoId=".$id;
+    $sql4= "delete from comentarios where comentarioFotoId=".$id;
+    $sql5= "delete from gostos where gostoFotoId=".$id;
+    $sql6= "delete from favoritos where favoritoPerfilId=".$id;
 
     mysqli_query($con,$sql6);
     mysqli_query($con,$sql5);
