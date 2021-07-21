@@ -98,7 +98,9 @@ $dados = mysqli_fetch_array($result);
 
                 <div class="container text-left">
                     <div id="gostos" >
-
+                        <?php
+                        if(isset($_SESSION['id'])){
+                        ?>
                         <span id="gosto" onclick="gosto(<?php echo $id?>)">
                             <?php
                             // verifica se o utilizador gosta da foto
@@ -112,17 +114,22 @@ $dados = mysqli_fetch_array($result);
                               ?>
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
                             <?php
-                            }
+                            }}
                             ?>
                                 <small id="gostar" style="text-align: center"> <?php echo $dados['n']?>  gostos</small>
                             </span>
 
                     </div>
-
+                    <?php
+                    if(isset($_SESSION['id'])){
+                    ?>
                         <div class="container text-right">
                             <input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
                             <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button>
                         </div>
+                    <?php
+                    }
+                    ?>
 
                 </div>
             </div>
