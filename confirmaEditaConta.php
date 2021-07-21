@@ -8,7 +8,7 @@ $email=addslashes($_POST['perfilEmail']);
 
 
 
-$sql="Update perfis set perfilNome='".$nome."',perfilEmail='".$email."', perfilPassword='".$password."'";
+$sql="Update perfis set perfilNome='".$nome."',perfilEmail='".$email."'";
 
 $sql.=" where perfilId=".$id;
 

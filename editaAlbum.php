@@ -39,7 +39,7 @@ $dados=mysqli_fetch_array($result);
 
                             </ul>
                             <ul>
-                                <small><input type="text" name="albumData" value="<?php echo $dados['albumData']?>"></small>
+                                <small><input type="date" name="albumData" value="<?php echo $dados['albumData']?>"></small>
                             </ul>
 <br>
                             <ul>

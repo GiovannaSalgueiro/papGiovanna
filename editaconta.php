@@ -91,22 +91,16 @@ $dados=mysqli_fetch_array($result);
                                     <strong>Palavra-passe atual:</strong><br><br><br><br>
                                     <strong>Nova palavra-passe:</strong><br><br><br>
                                     <strong>Repita a nova palavra-passe:</strong><br><br>
-
-
-
                                 </ul>
                             </div>
-
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
                                     <small><input type="password" class="form-control" name="oldPass"  required></small><br><br>
                                     <small><input type="password" class="form-control" name="newPass" required></small><br><br>
                                     <small><input type="password" class="form-control" name="newPass" required></small><br><br>
-
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                     <hr>
