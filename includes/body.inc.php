@@ -4,7 +4,7 @@ session_start();
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 
- // error_reporting(E_ERROR | E_PARSE);     Retirar os erros
+ error_reporting(E_ERROR | E_PARSE);     //Retirar os erros
 
 if (isset($_GET['message'])) {
 

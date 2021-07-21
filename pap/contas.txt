@@ -1,0 +1,11 @@
+Admin:
+
+	Email:					Palavra passe:
+	giovanna18salgueiro@gmail.com		giovanna2003
+
+Utilizadores:
+
+	alex_sousa@hotmail.com			123
+	mariaSoares@gmail.com			123
+	utilizador12@sapo.pt			123
+	manuSilva@gmail.com			123

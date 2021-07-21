@@ -98,6 +98,7 @@ $dados = mysqli_fetch_array($result);
 
                 <div class="container text-left">
                     <div id="gostos" >
+
                         <span id="gosto" onclick="gosto(<?php echo $id?>)">
                             <?php
                             // verifica se o utilizador gosta da foto
@@ -115,11 +116,14 @@ $dados = mysqli_fetch_array($result);
                             ?>
                                 <small id="gostar" style="text-align: center"> <?php echo $dados['n']?>  gostos</small>
                             </span>
+
                     </div>
+
                         <div class="container text-right">
                             <input id="comentarioTexto" type="text" name="comentarioTexto" placeholder="Adicione um comentário..." style="width: 60%"></small>&nbsp;
                             <button onclick="comentario(<?php echo $id?>)"><i class="fas fa-comment"></i></button>
                         </div>
+
                 </div>
             </div>
         </div>
