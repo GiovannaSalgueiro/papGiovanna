@@ -77,13 +77,20 @@ $dados=mysqli_fetch_array($result);
             </div>
 
             <div class="modal-body">
-                <form action="login.php" method="post" >
+                <?php
+                $sql2="select * from perfis where perfilId=".$id;
+                $res=mysqli_query($con,$sql2);
+                $dados2=mysqli_fetch_array($res);
+
+                ?>
+                <form action="confirmaEditaPerfilPass.php?id=<?php echo $dados2['perfilId'] ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group"><div class="row">
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-                                    <strong>Palavra-passe atual:</strong><br><br>
-                                    <strong>Nova palavra-passe:</strong><br><br>
+                                    <strong>Palavra-passe atual:</strong><br><br><br><br>
+                                    <strong>Nova palavra-passe:</strong><br><br><br>
+                                    <strong>Repita a nova palavra-passe:</strong><br><br>
 
 
 
@@ -93,17 +100,21 @@ $dados=mysqli_fetch_array($result);
                             <div class="col-lg-6">
                                 <br>
                                 <ul>
-                                    <small><input type="text" name="perfilPassword" value=""></small><br><br>
-                                    <small><input type="text" name="perfilPassword" value=""></small><br><br>
+                                    <small><input type="password" class="form-control" name="oldPass"  required></small><br><br>
+                                    <small><input type="password" class="form-control" name="newPass" required></small><br><br>
+                                    <small><input type="password" class="form-control" name="newPass" required></small><br><br>
 
                                 </ul>
                             </div>
 
                         </div>
                     </div>
-
+                    <hr>
+                    <button type="submit" class="btn btn-warning">Editar palavra-passe</button>
+                </form>
             </div>
-            </form>
+
+
         </div>
 
     </div>

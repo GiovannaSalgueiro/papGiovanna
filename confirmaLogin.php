@@ -40,7 +40,7 @@ $dados = mysqli_fetch_array($res2);
 
 // and $dados2['perfilAdmin']=='utilizador'
 
-if ($email == $dados['perfilEmail'] and $password == $dados['perfilPassword']) {
+if ($email == $dados['perfilEmail'] and $password == $dados['perfilPassword'] and $dados['perfilAdmin']=='utilizador' ){
     session_start();
     $_SESSION['id'] = $dados['perfilId'];
     $_SESSION['email'] = $dados['perfilEmail'];
@@ -48,7 +48,11 @@ if ($email == $dados['perfilEmail'] and $password == $dados['perfilPassword']) {
     header("location:index.php");
 
 
-} else {
-    header("location:sessao.php?message");
+}elseif($email == $dados['perfilEmail'] AND $password == $dados['perfilPassword'] and $dados['perfilAdmin']=='admin' ) {
+    session_start();
+    $_SESSION['id'] = $dados['perfilId'];
+    $_SESSION['nome'] = $dados['perfilNome'];
+    $_SESSION['email'] = $dados['perfilEmail'];
+    header("location:admin/index.php");
 }
 ?>

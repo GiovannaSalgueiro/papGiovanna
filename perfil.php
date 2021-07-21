@@ -27,6 +27,7 @@ $dados=mysqli_fetch_array($result);
             })
         }
 
+
     </script>
 
   <!-- ======= Hero Section ======= -->

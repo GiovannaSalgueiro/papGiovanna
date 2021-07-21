@@ -54,12 +54,10 @@ $dados=mysqli_fetch_array($result);
           <div class="content pl-lg-4 d-flex flex-column justify-content-center">
               <br>
               <?php
-              if(isset($_SESSION['id'])==$dados['albumFotografoId']){?>
 
-
+              if(isset($_SESSION['id'])&&($_SESSION['id'])==$dados['perfilId']){?>
                       <a href="adicionaFoto.php?id=<?php echo $id?>"><i class="fas fa-plus" style="color: #ffb459; text-align: right"></i><small> Adicionar foto</small></a>
             <?php
-
 
               }?>
           </div>
@@ -86,8 +84,7 @@ $dados=mysqli_fetch_array($result);
                         </a>
                         <br>
                         <?php
-                                if(isset($_SESSION['id'])==$dados['albumFotografoId']){
-                                    ?>
+                        if(isset($_SESSION['id'])&&($_SESSION['id'])==$dados['perfilId']){?>
 
 
                                 <a href="#" onclick="confirmaElimina(<?php echo $dadosFoto['fotoId']?>);"><h6 style="text-align: center"><i class="fas fa-trash-alt" style="color: #ffb459;"></i><small> Eliminar foto</small></h6></a>

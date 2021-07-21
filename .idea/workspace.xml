@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Caminhos">
-      <change afterPath="$PROJECT_DIR$/imagens/cascais6.jpg" afterDir="false" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/baseDados/modeloBluPost_v5.5.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confirmaEditaPerfilPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/68366947_1059531147584826_7593357353030778880_o.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/dsad.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/admin/AJAX/txt.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/criador.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/criador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/eliminaPerfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/eliminaPerfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/fotografo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fotografo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirmaLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirmaLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conta.php" beforeDir="false" afterPath="$PROJECT_DIR$/conta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editaconta.php" beforeDir="false" afterPath="$PROJECT_DIR$/editaconta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascais1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascais1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascais2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascais2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascais3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascais3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascais4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascais4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascais5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascais5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/cascaisCapa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/cascaisCapa.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens/maria.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagens/maria.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/batismo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/batismoC.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascais5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/cascaisCapa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/na.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/naa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/naz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/naza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/nazaa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/nazar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/nazare.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagens_bck/pedro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/AJAX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,11 +93,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\pap\papGiovanna" />
       <recent name="C:\wamp64\www\papGiovanna\admin\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna\admin" />
       <recent name="C:\wamp64\www\.____PAP2021\papGiovanna\AJAX" />
       <recent name="C:\wamp64\www\papGiovanna\AJAX" />
-      <recent name="C:\wamp64\www\papGiovanna" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -157,6 +183,7 @@
       <workItem from="1626682296327" duration="5338000" />
       <workItem from="1626769147754" duration="636000" />
       <workItem from="1626770999391" duration="11608000" />
+      <workItem from="1626854599060" duration="738000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>
