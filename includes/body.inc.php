@@ -199,8 +199,7 @@ function top1(){
             <li><a href="sessao.php">Login</a> </li>
 
 
-
-            <li><a href="#" data-toggle="modal" data-target="#regista">Registar</a>&nbsp;</li>
+            <li><a href="registo.php" >Registar</a>&nbsp;</li>
             <?php
                 }else{
                     ?>

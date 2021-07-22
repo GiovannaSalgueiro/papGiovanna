@@ -60,10 +60,10 @@ $result = mysqli_query($con, $sql);
                     <td><?php echo $dados['comentarioTexto']?></td>
 
 
-                    <td><a href="fotografo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-success">Ver perfil</span></a></td>
+                    <td><a href="fotografo.php?id=<?php echo $dados['perfilId']?>"><span class="btn-sm btn-success">perfil</span></a></td>
 
 
-                    <td><a href="" onclick="confirmaEliminaCom(<?php echo $dados['comentarioId']?>);"><span class="btn-sm btn-danger">Elimina  <i class="fas fa-trash-alt"></i></span></a></td>
+                    <td><a href="" onclick="confirmaEliminaCom(<?php echo $dados['comentarioId']?>);"><span class="btn-sm btn-danger">Elimina</i></span></a></td>
 
                         </tr>
                 <?php

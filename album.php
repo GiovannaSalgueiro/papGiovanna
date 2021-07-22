@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top1();
-
+$con->set_charset("utf8");
 $id=intval($_GET['idAlbum']);
 
 $sql="select *,count(fotoAlbumId) as f from fotos inner join albuns on fotoAlbumId=albumId
@@ -35,10 +35,13 @@ $dados=mysqli_fetch_array($result);
     <!-- ======= My Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
-
+    <br>
+          <a href="index.php"><i class="fas fa-home"></i>   Ir para a página ínicial</a>
           <br>
-          <small><a href="perfil.php?id=<?php echo $dados['albumFotografoId']?>">Voltar</a></small>
+          <br>
+          <small><a href="perfil.php?id=<?php echo $dados['albumFotografoId']?>"><i class="fas fa-camera"></i>   Ir para o perfil do fotografo</a></small>
+
+
           <br>
           <br>
 

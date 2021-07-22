@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="Fotos" />
+    <list default="true" id="155b5e8d-1ee1-4645-a7e6-54e74f053c3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/imagens/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/anCapa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagens/h.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/AJAXGetFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/AJAX/txt.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/AJAX/txt.log" beforeDir="false" afterPath="$PROJECT_DIR$/admin/AJAX/txt.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/AJAX/txt2.log" beforeDir="false" afterPath="$PROJECT_DIR$/admin/AJAX/txt2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/comentarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/comentarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album.php" beforeDir="false" afterPath="$PROJECT_DIR$/album.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,6 +162,8 @@
       <workItem from="1626770999391" duration="11608000" />
       <workItem from="1626854599060" duration="738000" />
       <workItem from="1626873879690" duration="1650000" />
+      <workItem from="1626942152611" duration="59000" />
+      <workItem from="1626942326172" duration="688000" />
     </task>
     <task id="LOCAL-00001" summary="Novo layout da página principal. Pequenos ajustes ao portfólio.">
       <created>1613668497028</created>

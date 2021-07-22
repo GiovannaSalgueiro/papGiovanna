@@ -7,7 +7,23 @@ $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 
 ?>
+<script>
+        function confirmaEliminaAlbum(id) {
+        $.ajax({
+        url:"AJAX/AJAXGetNameAlbum.php",
+        type:"post",
+        data:{
+        idAlbum:id
 
+        },
+        success:function (result){
+        if(confirm('Deseja eliminar todo o album :  ' +result+" ?"))
+
+        window.location="eliminaAlbum.php?id=" + id;
+        }
+        })
+        }
+</script>
 <body>
 <main id="main">
     <!-- ======= About Me Section ======= -->
@@ -41,6 +57,9 @@ $dados = mysqli_fetch_array($result);
                                 </ul>
                             </div>
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         <div class="row mt-n4">
                             <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                 <div class="count-box">
@@ -68,21 +87,6 @@ inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfi
                                 </div>
                             </div>
 
-                            <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                                <div class="count-box">
-                                    <i class="icofont-clock-time" style="color: #2cbdee;"></i>
-                                    <span data-toggle="counter-up"><?php
-                                        if(!is_null($dados['fotografoAnoInicio'])){
-                                            $n=intval(date("Y")) - $dados['fotografoAnoInicio'];
-                                            echo $n==0?" - ":$n;
-                                        }else{
-                                            echo '-';
-                                        }
-
-                                        ?></span>
-                                    <p><strong>Anos de experiencia </strong> </p>
-                                </div>
-                            </div>
 
                             <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
                                 <div class="count-box">
@@ -133,7 +137,7 @@ inner join fotografos on albumFotografoId=fotografoPerfilId where fotografoPerfi
                     <td><img src="../<?php echo $dadosAlbuns['albumCapaURL']?>" width="102"></td>
                     <td><?php echo $dadosAlbuns['albumData']?></td>
                     <td><a href="album.php?id=<?php echo $dadosAlbuns["albumId"]?>"><span class="btn-sm btn-success">Ver album</span></a></td>
-                    <td><span class="btn-sm btn-danger">Elimina</span></td>
+                    <td><a href="#" onclick="confirmaEliminaAlbum(<?php echo $dadosAlbuns['albumId']?>);"><span class="btn-sm btn-danger">Elimina</span></a></td>
 
                 </tr>
                     <?php

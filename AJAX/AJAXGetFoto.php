@@ -57,9 +57,8 @@ $dados = mysqli_fetch_array($result);
                 <div class="row">
 
                     <div class="col-12">
-                        <a href="albuns.php?id=<?php echo $dados['albumId']?>"><h6><i class="far fa-images"></i> <?php echo $dados['albumNome']?></h6></a>
+                        <a href="album.php?idAlbum=<?php echo $dados['albumId']?>&idFotografo=<?php echo $dados['fotografoPerfilId']?>"><h6><i class="far fa-images"></i> <?php echo $dados['albumNome']?></h6></a>
                     </div>
-
                 </div>
                 <div class="row">
                         <div class="col-8">
